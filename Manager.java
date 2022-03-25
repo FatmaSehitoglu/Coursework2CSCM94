@@ -7,4 +7,18 @@ public class Manager extends Staff {
         this.staffId = staffId;
     }
 
+    public void addStaff() {
+        //add code here
+    }
+
+    public void removeStaff() {
+        //add code here
+    }
+
+    public void editStaff() {
+        //add code here
+    }
+
+    //public void approveEvent() {} (not implemented)
+
 }
