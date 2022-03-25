@@ -1,3 +1,3 @@
-public class Waiter {
+public class Waiter extends Staff {
     
 }
