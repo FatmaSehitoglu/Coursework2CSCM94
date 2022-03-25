@@ -1,9 +1,9 @@
 public class Database {
 
-    Order[] orders;
-    Booking[] bookings;
-    Customer[] customers;
-    Staff[] staff;
-    MenuItem[] menuItems;
+    public static Order[] orders;
+    public static Booking[] bookings;
+    public static Customer[] customers;
+    public static Staff[] staff;
+    public static MenuItem[] menuItems;
 
 }
