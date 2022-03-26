@@ -13,8 +13,8 @@ public class Database {
 //Order Database
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();
 
-    public static void addToOrderHistory(Booking newOrder) {
-        bookingHistory.add(newOrder);
+    public static void addToOrderHistory(Order newOrder) {
+        orderHistory.add(newOrder);
     }
     public static ArrayList<Order> getOrderHistory() {
         return orderHistory;
@@ -39,8 +39,21 @@ public class Database {
     public static ArrayList<Staff> getStaffList() {
         return staffList;
     }
+    /*
+    // return customer history
+    public static ArrayList<Order> customerHistory(int custId) {
+        ArrayList<Order> custHistory = new ArrayList<Order>();
+        for(int i = 0; i < orderHistory.size(); i++  ) {
+            
+        }
+        
+    }
 
-
+    //most active customer
+    public static Customer mostPopularCustomer() {
+        for(int i = 0; i <  )
+    }
+*/
     //FIELDS
     //======
     public static Order[] orders;
