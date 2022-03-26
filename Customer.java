@@ -1,7 +1,7 @@
 public class Customer extends User {
-    String address;
-    int custId;
-    Order[] orderHistory;
+    private String address;
+    private int custId;
+    private Order[] orderHistory;
 
     public Customer(String firstName, String lastName, String address, int custId) {
         this.firstName = firstName;
@@ -9,6 +9,36 @@ public class Customer extends User {
         this.address = address;
         this.custId = custId;
     }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;   
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public int getCustId() {
+        return this.custId;
+    }
+
+
 
     //public void createNewEvent(){} (not implemented)
     //public void viewEvents(){} (not implemented)
