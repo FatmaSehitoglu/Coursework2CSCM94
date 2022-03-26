@@ -17,7 +17,7 @@ public class Booking {
         this.date = date;
         this.time = time;
         this.customerID = customerID;
-        this.approved = approved;
+        this.approved = false;
     }
     public String getDate() {
         return date;
