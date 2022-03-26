@@ -1,6 +1,6 @@
 
 
-public class TakeAwayOrder {
+public class TakeAwayOrder extends Order {
     
     //FIELDS
     //======
