@@ -9,7 +9,10 @@ public class Booking {
         bookings.add(book);
     }
     ArrayList<Booking> bookings = new ArrayList<>();
-
+    ArrayList<Table> reservations = new ArrayList<>();
+    public void addReservation(Table reservation){
+        reservations.add(reservation);
+    }
     public Booking(String date, String time, int customerID, boolean approved) {
         this.date = date;
         this.time = time;
