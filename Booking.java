@@ -5,18 +5,16 @@ public class Booking {
     private int customerID;
     private boolean approved;
     private int numOfGuests;
-    public void addBooking(Booking book){
-        bookings.add(book);
-    }
-    ArrayList<Booking> bookings = new ArrayList<>();
+
     ArrayList<Table> reservations = new ArrayList<>();
     public void addReservation(Table reservation){
         reservations.add(reservation);
     }
-    public Booking(String date, String time, int customerID, boolean approved) {
+    public Booking(String date, String time, int customerID,int numOfGuests, boolean approved) {
         this.date = date;
         this.time = time;
         this.customerID = customerID;
+        this.numOfGuests = numOfGuests;
         this.approved = false;
     }
     public String getDate() {
@@ -41,6 +39,10 @@ public class Booking {
 
     public void setCustomerID(int customerID) {
         this.customerID = customerID;
+    }
+
+    public int getNumOfGuests() {
+        return numOfGuests;
     }
 
     public boolean isApproved() {
