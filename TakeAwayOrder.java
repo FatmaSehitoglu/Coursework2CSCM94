@@ -1,77 +1,44 @@
-import java.util.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-public class TakeAwayOrder extends Order {
-    
-    //FIELDS
-    //======
-    //int custId;           (inherited)
-    //boolean completed;    (inherited)
-    //String dateTime;      (inherited)
-    private String pickupTime;
+public class Takeaway extends Order{
+    private LocalDateTime arriveTime;
 
-    //CONSTRUCTOR
-    //===========
-    public TakeAwayOrder(
-        int custId, 
-        boolean completed, 
-        String pickupTime
-    ) {
-        this.custId = custId;
-        this.completed = false;
-        this.dateTime = currentDateTime();
-        this.pickupTime = pickupTime;
-    }
-        
-    //SETTERS
-    //=======
-    public void setCustId(int custId) {
-        this.custId = custId;
+    /*public Takeaway(int customID, String[] items, boolean orderComplete, LocalDateTime time, LocalDateTime arriveTime) {
+        super(customID, items, orderComplete, time);
+        this.arriveTime = arriveTime;
+    }*/
+
+    public Takeaway(LocalDateTime arriveTime, ArrayList<MenuItem> items) {
+        this.arriveTime = arriveTime;
+        record(items);
     }
 
-    public void setComplete() {
-        this.completed = true;
+    public LocalDateTime getArriveTime() {
+        return arriveTime;
     }
 
-    public void setIncomplete() {
-        this.completed = false;
+    public void setArriveTime(LocalDateTime arriveTime) {
+        this.arriveTime = arriveTime;
     }
 
-    public void setPickupTime(String pickupTime) {
-        this.pickupTime = pickupTime;
+    @Override
+    public String toString() {
+        return "Takeaway{" +
+                "arriveTime=" + arriveTime +
+                '}';
     }
 
-    //GETTERS
-    //=======
-    public int getCustId() {
-        return this.custId;
+    @Override
+    public void record(ArrayList<MenuItem> items) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Please enter the customer ID:");
+        int id = sc.nextInt();
+        setCustomID(id);
+        setItems(items);
+        setTime(LocalDateTime.now());
+        setOrderComplete(false);
     }
-
-    public boolean isComplete() {
-        return this.completed;
-    }
-
-    public String getDateTime() {
-        return this.dateTime;
-    }
-
-    public String getPickupTime() {
-        return this.pickupTime;
-    }
-
-    //METHODS
-    //=======
-
-    //Methods here
-
-    //UTILITY METHODS
-    //======= =======
-    private static String currentDateTime() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
-        return dateFormat.format(date);
-    }
-
-
 }
