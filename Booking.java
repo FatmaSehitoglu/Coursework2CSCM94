@@ -10,7 +10,7 @@ public class Booking {
     public void addReservation(Table reservation){
         reservations.add(reservation);
     }
-    public Booking(String date, String time, int customerID,int numOfGuests, boolean approved) {
+    public Booking(String date, String time, int customerID,int numOfGuests) {
         this.date = date;
         this.time = time;
         this.customerID = customerID;

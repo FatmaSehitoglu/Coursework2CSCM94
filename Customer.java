@@ -8,7 +8,7 @@ public class Customer extends User {
     //======
     private String address;
     private int custId;
-    private Order[] orderHistory;
+    //private Order[] orderHistory;
 
     //CONSTRUCTOR
     //======
@@ -58,9 +58,9 @@ public class Customer extends User {
     //public void viewEvents(){} (not implemented)
     //public void joinEvent() {} (not implemented)
 
-    public void requestBooking(String date, String time) {
+    public void requestBooking(String date, String time, int noOfGuests) {
         int id = this.custId;
-        Booking newBooking = new Booking(date, time, id);
+        Booking newBooking = new Booking(date, time, id, noOfGuests);
         Database.addToBookingHistory(newBooking);
         
     }
