@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 public class Customer extends User {
 
-    public int getCustID() {
-		return this.custId;
-	}
     //FIELDS
     //======
+    //private firstName     (inherited)
+    //private lastName      (inherited)
     private String address;
     private int custId;
     private Order[] orderHistory;
@@ -13,36 +12,24 @@ public class Customer extends User {
     //CONSTRUCTOR
     //======
     public Customer(String firstName, String lastName, String address, int custId) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.custId = custId;
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setAddress(address);
+        this.setCustId(custId);
     }
 
     //SETTERS
     //=======
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;   
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public void setAddress(String address) {
         this.address = address;
     }
 
+    private void setCustId(int custId) {
+        this.custId = custId;
+    }
+
     //GETTERS
     //=======
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
     public String getAddress() {
         return this.address;
     }
