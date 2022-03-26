@@ -35,5 +35,8 @@ public class Manager extends Staff {
     }
 
     //public void approveEvent() {} (not implemented)
-
+    public Customer getMostActiveCustomer() {
+        Customer mostActive = Database.mostActiveCustomer();
+        return mostActive;
+    }
 }
