@@ -1,6 +1,13 @@
 public class MenuItem {
     private int ID;
     private String description;
+    private String name;
+
+    public MenuItem(int ID, String description, String name) {
+        this.ID = ID;
+        this.description = description;
+        this.name = name;
+    }
 
     public int getID() {
         return ID;
@@ -18,8 +25,11 @@ public class MenuItem {
         this.description = description;
     }
 
-    public MenuItem(int ID, String description) {
-        this.ID = ID;
-        this.description = description;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
