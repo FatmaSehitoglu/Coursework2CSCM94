@@ -2,9 +2,9 @@ public abstract class Staff extends User{
     
     //FIELDS
     //======
-    //int totalHoursWorked; (not implemented)
     //Shift[] hoursToWork; (not implemented)
     private String staffId;
+    private int totalHoursWorked = 0;
 
     //SETTERS
     //=======
@@ -12,10 +12,18 @@ public abstract class Staff extends User{
         this.staffId = staffId;
     }
 
+    public void incrementHoursWorked(int n) {
+        this.totalHoursWorked += n;
+    }
+
     //GETTERS
     //=======
     public String getStaffId() {
         return this.staffId;
+    }
+
+    public int getHoursWorked() {
+        return totalHoursWorked;
     }
 
 }
