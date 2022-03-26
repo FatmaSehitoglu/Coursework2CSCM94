@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class Waiter extends Staff {
     
     //FIELDS
@@ -26,7 +29,20 @@ public class Waiter extends Staff {
     //=======
 
     public void newEatInOrder() {
-        //add code here
+        Scanner in = new Scanner(System.in);
+        int tableId = -1;
+
+        System.out.println("Enter table number: ");
+        tableId = in.nextInt();
+        int waiterId = this.staffId;
+
+        //select items from menu
+        //this method doesn't exist yet
+        ArrayList<MenuItem> items = Menu.selectFromMenu();
+
+
+        Order order = new Eat_in(tableId, waiterId, items);
+        Database.addToOrderHistory(order);
     }
 
     public void cancelOrder() {
