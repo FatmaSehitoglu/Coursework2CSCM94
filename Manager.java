@@ -8,7 +8,7 @@ public class Manager extends Staff {
 
     //CONSTRUCTOR
     //===========
-    public Manager(String firstName, String lastName, int staffId) {
+    public Manager(String firstName, String lastName, String staffId) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setStaffId(staffId);

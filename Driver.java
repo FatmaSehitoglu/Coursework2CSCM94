@@ -8,7 +8,7 @@ public class Driver extends Staff {
     
     //CONSTRUCTOR
     //===========
-    public Driver(String firstName, String lastName, int staffId) {
+    public Driver(String firstName, String lastName, String staffId) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setStaffId(staffId);

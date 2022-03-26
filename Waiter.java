@@ -11,7 +11,7 @@ public class Waiter extends Staff {
 
     //CONSTRUCTOR
     //===========
-    public Waiter(String firstName, String lastName, int staffId) {
+    public Waiter(String firstName, String lastName, String staffId) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setStaffId(staffId);
@@ -34,7 +34,7 @@ public class Waiter extends Staff {
 
         System.out.println("Enter table number: ");
         tableId = in.nextInt();
-        int waiterId = this.staffId;
+        String waiterId = this.getStaffId();
 
         //select items from menu
         //this method doesn't exist yet
