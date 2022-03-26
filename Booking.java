@@ -5,8 +5,8 @@ public class Booking {
     private int customerID;
     private boolean approved;
     private int numOfGuests;
+    private int duration;
 
-    ArrayList<Table> reservations = new ArrayList<>();
     public void addReservation(Table reservation){
         reservations.add(reservation);
     }
