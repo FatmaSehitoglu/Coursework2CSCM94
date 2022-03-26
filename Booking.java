@@ -9,11 +9,11 @@ public class Booking {
     }
     ArrayList<Booking> bookings = new ArrayList<>();
 
-    public Booking(String date, String time, int customerID, boolean approved) {
+    public Booking(String date, String time, int customerID) {
         this.date = date;
         this.time = time;
         this.customerID = customerID;
-        this.approved = approved;
+        this.approved = false;
     }
     public String getDate() {
         return date;

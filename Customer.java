@@ -1,8 +1,13 @@
+import java.util.ArrayList;
 public class Customer extends User {
+    
     String address;
     int custId;
     Order[] orderHistory;
 
+    public int getCustID() {
+		return this.custId;
+	}
     public Customer(String firstName, String lastName, String address, int custId) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -14,8 +19,11 @@ public class Customer extends User {
     //public void viewEvents(){} (not implemented)
     //public void joinEvent() {} (not implemented)
 
-    public void requestBooking() {
-        //add code here
+    public void requestBooking(String date, String time) {
+        int id = this.custId;
+        Booking newBooking = new Booking(date, time, id);
+        Database.addToBookingHistory(newBooking);
+        
     }
 
     public void cancelBooking() {
