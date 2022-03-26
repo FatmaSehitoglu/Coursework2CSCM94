@@ -7,6 +7,26 @@ public class Waiter extends Staff {
         this.staffId = staffId;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public int getStaffId() {
+        return this.staffId;
+    }
+
     public void newEatInOrder() {
         //add code here
     }
