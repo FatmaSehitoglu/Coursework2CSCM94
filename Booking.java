@@ -4,6 +4,7 @@ public class Booking {
     private String time;
     private int customerID;
     private boolean approved;
+    private int numOfGuests;
     public void addBooking(Booking book){
         bookings.add(book);
     }
