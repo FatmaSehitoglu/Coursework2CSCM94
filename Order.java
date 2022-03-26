@@ -1,28 +1,32 @@
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public abstract class Order {
-    private int customID;
+    private String customID;
     private ArrayList<MenuItem> items;
     private boolean orderComplete;
     private LocalDateTime time;
+    private boolean chefComplete;
+    private boolean approval;
 
-    public Order() {
-    }
 
-    public Order(int customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time) {
+
+    public Order(String customID, ArrayList<MenuItem> items, boolean approval) {
         this.customID = customID;
         this.items = items;
-        this.orderComplete = orderComplete;
-        this.time = time;
+        this.approval = approval;
+        this.time = LocalDateTime.now();
+        if (approval){
+            this.orderComplete = false;
+            this.chefComplete = false;
+        }
     }
 
-    public int getCustomID() {
+    public String getCustomID() {
         return customID;
     }
 
-    public void setCustomID(int customID) {
+    public void setCustomID(String customID) {
         this.customID = customID;
     }
 
@@ -50,6 +54,22 @@ public abstract class Order {
         this.time = time;
     }
 
+    public boolean isChefComplete() {
+        return chefComplete;
+    }
+
+    public void setChefComplete(boolean chefComplete) {
+        this.chefComplete = chefComplete;
+    }
+
+    public boolean isApproval() {
+        return approval;
+    }
+
+    public void setApproval(boolean approval) {
+        this.approval = approval;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -60,9 +80,4 @@ public abstract class Order {
                 '}';
     }
 
-    //public abstract void record();
-
-    public abstract void record(ArrayList<MenuItem> items);
-    //public abstract boolean additem();
 }
-
