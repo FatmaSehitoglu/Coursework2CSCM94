@@ -39,21 +39,24 @@ public class Database {
     public static ArrayList<Staff> getStaffList() {
         return staffList;
     }
-    /*
+    
     // return customer history
     public static ArrayList<Order> customerHistory(int custId) {
         ArrayList<Order> custHistory = new ArrayList<Order>();
         for(int i = 0; i < orderHistory.size(); i++  ) {
-            
+            Order checking = orderHistory.get(i);
+            if( checking.getCustomID() == custId) {
+                custHistory.add(checking);
+            }
         }
-        
+        return custHistory;
     }
 
     //most active customer
     public static Customer mostPopularCustomer() {
         for(int i = 0; i <  )
     }
-*/
+
     //FIELDS
     //======
     public static Order[] orders;
