@@ -26,7 +26,6 @@ public class Chef extends Staff {
         //add code here
     }
 
-    //is this implemented? i forgot...
     public void updateDailySpecial() {
         //add code here
     }

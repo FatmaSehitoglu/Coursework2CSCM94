@@ -22,9 +22,9 @@ public class Driver extends Staff {
 
     //METHODS
     //=======
-
-    //Add code here
-
-
+    public void completeDelivery() {
+        //add code here
+    }
+   
 
 }
