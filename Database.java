@@ -39,7 +39,11 @@ public class Database {
     public static ArrayList<Staff> getStaffList() {
         return staffList;
     }
-    
+//Menu Database
+    public static ArrayList<MenuItem>menuItems = new ArrayList<>();
+    public static void addToMenu(MenuItem item){menuItems.add(item);}
+    public static ArrayList<MenuItem> getMenu(){return menuItems;};
+
     // return customer history
     public static ArrayList<Order> customerHistory(int custId) {
         ArrayList<Order> custHistory = new ArrayList<Order>();
