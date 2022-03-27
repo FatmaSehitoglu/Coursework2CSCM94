@@ -2,26 +2,20 @@ public abstract class Staff extends User{
     
     //FIELDS
     //======
+    //private String firstName;     (inherited)
+    //private String lastName;      (inherited)
+    //private String id;            (inherited)
     //Shift[] hoursToWork; (not implemented)
-    private String staffId;
     private int totalHoursWorked = 0;
 
     //SETTERS
     //=======
-    public void setStaffId(String staffId) {
-        this.staffId = staffId;
-    }
-
     public void incrementHoursWorked(int n) {
         this.totalHoursWorked += n;
     }
 
     //GETTERS
     //=======
-    public String getStaffId() {
-        return this.staffId;
-    }
-
     public int getHoursWorked() {
         return totalHoursWorked;
     }
