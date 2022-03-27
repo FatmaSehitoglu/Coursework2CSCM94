@@ -29,9 +29,8 @@ class Coursework2 {
         
     }
 
-    public User mainLogin() {
+    public static User mainLogin() {
         User user = null;
-        Scanner in = new Scanner(System.in);
         boolean cont = true;
         while (cont) {
             System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. Exit");
@@ -40,7 +39,18 @@ class Coursework2 {
                 user = customerLogin();
             } else if (select == 2) {
                 user = staffLogin();
-            } 
+            } else {
+                cont = false;
+            }
+        }
+        return user;
+    }
+
+    public static customerLogin() {
+        boolean cont = true;
+        while (cont) {
+            System.out.println("Enter email address:");
+            String id = Input.stringInput();
         }
     }
 
