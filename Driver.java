@@ -26,6 +26,8 @@ public class Driver extends Staff {
         //add code here
     }
 
+    public void displayMainMenu() {}
+
     @Override
     public String toString() {
         return String.format("%s %s, %s", this.firstName, this.lastName, "Driver");
