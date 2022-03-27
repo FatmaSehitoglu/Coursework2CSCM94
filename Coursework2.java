@@ -10,7 +10,6 @@ class Coursework2 {
             cust1.requestBooking("7","4");
             System.out.println(Database.getBookingHistory().get(0).getTime());
         }
-        Menu.addMenuItem();
 
     }
 }

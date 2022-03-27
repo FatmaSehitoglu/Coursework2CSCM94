@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Database {
 //Booking Database
@@ -40,7 +41,9 @@ public class Database {
         return staffList;
     }
 //Menu Database
-    public static ArrayList<MenuItem>menuItems = new ArrayList<>();
+    public static ArrayList<MenuItem>menuItems = new ArrayList<>(Arrays.asList(new MenuItem(1,
+        "Pepperoni", "Pizza"), new MenuItem(2, "Carbonara", "Pasta"),
+        new MenuItem(3, "Chicken tomato sauce", "Chicken tomato")));
     public static void addToMenu(MenuItem item){menuItems.add(item);}
     public static ArrayList<MenuItem> getMenu(){return menuItems;};
 
