@@ -68,7 +68,14 @@ public class Database {
         }
         return false;
     }
-
+    public static Staff getStuff(String ID) {
+        for(int k=0; k < staffList.size(); k++) {
+            if(ID.equals(staffList.get(k).getId())) {
+                return staffList.get(k);
+            }
+        }
+        return null;
+    }
 //Menu Database
     public static ArrayList<MenuItem>menuItems = new ArrayList<>(Arrays.asList(new MenuItem(1,
         "Pepperoni", "Pizza"), new MenuItem(2, "Carbonara", "Pasta"),
