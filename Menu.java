@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner in = new Scanner(System.in);
-    public MenuItem selectFromMenu(){
+    public ArrayList<MenuItem> selectFromMenu(){
         ArrayList<Integer> selections = new ArrayList<>();
         int exit = 0;
+        int option = 0;
         while (exit != 2) {
             System.out.println("Select an item: ");
             System.out.println("1. " + Database.getMenu().get(0).getName() + "\n" +
@@ -17,13 +18,14 @@ public class Menu {
                         + "3. " + Database.getMenu().get(2).getName());
                 in.nextLine();
             }
-            int option = in.nextInt();
+            option = in.nextInt();
             in.nextLine();
             while (option < 1 || option > 3) {
                 System.out.println("Choose a valid option:");
                 option = in.nextInt();
                 in.nextLine();
             }
+            Database.addToSelections(Database.getMenu().get(option-1));
             System.out.println("1. Select more items\n 2. Exit");
             while (!in.hasNextInt()) {   //checks whether the input is Int so program doesnt crash
                 System.out.println("1. Select more items\n 2. Exit");
@@ -37,7 +39,10 @@ public class Menu {
                 in.nextLine();
             }
         }
-        System.out.println("You have chosen " + Database.getMenu().get(option-1).getName());
-        return Database.getMenu().get(option-1);
+        System.out.println("You have chosen:");
+        for (MenuItem select: Database.getSelections()){
+            System.out.println(select);
+        }
+        return Database.getSelections();
     }
 }
