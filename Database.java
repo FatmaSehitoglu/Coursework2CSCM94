@@ -39,6 +39,15 @@ public class Database {
         return false;
     }
 
+    public static Customer getCustomer(String ID) {
+        for(int k=0; k < customerList.size(); k++) {
+            if(ID.equals(customerList.get(k).getId())) {
+                return customerList.get(k);
+            }
+        }
+        return null;
+    }
+
 //Staff Database
     public static ArrayList<Staff> staffList = new ArrayList<Staff>();
 
