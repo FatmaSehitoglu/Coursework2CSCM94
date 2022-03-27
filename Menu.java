@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner in = new Scanner(System.in);
-    public ArrayList<MenuItem> selectFromMenu(){
+    public void selectFromMenu(){
         int exit = 0;
         int option = 0;
         while (exit != 2) {
@@ -42,6 +42,5 @@ public class Menu {
         for (MenuItem select: Database.getSelections()){
             System.out.println(select.getName());
         }
-        return Database.getSelections();
     }
 }
