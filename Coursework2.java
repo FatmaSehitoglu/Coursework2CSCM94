@@ -56,7 +56,7 @@ class Coursework2 {
                 user.displayMainMenu();
             } else {
                 System.out.println("Customer email not found\n1. Try again\n2. Sign up\n3. Back to main menu");
-                int select = Input.intInput(1, 2);
+                int select = Input.intInput(1, 3);
                 if (select == 2) {
                     cont = false;
                     customerSignup();
