@@ -92,7 +92,7 @@ class Coursework2 {
         String firstName = Input.stringInput();
         System.out.println("Enter last name:");
         String lastName = Input.stringInput();
-        System.out.println("Enter address:");
+        System.out.println("Enter your home address (or leave blank):");
         String address = Input.stringInput();
         System.out.println("Enter email address:");
         String email1 = Input.stringInput();
