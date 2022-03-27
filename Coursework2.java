@@ -33,12 +33,14 @@ class Coursework2 {
         User user = null;
         boolean cont = true;
         while (cont) {
-            System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. Exit");
-            Input.intInput(1, 3);
+            System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n 4. Exit");
+            int select = Input.intInput(1, 3);
             if (select == 1) {
                 user = customerLogin();
             } else if (select == 2) {
                 user = staffLogin();
+            } else if (select == 3) {
+                customerSignup();
             } else {
                 cont = false;
             }
@@ -46,13 +48,49 @@ class Coursework2 {
         return user;
     }
 
-    public static customerLogin() {
+    public static Customer customerLogin() {
+        User user = null;
         boolean cont = true;
         while (cont) {
             System.out.println("Enter email address:");
             String id = Input.stringInput();
+            if (Database.checkCustomer(id)) {
+                return Database.getCustomer(id);
+            } else {
+                System.out.println("Customer email not found\n1. Try again\n2. Sign up\n3. Back to main menu");
+                int select = Input.intInput(1, 2);
+                if (select == 2) {
+                    cont = false;
+                    customerSignup();
+                } else if (select == 3){
+                    cont = false;
+                }
+            }
         }
     }
+
+    public static Staff staffLogin() {
+        Staff staff = null;
+        boolean cont = true;
+        while (cont) {
+            System.out.println("Enter email address:");
+            String id = Input.stringInput();
+            if (Database.checkStaff(id)) {
+                return Database.getStaff(id);
+            } else {
+                System.out.println("Customer email not found\n1. Try again\n2. Back to main menu");
+                int select = Input.intInput(1, 2);
+                if (select == 2) {
+                    cont = false;
+                }
+            }
+        }    
+    }
+
+    public static customerSignup() {
+
+    }
+
 
 
 
