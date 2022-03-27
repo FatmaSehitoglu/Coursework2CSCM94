@@ -55,11 +55,11 @@ public class Database {
     public static ArrayList<MenuItem> getSelections(){return selectionss;};
 
     // return customer history
-    public static ArrayList<Order> customerHistory(int custId) {
+    public static ArrayList<Order> customerHistory(String custId) {
         ArrayList<Order> custHistory = new ArrayList<Order>();
         for(int i = 0; i < orderHistory.size(); i++  ) {
             Order checking = orderHistory.get(i);
-            if( checking.getCustomID() == custId) {
+            if( checking.getCustomID().equals(custId)) {
                 custHistory.add(checking);
             }
         }
