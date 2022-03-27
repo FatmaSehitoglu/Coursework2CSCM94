@@ -39,7 +39,7 @@ public class Waiter extends Staff {
 
         //select items from menu
         //this method doesn't exist yet
-        ArrayList<MenuItem> items = Menu.selectFromMenu();
+        Menu.selectFromMenu();
 
 
         Order order = new Eat_in(tableId, waiterId, items);
