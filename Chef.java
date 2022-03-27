@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Chef extends Staff {
 
     //FIELDS
@@ -29,22 +27,16 @@ public class Chef extends Staff {
     }
 
     public void addtoMenu(){
-        Scanner in = new Scanner(System.in);
         int id;
         String description;
         String name;
         System.out.println("Enter ID of item you want to add:");
 
-        while (!in.hasNextInt()) {   //checks whether the input is Int so program doesn't crash
-            System.out.println("Enter ID of item you want to add:");
-            in.nextLine();
-        }
-        id = in.nextInt();
-        in.nextLine();
+        id = Input.intInput(0, 999999);
         System.out.println("Describe the item you are adding: ");
-        description = in.nextLine();
+        description = Input.stringInput();
         System.out.println("Now give it a name: ");
-        name = in.nextLine();
+        name = Input.stringInput();
         Database.addToMenu(new MenuItem(id, description, name));
     }
 
