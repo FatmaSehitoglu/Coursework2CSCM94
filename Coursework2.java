@@ -1,5 +1,3 @@
-import java.util.Scanner;
-//import java.util.ArrayList;
 class Coursework2 {
     public static void main(String[] args) {
         /*
@@ -21,8 +19,8 @@ class Coursework2 {
         menu.selectFromMenu();
         */
 
-        Manager george = new Manager("George", "Mallard", "george@mallard.com");
-        Database.addToStaffList(george);
+        Manager georgeMallard = new Manager("George", "Mallard", "george@mallard.com");
+        Database.addToStaffList(georgeMallard);
 
         mainLogin();
     }
