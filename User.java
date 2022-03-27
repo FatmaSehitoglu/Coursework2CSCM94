@@ -23,4 +23,9 @@ public abstract class User {
     public String getLastName() {
         return this.lastName;
     }
+
+    //ABSTRACT METHODS
+    //======== =======
+    public abstract void displayMainMenu();
+
 }
