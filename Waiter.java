@@ -12,10 +12,10 @@ public class Waiter extends Staff {
 
     //CONSTRUCTOR
     //===========
-    public Waiter(String firstName, String lastName, String id) {
+    public Waiter(String firstName, String lastName, String staffId) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
-        this.setId(id);
+        this.setStaffId(staffId);
     }
 
     //SETTERS
@@ -35,34 +35,38 @@ public class Waiter extends Staff {
 
         System.out.println("Enter table number: ");
         tableId = in.nextInt();
-        String waiterId = this.getId();
+        String waiterId = this.getStaffId();
 
         //select items from menu
         //this method doesn't exist yet
-        //Menu.selectFromMenu();
+        // Menu.selectFromMenu();
 
 
-        //Order order = new Eat_in(tableId, waiterId, items);
-        //Database.addToOrderHistory(order);
+        Order order = new Eat_in(tableId, waiterId, items);
+        Database.addToOrderHistory(order);
     }
 
-    public void cancelOrder() {
-        //add code here
+    public void cancelOrder(Order order) {
+        for(int i=0; i<Database.orderHistory.size(); i++) {
+            if(order.equals(Database.orderHistory.get(i))) {
+                Database.orderHistory.remove(i);
+            }
+        }
     }
 
-    public void approveBooking() {
-        //add code here
+    public void approveBooking(Booking booking) {
+        booking.setApproved(true);
     }
 
-    public void approveDelivery() {
-        //add code here
+    public void approveDelivery(Delivery delivery) {
+        delivery.setApproval(true);
     }
 
     public void displayMainMenu() {}
 
     @Override
     public String toString() {
-        return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Waiter");
+        return String.format("%s %s, %s", this.firstName, this.lastName, "Waiter");
     }
 
 }
