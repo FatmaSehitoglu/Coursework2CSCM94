@@ -24,13 +24,10 @@ class Coursework2 {
         Manager george = new Manager("George", "Mallard", "george@mallard.com");
         Database.addToStaffList(george);
 
-        User user = mainLogin();
-        user.displayMainMenu();          
-        
+        mainLogin();
     }
 
-    public static User mainLogin() {
-        User user = null;
+    public static void mainLogin() {
         boolean cont = true;
         while (cont) {
             System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n 4. Exit");
@@ -45,17 +42,18 @@ class Coursework2 {
                 cont = false;
             }
         }
-        return user;
     }
 
-    public static Customer customerLogin() {
-        User user = null;
+    public static void customerLogin() {
+        Customer user = null;
         boolean cont = true;
         while (cont) {
             System.out.println("Enter email address:");
             String id = Input.stringInput();
             if (Database.checkCustomer(id)) {
-                return Database.getCustomer(id);
+                user =  Database.getCustomer(id);
+                cont = false;
+                user.displayMainMenu();
             } else {
                 System.out.println("Customer email not found\n1. Try again\n2. Sign up\n3. Back to main menu");
                 int select = Input.intInput(1, 2);
@@ -69,14 +67,16 @@ class Coursework2 {
         }
     }
 
-    public static Staff staffLogin() {
-        Staff staff = null;
+    public static void staffLogin() {
+        Staff user = null;
         boolean cont = true;
         while (cont) {
             System.out.println("Enter email address:");
             String id = Input.stringInput();
             if (Database.checkStaff(id)) {
-                return Database.getStaff(id);
+                user = Database.getStaff(id);
+                cont = false;
+                user.displayMainMenu();
             } else {
                 System.out.println("Customer email not found\n1. Try again\n2. Back to main menu");
                 int select = Input.intInput(1, 2);
@@ -87,7 +87,7 @@ class Coursework2 {
         }    
     }
 
-    public static customerSignup() {
+    public static void customerSignup() {
 
     }
 
