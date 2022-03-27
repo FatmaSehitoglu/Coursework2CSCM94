@@ -68,7 +68,7 @@ public class Database {
         }
         return false;
     }
-    public static Staff getStuff(String ID) {
+    public static Staff getStaff(String ID) {
         for(int k=0; k < staffList.size(); k++) {
             if(ID.equals(staffList.get(k).getId())) {
                 return staffList.get(k);
