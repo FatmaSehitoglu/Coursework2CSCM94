@@ -39,11 +39,11 @@ public class Waiter extends Staff {
 
         //select items from menu
         //this method doesn't exist yet
-        Menu.selectFromMenu();
+        //Menu.selectFromMenu();
 
 
-        Order order = new Eat_in(tableId, waiterId, items);
-        Database.addToOrderHistory(order);
+        //Order order = new Eat_in(tableId, waiterId, items);
+        //Database.addToOrderHistory(order);
     }
 
     public void cancelOrder() {
