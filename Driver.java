@@ -8,7 +8,7 @@ public class Driver extends Staff {
     
     //CONSTRUCTOR
     //===========
-    public Driver(String firstName, String lastName, int staffId) {
+    public Driver(String firstName, String lastName, String staffId) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setStaffId(staffId);
@@ -22,9 +22,14 @@ public class Driver extends Staff {
 
     //METHODS
     //=======
+    public void completeDelivery() {
+        //add code here
+    }
 
-    //Add code here
-
-
+    @Override
+    public String toString() {
+        return String.format("%s %s, %s", this.firstName, this.lastName, "Driver");
+    }
+   
 
 }

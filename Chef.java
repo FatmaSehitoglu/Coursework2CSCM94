@@ -8,7 +8,7 @@ public class Chef extends Staff {
     
     //CONSTRUCTOR
     //===========
-    public Chef(String firstName, String lastName, int staffId) {
+    public Chef(String firstName, String lastName, String staffId) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setStaffId(staffId);
@@ -26,9 +26,13 @@ public class Chef extends Staff {
         //add code here
     }
 
-    //is this implemented? i forgot...
     public void updateDailySpecial() {
         //add code here
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s, %s", this.firstName, this.lastName, "Chef");
     }
 
 }
