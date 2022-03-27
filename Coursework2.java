@@ -14,23 +14,37 @@ class Coursework2 {
         int guestNo = in.nextInt();
         cust1.requestBooking(x,y,guestNo);
         */
-        boolean cont = true;
-        while (cont) {
-            System.out.println("Enter user ID:");
-            String id = in.nextLine();
-            
-        }
-
-        Manager george = new Manager("George", "Mallard", "george@mallard.com");
-        Database.addToStaffList(george);
-        User user = george;
-        user.displayMainMenu();
-        
 
         /*
         Menu mainMenu = new Menu();
         Menu menu = mainMenu;
         menu.selectFromMenu();
         */
+
+        Manager george = new Manager("George", "Mallard", "george@mallard.com");
+        Database.addToStaffList(george);
+
+        User user = mainLogin();
+        user.displayMainMenu();          
+        
     }
+
+    public User mainLogin() {
+        User user = null;
+        Scanner in = new Scanner(System.in);
+        boolean cont = true;
+        while (cont) {
+            System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. Exit");
+            Input.intInput(1, 3);
+            if (select == 1) {
+                user = customerLogin();
+            } else if (select == 2) {
+                user = staffLogin();
+            } 
+        }
+    }
+
+
+
+
 }
