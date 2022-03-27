@@ -11,6 +11,7 @@ class Coursework2 {
             cust1.requestBooking("7","4");
             System.out.println(Database.getBookingHistory().get(0).getTime());
         }
+<<<<<<< HEAD
         Menu.addMenuItem();
         */
         
@@ -18,6 +19,8 @@ class Coursework2 {
         Database.addToStaffList(george);
         george.displayStaff();
 
+=======
+>>>>>>> 5be4fb201db314d863da187626e476a3cdf2fc79
 
     }
 }

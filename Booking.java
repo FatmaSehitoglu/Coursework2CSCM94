@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public class Booking {
     private String date;
     private String time;
@@ -13,6 +12,7 @@ public class Booking {
         this.customerID = customerID;
         this.numOfGuests = numOfGuests;
         this.approved = false;
+        this.duration = 1;
     }
     public String getDate() {
         return date;
@@ -39,9 +39,17 @@ public class Booking {
     }
 
     public int getNumOfGuests() {
-        return numOfGuests;
+        return this.numOfGuests;
     }
-
+    public void setNumOfGuests(int noOfGuests) {
+        this.numOfGuests = noOfGuests;
+    }
+    public int getDuration() {
+        return this.duration;
+    }
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
     public boolean isApproved() {
         return approved;
     }
@@ -49,4 +57,5 @@ public class Booking {
     public void setApproved(boolean approved) {
         this.approved = approved;
     }
+
 }
