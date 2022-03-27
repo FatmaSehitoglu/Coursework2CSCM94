@@ -30,6 +30,14 @@ public class Database {
     public static ArrayList<Customer> getCustomerList() {
         return customerList;
     }
+    public static boolean checkCustomer(String possibleID) {
+        for(int k=0; k < customerList.size(); k++) {
+            if(possibleID.equals(customerList.get(k).getId())) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 //Staff Database
     public static ArrayList<Staff> staffList = new ArrayList<Staff>();
@@ -42,6 +50,14 @@ public class Database {
     }
     public static int getStaffCount() {
         return staffList.size();
+    }
+    public static boolean checkStaff(String possibleID) {
+        for(int k=0; k < staffList.size(); k++) {
+            if(possibleID.equals(staffList.get(k).getId())) {
+                return true;
+            }
+        }
+        return false;
     }
 
 //Menu Database
