@@ -6,7 +6,7 @@ public class Input {
         Scanner in = new Scanner(System.in);
         int inputInt = 0;
         while (!in.hasNextInt()) {   //checks whether the input is Int so program doesn't crash
-            System.out.println("Please enter a valid input in range: ");
+            System.out.println("Please enter a valid input in range " + min + " to " + max);
             in.nextLine();
         }
         inputInt = in.nextInt();
@@ -17,5 +17,10 @@ public class Input {
             in.nextLine();
         }
         return inputInt;
+    }
+    public static String stringInput(){
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+        return input;
     }
 }
