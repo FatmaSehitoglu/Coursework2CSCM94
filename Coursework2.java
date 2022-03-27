@@ -30,8 +30,8 @@ class Coursework2 {
     public static void mainLogin() {
         boolean cont = true;
         while (cont) {
-            System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n 4. Exit");
-            int select = Input.intInput(1, 3);
+            System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n4. Exit");
+            int select = Input.intInput(1, 4);
             if (select == 1) {
                 customerLogin();
             } else if (select == 2) {
@@ -88,7 +88,17 @@ class Coursework2 {
     }
 
     public static void customerSignup() {
-
+        System.out.println("Enter first name:");
+        String firstName = Input.stringInput();
+        System.out.println("Enter last name:");
+        String lastName = Input.stringInput();
+        System.out.println("Enter address:");
+        String address = Input.stringInput();
+        System.out.println("Enter email address:");
+        String email1 = Input.stringInput();
+        Customer cust = new Customer(firstName, lastName, address, email1);
+        Database.addToCustomerList(cust);
+        System.out.println("Welcome to Cafe94 " + firstName + "!");
     }
 
 
