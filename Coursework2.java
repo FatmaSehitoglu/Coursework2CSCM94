@@ -27,7 +27,8 @@ class Coursework2 {
         mainLogin();
     }
 
-    public static void mainLogin() {
+    //Main login page for app
+    private static void mainLogin() {
         boolean cont = true;
         while (cont) {
             System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n4. Exit");
@@ -44,7 +45,8 @@ class Coursework2 {
         }
     }
 
-    public static void customerLogin() {
+    //Login page for existing Customers
+    private static void customerLogin() {
         Customer user = null;
         boolean cont = true;
         while (cont) {
@@ -67,7 +69,8 @@ class Coursework2 {
         }
     }
 
-    public static void staffLogin() {
+    //Login page for existing Staff members
+    private static void staffLogin() {
         Staff user = null;
         boolean cont = true;
         while (cont) {
@@ -87,7 +90,8 @@ class Coursework2 {
         }    
     }
 
-    public static void customerSignup() {
+    //Sign up page for new Customers
+    private static void customerSignup() {
         System.out.println("Enter first name:");
         String firstName = Input.stringInput();
         System.out.println("Enter last name:");
@@ -98,11 +102,7 @@ class Coursework2 {
         String email1 = Input.stringInput();
         Customer cust = new Customer(firstName, lastName, address, email1);
         Database.addToCustomerList(cust);
-        System.out.println("Welcome to Cafe94 " + firstName + "!");
+        System.out.println("\nWelcome to Cafe94 " + firstName + "!\n");
     }
-
-
-
-
 
 }
