@@ -27,6 +27,7 @@ class Coursework2 {
         mainLogin();
     }
 
+    //Main login page for app
     private static void mainLogin() {
         boolean cont = true;
         while (cont) {
@@ -44,6 +45,7 @@ class Coursework2 {
         }
     }
 
+    //Login page for existing Customers
     private static void customerLogin() {
         Customer user = null;
         boolean cont = true;
@@ -67,6 +69,7 @@ class Coursework2 {
         }
     }
 
+    //Login page for existing Staff members
     private static void staffLogin() {
         Staff user = null;
         boolean cont = true;
@@ -87,6 +90,7 @@ class Coursework2 {
         }    
     }
 
+    //Sign up page for new Customers
     private static void customerSignup() {
         System.out.println("Enter first name:");
         String firstName = Input.stringInput();
