@@ -1,8 +1,9 @@
 public abstract class User {
     //FIELDS
     //======
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
+    private String id;
 
     //SETTERS
     //=======
@@ -14,6 +15,10 @@ public abstract class User {
         this.lastName = lastName;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     //GETTERS
     //=======
     public String getFirstName() {
@@ -22,6 +27,10 @@ public abstract class User {
 
     public String getLastName() {
         return this.lastName;
+    }
+
+    public String getId() {
+        return this.id;
     }
 
     //ABSTRACT METHODS

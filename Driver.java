@@ -8,10 +8,10 @@ public class Driver extends Staff {
     
     //CONSTRUCTOR
     //===========
-    public Driver(String firstName, String lastName, String staffId) {
+    public Driver(String firstName, String lastName, String id) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
-        this.setStaffId(staffId);
+        this.setId(id);
     }
 
     //SETTERS
@@ -30,7 +30,7 @@ public class Driver extends Staff {
 
     @Override
     public String toString() {
-        return String.format("%s %s, %s", this.firstName, this.lastName, "Driver");
+        return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Driver");
     }
    
 

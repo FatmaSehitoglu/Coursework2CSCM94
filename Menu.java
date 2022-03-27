@@ -27,7 +27,7 @@ public class Menu {
             Database.addToSelections(Database.getMenu().get(option-1));
             System.out.println("1. Select more items\n 2. Exit");
             while (!in.hasNextInt()) {   //checks whether the input is Int so program doesn't crash
-                System.out.println("1. Select more items\n 2. Exit");
+                System.out.println("1. Select more items\n2. Exit");
                 in.nextLine();
             }
             exit = in.nextInt();

@@ -12,10 +12,10 @@ public class Waiter extends Staff {
 
     //CONSTRUCTOR
     //===========
-    public Waiter(String firstName, String lastName, String staffId) {
+    public Waiter(String firstName, String lastName, String id) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
-        this.setStaffId(staffId);
+        this.setId(id);
     }
 
     //SETTERS
@@ -35,15 +35,15 @@ public class Waiter extends Staff {
 
         System.out.println("Enter table number: ");
         tableId = in.nextInt();
-        String waiterId = this.getStaffId();
+        String waiterId = this.getId();
 
         //select items from menu
         //this method doesn't exist yet
-        Menu.selectFromMenu();
+        //Menu.selectFromMenu();
 
 
-        Order order = new Eat_in(tableId, waiterId, items);
-        Database.addToOrderHistory(order);
+        //Order order = new Eat_in(tableId, waiterId, items);
+        //Database.addToOrderHistory(order);
     }
 
     public void cancelOrder() {
@@ -62,7 +62,7 @@ public class Waiter extends Staff {
 
     @Override
     public String toString() {
-        return String.format("%s %s, %s", this.firstName, this.lastName, "Waiter");
+        return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Waiter");
     }
 
 }
