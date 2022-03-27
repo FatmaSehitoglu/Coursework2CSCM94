@@ -50,6 +50,9 @@ public class Database {
         new MenuItem(3, "Chicken tomato sauce", "Chicken tomato")));
     public static void addToMenu(MenuItem item){menuItems.add(item);}
     public static ArrayList<MenuItem> getMenu(){return menuItems;};
+    public static ArrayList<MenuItem> selectionss = new ArrayList<>();
+    public static void addToSelections(MenuItem selections){selectionss.add(selections);}
+    public static ArrayList<MenuItem> getSelections(){return selectionss;};
 
     // return customer history
     public static ArrayList<Order> customerHistory(String custId) {
