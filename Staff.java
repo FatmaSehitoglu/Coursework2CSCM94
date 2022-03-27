@@ -2,20 +2,28 @@ public abstract class Staff extends User{
     
     //FIELDS
     //======
-    //int totalHoursWorked; (not implemented)
     //Shift[] hoursToWork; (not implemented)
-    int staffId;
+    private String staffId;
+    private int totalHoursWorked = 0;
 
     //SETTERS
     //=======
-    public void setStaffId(int staffId) {
+    public void setStaffId(String staffId) {
         this.staffId = staffId;
+    }
+
+    public void incrementHoursWorked(int n) {
+        this.totalHoursWorked += n;
     }
 
     //GETTERS
     //=======
-    public int getStaffId() {
+    public String getStaffId() {
         return this.staffId;
+    }
+
+    public int getHoursWorked() {
+        return totalHoursWorked;
     }
 
 }

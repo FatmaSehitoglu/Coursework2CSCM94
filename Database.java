@@ -53,17 +53,19 @@ public class Database {
     }
 
     //most active customer
-    public static Customer mostPopularCustomer() {
-        for(int i = 0; i <  )
+    public static Customer mostActiveCustomer() {
+        Customer mostActiveCust = customerList.get(0); // If the customer list is empty error will occur!!!
+        int maxSize = 0;
+        for(int i = 0; i <customerList.size(); i++) {
+            Customer checkingCust = customerList.get(i);
+            int size = customerHistory(checkingCust.getCustId()).size();
+            if(size > maxSize) {
+                maxSize = size;
+                mostActiveCust = checkingCust;
+            }
+        }
+        return mostActiveCust;
     }
-
-    //FIELDS
-    //======
-    public static Order[] orders;
-    public static Booking[] bookings;
-    public static Customer[] customers;
-    public static Staff[] staff;
-    public static MenuItem[] menuItems;
 
     
 
