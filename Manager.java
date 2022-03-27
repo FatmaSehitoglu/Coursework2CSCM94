@@ -39,4 +39,9 @@ public class Manager extends Staff {
         Customer mostActive = Database.mostActiveCustomer();
         return mostActive;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s, %s", this.firstName, this.lastName, "Manager");
+    }
 }

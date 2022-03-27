@@ -25,6 +25,11 @@ public class Driver extends Staff {
     public void completeDelivery() {
         //add code here
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s, %s", this.firstName, this.lastName, "Driver");
+    }
    
 
 }
