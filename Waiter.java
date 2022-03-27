@@ -42,8 +42,8 @@ public class Waiter extends Staff {
         // Menu.selectFromMenu();
 
 
-        Order order = new Eat_in(tableId, waiterId, items);
-        Database.addToOrderHistory(order);
+        //Order order = new Eat_in(tableId, waiterId, items);
+        //Database.addToOrderHistory(order);
     }
 
     public void cancelOrder(Order order) {
