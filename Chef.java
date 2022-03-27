@@ -10,10 +10,10 @@ public class Chef extends Staff {
     
     //CONSTRUCTOR
     //===========
-    public Chef(String firstName, String lastName, String staffId) {
+    public Chef(String firstName, String lastName, String id) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
-        this.setStaffId(staffId);
+        this.setId(id);
     }
 
     //SETTERS
@@ -56,7 +56,7 @@ public class Chef extends Staff {
 
     @Override
     public String toString() {
-        return String.format("%s %s, %s", this.firstName, this.lastName, "Chef");
+        return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Chef");
     }
 
 }
