@@ -33,9 +33,9 @@ class Coursework2 {
             System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n 4. Exit");
             int select = Input.intInput(1, 3);
             if (select == 1) {
-                user = customerLogin();
+                customerLogin();
             } else if (select == 2) {
-                user = staffLogin();
+                staffLogin();
             } else if (select == 3) {
                 customerSignup();
             } else {
