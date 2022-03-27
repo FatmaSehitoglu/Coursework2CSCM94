@@ -4,8 +4,7 @@ class Coursework2 {
     public static void main(String[] args) {
         /*
         System.out.println("Hello World!"); 
-        try (Scanner in = new Scanner(System.in)) {
-        }
+        Scanner in = new Scanner(System.in);
         Customer cust1 = new Customer("fatma", "sh", "Swansea", "00011");
         //String x = in.nextLine();
        // String y = in.nextLine();
