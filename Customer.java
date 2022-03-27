@@ -64,4 +64,6 @@ public class Customer extends User {
         //add code here
     }
 
+    public void displayMainMenu() {}
+
 }
