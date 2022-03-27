@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 class Coursework2 {
     public static void main(String[] args) {
+        /*
         System.out.println("Hello World!"); 
         try (Scanner in = new Scanner(System.in)) {
             Customer cust1 = new Customer("fatma", "sh", "Swansea", 00011);
@@ -10,6 +11,16 @@ class Coursework2 {
             cust1.requestBooking("7","4");
             System.out.println(Database.getBookingHistory().get(0).getTime());
         }
+<<<<<<< HEAD
+        Menu.addMenuItem();
+        */
+        
+        Manager george = new Manager("George", "Mallard", "george@mallard.com");
+        Database.addToStaffList(george);
+        george.displayStaff();
+
+=======
+>>>>>>> 5be4fb201db314d863da187626e476a3cdf2fc79
 
     }
 }
