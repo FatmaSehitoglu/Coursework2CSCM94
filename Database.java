@@ -39,6 +39,10 @@ public class Database {
     public static ArrayList<Staff> getStaffList() {
         return staffList;
     }
+    public static int getStaffCount() {
+        return staffList.size();
+    }
+
 //Menu Database
     public static ArrayList<MenuItem>menuItems = new ArrayList<>();
     public static void addToMenu(MenuItem item){menuItems.add(item);}
