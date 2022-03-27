@@ -1,12 +1,12 @@
 public class Booking {
     private String date;
     private String time;
-    private int customerID;
+    private String customerID;
     private boolean approved;
     private int numOfGuests;
     private int duration;
     
-    public Booking(String date, String time, int customerID,int numOfGuests) {
+    public Booking(String date, String time, String customerID,int numOfGuests) {
         this.date = date;
         this.time = time;
         this.customerID = customerID;
@@ -30,11 +30,11 @@ public class Booking {
         this.time = time;
     }
 
-    public int getCustomerID() {
+    public String getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(int customerID) {
+    public void setCustomerID(String customerID) {
         this.customerID = customerID;
     }
 

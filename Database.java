@@ -50,13 +50,16 @@ public class Database {
         new MenuItem(3, "Chicken tomato sauce", "Chicken tomato")));
     public static void addToMenu(MenuItem item){menuItems.add(item);}
     public static ArrayList<MenuItem> getMenu(){return menuItems;};
+    public static ArrayList<MenuItem> selectionss = new ArrayList<>();
+    public static void addToSelections(MenuItem selections){selectionss.add(selections);}
+    public static ArrayList<MenuItem> getSelections(){return selectionss;};
 
     // return customer history
-    public static ArrayList<Order> customerHistory(int custId) {
+    public static ArrayList<Order> customerHistory(String custId) {
         ArrayList<Order> custHistory = new ArrayList<Order>();
         for(int i = 0; i < orderHistory.size(); i++  ) {
             Order checking = orderHistory.get(i);
-            if( checking.getCustomID() == custId) {
+            if( checking.getCustomID().equals(custId)) {
                 custHistory.add(checking);
             }
         }

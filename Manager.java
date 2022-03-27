@@ -32,7 +32,7 @@ public class Manager extends Staff {
 
             Scanner in = new Scanner(System.in);
             int select = in.nextInt();
-
+            
             if (select == 1) {
                 displayStaff();
             } else if (select == 0) {
