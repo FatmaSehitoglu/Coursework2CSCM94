@@ -56,6 +56,8 @@ public class Customer extends User {
         //add code here
     }
 
-    public void displayMainMenu() {}
+    public void displayMainMenu() {
+        System.out.println("Hello customer! Functionality to follow...");
+    }
 
 }
