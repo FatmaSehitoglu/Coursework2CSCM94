@@ -14,7 +14,13 @@ class Coursework2 {
         int guestNo = in.nextInt();
         cust1.requestBooking(x,y,guestNo);
         */
-        
+        boolean cont = true;
+        while (cont) {
+            System.out.println("Enter user ID:");
+            String id = in.nextLine();
+            
+        }
+
         Manager george = new Manager("George", "Mallard", "george@mallard.com");
         Database.addToStaffList(george);
         User user = george;
