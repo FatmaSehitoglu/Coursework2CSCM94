@@ -18,4 +18,9 @@ public class Input {
         }
         return inputInt;
     }
+    public static String stringInput(){
+        Scanner in = new Scanner(System.in);
+        String input = in.nextLine();
+        return input;
+    }
 }
