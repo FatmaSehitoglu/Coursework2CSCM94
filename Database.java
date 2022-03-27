@@ -104,7 +104,7 @@ public class Database {
         int maxSize = 0;
         for(int i = 0; i <customerList.size(); i++) {
             Customer checkingCust = customerList.get(i);
-            int size = customerHistory(checkingCust.getCustId()).size();
+            int size = customerHistory(checkingCust.getId()).size();
             if(size > maxSize) {
                 maxSize = size;
                 mostActiveCust = checkingCust;
