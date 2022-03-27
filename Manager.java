@@ -24,6 +24,24 @@ public class Manager extends Staff {
    
     //METHODS
     //=======
+    public void displayMainMenu() {
+        boolean cont = true;
+        while (cont) {
+            System.out.println("1. Edit Staff");
+            System.out.println("0. Quit");
+
+            Scanner in = new Scanner(System.in);
+            int select = in.nextInt();
+
+            if (select == 1) {
+                displayStaff();
+            }
+
+        }
+
+    }
+
+
     public void displayStaff() {
         boolean cont = true;
         while (cont) {
