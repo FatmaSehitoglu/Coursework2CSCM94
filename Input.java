@@ -18,9 +18,9 @@ public class Input {
         }
         return inputInt;
     }
-    public static String stringInput(String input){
+    public static String stringInput(){
         Scanner in = new Scanner(System.in);
-        input = in.nextLine();
+        String input = in.nextLine();
         return input;
     }
 }
