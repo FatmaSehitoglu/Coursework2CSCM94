@@ -26,6 +26,10 @@ public class Chef extends Staff {
         //add code here
     }
 
+    public void addtoMenu(){
+
+    }
+
     public void updateDailySpecial() {
         //add code here
     }
