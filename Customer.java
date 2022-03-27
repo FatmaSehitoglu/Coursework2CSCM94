@@ -38,7 +38,7 @@ public class Customer extends User {
     //public void joinEvent() {} (not implemented)
 
     public void requestBooking(String date, String time, int noOfGuests) {
-        String id = this.custId;
+        String id = this.getId();
         Booking newBooking = new Booking(date, time, id, noOfGuests);
         Database.addToBookingHistory(newBooking);
         
