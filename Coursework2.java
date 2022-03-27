@@ -102,7 +102,7 @@ class Coursework2 {
         String email1 = Input.stringInput();
         Customer cust = new Customer(firstName, lastName, address, email1);
         Database.addToCustomerList(cust);
-        System.out.println("Welcome to Cafe94 " + firstName + "!");
+        System.out.println("\nWelcome to Cafe94 " + firstName + "!\n");
     }
 
 }
