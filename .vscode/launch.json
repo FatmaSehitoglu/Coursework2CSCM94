@@ -16,7 +16,6 @@
             "request": "launch",
             "mainClass": "Coursework2",
             "projectName": "Coursework2CSCM94_8821fad7",
-            "vmArgs" : "--module-path \"C:/JAVA/javafx-sdk-18/lib\" --add-modules javafx.controls,javafx.fxml" ,
         }
     ]
 }

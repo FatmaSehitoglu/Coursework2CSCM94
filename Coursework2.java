@@ -1,7 +1,6 @@
 class Coursework2 {
     public static void main(String[] args) {
         /*
-        System.out.println("Hello World!"); 
         Scanner in = new Scanner(System.in);
         Customer cust1 = new Customer("fatma", "sh", "Swansea", "00011");
         System.out.println("Enter the date for the booking");
@@ -77,7 +76,17 @@ class Coursework2 {
             if (Database.checkStaff(id)) {
                 user = Database.getStaff(id);
                 cont = false;
-                user.displayMainMenu();
+                //checks staffUsers class and shows different menus accordingly
+                if(user.getClass() == Manager.class) {
+                    user.displayMainMenu();
+                }else if(user.getClass() == Waiter.class) {
+                    user.displayMainMenu();
+                }else if(user.getClass() == Chef.class) {
+                    user.displayMainMenu();
+                }else {
+                    user.displayMainMenu();
+                }
+                
             } else {
                 System.out.println("Customer email not found\n1. Try again\n2. Back to main menu");
                 int select = Input.intInput(1, 2);
