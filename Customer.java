@@ -3,19 +3,19 @@ public class Customer extends User {
 
     //FIELDS
     //======
-    //private firstName     (inherited)
-    //private lastName      (inherited)
+    //private String firstName     (inherited)
+    //private String lastName      (inherited)
+    //private String id            (inherited)
     private String address;
-    private String custId;
     //private Order[] orderHistory;
 
     //CONSTRUCTOR
     //======
-    public Customer(String firstName, String lastName, String address, String custId) {
+    public Customer(String firstName, String lastName, String address, String id) {
         this.setFirstName(firstName);
         this.setLastName(lastName);
         this.setAddress(address);
-        this.setCustId(custId);
+        this.setId(id);
     }
 
     //SETTERS
@@ -24,18 +24,10 @@ public class Customer extends User {
         this.address = address;
     }
 
-    private void setCustId(String custId) {
-        this.custId = custId;
-    }
-
     //GETTERS
     //=======
     public String getAddress() {
         return this.address;
-    }
-
-    public String getCustId() {
-        return this.custId;
     }
 
     //METHODS
