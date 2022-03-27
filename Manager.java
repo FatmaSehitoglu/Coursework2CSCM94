@@ -29,7 +29,7 @@ public class Manager extends Staff {
         while (cont) {
             System.out.println("1. ADD NEW STAFF MEMBER");
             for (int i = 0; i < Database.getStaffCount(); i++) {
-                System.out.println((i + 2) + Database.staffList.get(i).toString());
+                System.out.println((i + 2) + ". " + Database.staffList.get(i).toString());
             }
             System.out.println("0. Back");
             Scanner in = new Scanner(System.in);
