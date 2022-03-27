@@ -20,9 +20,7 @@ class Coursework2 {
         User user = george;
         user.displayMainMenu();
         */
-        Menu mainMenu = new Menu();
-        Menu menu = mainMenu;
-        menu.selectFromMenu();
+
 
     }
 }
