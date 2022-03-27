@@ -15,11 +15,11 @@ class Coursework2 {
         cust1.requestBooking(x,y,guestNo);
         */
         
-         Manager george = new Manager("George", "Mallard", "george@mallard.com");
+        /*Manager george = new Manager("George", "Mallard", "george@mallard.com");
         Database.addToStaffList(george);
         User user = george;
         user.displayMainMenu();
-        
+        */
         
     }
 }
