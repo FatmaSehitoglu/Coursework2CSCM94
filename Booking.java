@@ -60,7 +60,7 @@ public class Booking {
     @Override
     public String toString() {
         return "Booking{" +
-        "customID=" + customID +
+        "customerID=" + customerID +
         ", date=" + date +
         ", time=" + time +
         ", Guest No=" + numOfGuests +
