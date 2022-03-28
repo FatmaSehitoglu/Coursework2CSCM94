@@ -112,6 +112,7 @@ class Coursework2 {
         System.out.println("\nWelcome to Cafe94 " + firstName + "!\n");
     }
 
+    //should this method be here or Waiter?
     private static void waiterMenu(Staff user){
         boolean cont = true;
         while (cont) {
