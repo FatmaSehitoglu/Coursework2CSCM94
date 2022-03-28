@@ -57,5 +57,15 @@ public class Booking {
     public void setApproved(boolean approved) {
         this.approved = approved;
     }
-
+    @Override
+    public String toString() {
+        return "Booking{" +
+        "customerID=" + customerID +
+        ", date=" + date +
+        ", time=" + time +
+        ", Guest No=" + numOfGuests +
+        ", duration=" + duration +
+        ", Order Approved=" + approved +
+        '}';
+}
 }

@@ -1,7 +1,6 @@
 class Coursework2 {
     public static void main(String[] args) {
         /*
-        System.out.println("Hello World!"); 
         Scanner in = new Scanner(System.in);
         Customer cust1 = new Customer("fatma", "sh", "Swansea", "00011");
         System.out.println("Enter the date for the booking");
@@ -77,7 +76,17 @@ class Coursework2 {
             if (Database.checkStaff(id)) {
                 user = Database.getStaff(id);
                 cont = false;
-                user.displayMainMenu();
+                //checks staffUsers class and shows different menus accordingly
+                if(user.getClass() == Manager.class) {
+                    user.displayMainMenu();
+                }else if(user.getClass() == Waiter.class) {
+                    waiterMenu(user);
+                }else if(user.getClass() == Chef.class) {
+                    user.displayMainMenu();
+                }else {
+                    user.displayMainMenu();
+                }
+                
             } else {
                 System.out.println("Customer email not found\n1. Try again\n2. Back to main menu");
                 int select = Input.intInput(1, 2);
@@ -102,5 +111,57 @@ class Coursework2 {
         Database.addToCustomerList(cust);
         System.out.println("\nWelcome to Cafe94 " + firstName + "!\n");
     }
+
+    //should this method be here or Waiter?
+    private static void waiterMenu(Staff user){
+        boolean cont = true;
+        while (cont) {
+            System.out.println("Profile : " + user.toString());
+            System.out.println("Menu \n1. New Eat In Order \n2. Cancel Order \n3. Approve Booking \n4. Approve Delivery \n5. Exit");
+            int select = Input.intInput(1, 5);
+            switch(select) {
+               // ---currently user is staff so Waiter methods doesnt work
+                case 1:
+                    // user.newEatInOrder();
+                    break; 
+                case 2:
+                    System.out.println("Select an order to Cancel");
+                    /* Possible problems:
+                    -user cannot leave without cancelling
+                    -the list might be empty in which case the user cannot do anything
+                    -the number system will be weird
+                    */
+                    for(int i = 0; i<Database.orderHistory.size(); i++) {
+                        Order checkingOrder = Database.orderHistory.get(i);
+                        if(checkingOrder.isOrderComplete() == false) {
+                            System.out.println(i + " : " + checkingOrder.toString());
+                        }
+                    }
+                    int orderToCancel = Input.intInput(1, Database.orderHistory.size());
+                    Database.orderHistory.remove(orderToCancel);
+                    break;
+                case 3:
+                    //similar possible errors to case 2
+                    System.out.println("Select a Booking to Approve");
+                    for(int i = 0; i<Database.bookingHistory.size(); i++) {
+                        Booking bookingsWaitingApproval = Database.bookingHistory.get(i);
+                        if(bookingsWaitingApproval.isApproved() == false) {
+                            System.out.println(i + " : " + bookingsWaitingApproval.toString());
+                        }
+                    }
+                    int bookingToApprove = Input.intInput(1, Database.bookingHistory.size());
+                    Database.bookingHistory.get(bookingToApprove).setApproved(true);
+                    break;
+                case 4:
+                    System.out.println("Select a Delivery to Approve");
+                    //deliveries need to be seperated from orders
+                    break;  
+                case 5:
+                cont = false;
+                break;
+            }
+        }
+    }
+
 
 }

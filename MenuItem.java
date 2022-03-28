@@ -2,11 +2,15 @@ public class MenuItem {
     private int ID;
     private String description;
     private String name;
+    private Boolean inMenu;
+    private Boolean isSpecial;
 
-    public MenuItem(int ID, String description, String name) {
+    public MenuItem(int ID, String description, String name, Boolean inMenu, Boolean isSpecial) {
         this.ID = ID;
         this.description = description;
         this.name = name;
+        this.inMenu = inMenu;
+        this.isSpecial = isSpecial;
     }
 
     public int getID() {
@@ -32,4 +36,21 @@ public class MenuItem {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Boolean getInMenu() {
+        return inMenu;
+    }
+
+    public void setInMenu(Boolean setInMenu) {
+        this.inMenu = setInMenu;
+    }
+
+    public Boolean getIsSpecial() {
+        return isSpecial;
+    }
+
+    public void setIsSpecial(Boolean isSpecial) {
+        this.isSpecial = isSpecial;
+    }
+    
 }

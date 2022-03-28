@@ -36,12 +36,22 @@ public class Chef extends Staff {
         System.out.println("Describe the item you are adding: ");
         description = Input.stringInput();
         System.out.println("Now give it a name: ");
+<<<<<<< HEAD
         name = Input.stringInput();
         Database.addToMenu(new MenuItem(id, description, name));
+=======
+        name = in.nextLine();
+        Database.addToMenu(new MenuItem(id, description, name,true,false));
+>>>>>>> 48245d74af2c2e55dee5f9a79c11bbdeb70610ac
     }
 
-    public void updateDailySpecial() {
-        //add code here
+    public void updateDailySpecial() { //not finished
+        //assuming there can be only one daily special first take off the old special
+        MenuItem old = Database.getTodaysSpecial();
+        old.setIsSpecial(false);
+        System.out.println("Select from the new special from following list");
+
+
     }
 
     public void displayMainMenu() {}

@@ -86,25 +86,14 @@ public class Manager extends Staff {
         String lastName = "";
         String id = "";
         int role = -1;
-
-        Scanner in = new Scanner(System.in);
         System.out.println("Enter role:\n1. Manager\n2. Waiter\n3. Chef\n4. Driver");
-        while (!in.hasNextInt()) {   //checks whether the input is Int so program doesn't crash
-            System.out.println("Enter role:\n1. Manager\n2. Waiter\n3. Chef\n4. Driver");
-            in.nextLine();
-        }
-        role = in.nextInt();
-        in.nextLine();
-
-
-
+        role = Input.intInput(1,4);
         System.out.println("Enter first name: ");
-        firstName = in.nextLine();
+        firstName = Input.stringInput();
         System.out.println("Enter last name: ");
-        lastName = in.nextLine();
+        lastName = Input.stringInput();
         System.out.println("Enter email address: ");
-        id = in.nextLine();
-
+        id = Input.stringInput();
         switch (role) {
             case 1:
                 Staff newManager = new Manager(firstName, lastName, id);
@@ -123,8 +112,6 @@ public class Manager extends Staff {
                 Database.addToStaffList(newDriver);
                 break;
         }
-
-
     }
 
     public void removeStaff() {
