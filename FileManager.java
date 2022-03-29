@@ -32,14 +32,21 @@ public class FileManager {
             System.out.println("An error occurred");
             e.printStackTrace();
         }
+
+        for (int i = 0; i < list.size(); i++) {
+            //System.out.println("Line read: " + list.get(i));
+        }
+
         String[][] output = new String[list.size()][n]; 
-        String[] temp = new String[n];
+        //String[] temp = new String[n];
         for (int i = 0; i < list.size(); i++){
-            temp = list.get(i).split("|");
+            String[] temp = list.get(i).split("\\|");
             for (int j = 0; j < n; j++){
+                //System.out.println(temp[j]);
                 output[i][j] = temp[j];
             }
         }
+
         return output;
     }
     
