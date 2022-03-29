@@ -63,7 +63,7 @@ public class Customer extends User {
     }
 
     public String toDataString() {
-        return this.getFirstName() + "|" + this.getLastName() + "|" + this.getAddress() + "|" + this.getId();
+        return this.getFirstName() + "|" + this.getLastName() + "|" + this.getAddress() + "|" + this.getId() + "\r\n";
     }
 
 }

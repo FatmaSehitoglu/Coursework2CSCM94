@@ -1,5 +1,6 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class FileManager {
 
@@ -12,6 +13,10 @@ public class FileManager {
         } catch (IOException e) {
             System.out.println("An error occurred");
         }
+    }
+
+    public static String[][] readFromFile(String filename, int n) {
+        String S = 
     }
 
 
