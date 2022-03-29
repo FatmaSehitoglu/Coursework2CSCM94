@@ -58,4 +58,8 @@ public class Chef extends Staff {
         return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Chef");
     }
 
+    public String toDataString() {
+        return String.format("%s|%s|%s|%s", this.getFirstName(), this.getLastName(), this.getId(), "Chef");
+    }
+
 }

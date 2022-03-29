@@ -132,4 +132,8 @@ public class Manager extends Staff {
     public String toString() {
         return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Manager");
     }
+
+    public String toDataString() {
+        return String.format("%s|%s|%s|%s", this.getFirstName(), this.getLastName(), this.getId(), "Manager");
+    }
 }
