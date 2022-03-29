@@ -36,7 +36,7 @@ public class FileManager {
         String[] temp = new String[n];
         for (int i = 0; i < list.size(); i++){
             temp = list.get(i).split("|");
-            for (int j = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
                 output[i][j] = temp[j];
             }
         }
