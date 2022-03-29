@@ -38,8 +38,12 @@ public class Database {
 
     public static void addToCustomerList(Customer newCustomer) {
         customerList.add(newCustomer);
+    }
+
+    public static void writeCustomer(Customer newCustomer) {
         FileManager.writeToFile("CustomerDb.txt", newCustomer.toDataString());
     }
+
     public static ArrayList<Customer> getCustomerList() {
         return customerList;
     }
