@@ -17,7 +17,7 @@ class Coursework2 {
         Menu menu = mainMenu;
         menu.selectFromMenu();
         */
-
+        Database.populateDb();
         Manager georgeMallard = new Manager("George", "Mallard", "george@mallard.com");
         Database.addToStaffList(georgeMallard);
 

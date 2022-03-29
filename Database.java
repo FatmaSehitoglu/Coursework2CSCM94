@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Database {
+
+    public static void populateDb() {
+        populateCustomers();
+    }
+
 //Booking Database
     public static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
 
@@ -23,6 +28,13 @@ public class Database {
 
 //Customer Database
     public static ArrayList<Customer> customerList = new ArrayList<Customer>();
+
+    public static void populateCustomers() {
+        String[][] str = FileManager.readFromFile("CustomerDb.txt", 4);
+        for (int i = 0; i < str.length; i++){
+            addToCustomerList(new Customer(str[i][0], str[i][1], str[i][2], str[i][3]));
+        }
+    }
 
     public static void addToCustomerList(Customer newCustomer) {
         customerList.add(newCustomer);
