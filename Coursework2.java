@@ -108,8 +108,7 @@ class Coursework2 {
         System.out.println("Enter email address:");
         String email1 = Input.stringInput();
         Customer cust = new Customer(firstName, lastName, address, email1);
-        Database.addToCustomerList(cust);
-        Database.writeCustomer(cust);
+        Database.addNewCustomer(cust);
         System.out.println("\nWelcome to Cafe94 " + firstName + "!\n");
     }
 

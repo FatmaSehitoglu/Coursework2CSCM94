@@ -40,6 +40,11 @@ public class Database {
         customerList.add(newCustomer);
     }
 
+    public static void addNewCustomer(Customer newCustomer) {
+        addToCustomerList(newCustomer);
+        writeCustomer(newCustomer);
+    }
+
     public static void writeCustomer(Customer newCustomer) {
         FileManager.writeToFile("CustomerDb.txt", newCustomer.toDataString());
     }
