@@ -7,6 +7,7 @@ public class FileManager {
         try {
             FileWriter writer = new FileWriter(filename);
             writer.write(data);
+            System.out.println("New customer added to file");
             writer.close();
         } catch (IOException e) {
             System.out.println("An error occurred");
