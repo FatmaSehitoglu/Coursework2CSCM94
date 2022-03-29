@@ -1,3 +1,5 @@
+import javax.swing.LayoutStyle;
+
 // import java.util.ArrayList;
 public class Customer extends User {
 
@@ -58,6 +60,10 @@ public class Customer extends User {
 
     public void displayMainMenu() {
         System.out.println("\nHello customer! Functionality to follow...\n");
+    }
+
+    public String toDataString() {
+        return this.getFirstName() + "|" + this.getLastName() + "|" + this.getAddress() + "|" + this.getId();
     }
 
 }
