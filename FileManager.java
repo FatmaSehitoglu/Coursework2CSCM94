@@ -5,7 +5,7 @@ public class FileManager {
 
     public static void writeToFile(String filename, String data) {
         try {
-            FileWriter writer = new FileWriter(filename);
+            FileWriter writer = new FileWriter(filename, true);
             writer.write(data);
             writer.close();
             System.out.println("Successfuly wrote " + data + " to " + filename);
