@@ -36,10 +36,11 @@ public class Chef extends Staff {
         System.out.println("Describe the item you are adding: ");
         description = Input.stringInput();
         System.out.println("Now give it a name: ");
-        name = in.nextLine();
+        name = Input.stringInput();
         Database.addToMenu(new MenuItem(id, description, name,true,false));
     }
 
+    /*
     public void updateDailySpecial() { //not finished
         //assuming there can be only one daily special first take off the old special
         MenuItem old = Database.getTodaysSpecial();
@@ -48,6 +49,7 @@ public class Chef extends Staff {
 
 
     }
+    */
 
     public void displayMainMenu() {}
 

@@ -78,9 +78,8 @@ public class Database {
         return null;
     }
 //Menu Database
-    //public static ArrayList<MenuItem>menuItems = new ArrayList<>(Arrays.asList(new MenuItem(1,
-      //  "Pepperoni", "Pizza"), new MenuItem(2, "Carbonara", "Pasta"),
-        //new MenuItem(3, "Chicken tomato sauce", "Chicken tomato")));
+    public static ArrayList<MenuItem>menuItems = new ArrayList<>();
+    
     public static void addToMenu(MenuItem item){menuItems.add(item);}
     public static ArrayList<MenuItem> getMenu(){return menuItems;};
     public static ArrayList<MenuItem> selectionss = new ArrayList<>();
