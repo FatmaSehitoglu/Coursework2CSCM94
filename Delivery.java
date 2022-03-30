@@ -8,7 +8,7 @@ public class Delivery extends Order{
 
 
 
-    public Delivery(String customID, ArrayList<MenuItem> items, boolean approval, String address, String driveID) {
+    public Delivery(String customID, ArrayList<MenuItem>[] items, boolean approval, String address, String driveID) {
         super(customID, items, approval);
         this.address = address;
         this.driveID = driveID;
@@ -42,9 +42,9 @@ public class Delivery extends Order{
     @Override
     public String toString() {
         return "Delivery{" +
-                "address='" + address + '\'' +
-                ", driveID=" + driveID +
-                '}';
+                "address '" + address +
+                " driveID " + driveID +
+                " }";
     }
 
 }
