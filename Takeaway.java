@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Takeaway extends Order{
     private LocalDateTime arriveTime;
 
-    public Takeaway(String customID, ArrayList<MenuItem> items, boolean approval, LocalDateTime time) {
+    public Takeaway(String customID, ArrayList<MenuItem>[] items, boolean approval, LocalDateTime time) {
         super(customID, items, approval);
     }
 
@@ -21,8 +21,7 @@ public class Takeaway extends Order{
     @Override
     public String toString() {
         return "Takeaway{" +
-                "arriveTime=" + arriveTime +
-                '}';
+                "arriveTime " + arriveTime +
+                " }";
     }
-
 }
