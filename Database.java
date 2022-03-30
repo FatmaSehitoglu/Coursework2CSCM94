@@ -7,7 +7,8 @@ public class Database {
         populateCustomers();
     }
 
-//Booking Database
+    //BOOKING DATABASE
+    //======= ========
     public static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
 
     public static void addToBookingHistory(Booking newBooking) {
@@ -16,7 +17,8 @@ public class Database {
     public static ArrayList<Booking> getBookingHistory() {
         return bookingHistory;
     }
-//Order Database
+    //ORDER DATABASE
+    //===== ========
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();
 
     public static void addToOrderHistory(Order newOrder) {
@@ -26,7 +28,8 @@ public class Database {
         return orderHistory;
     }
 
-//Customer Database
+    //CUSTOMER DATABASE
+    //======== ========
     public static ArrayList<Customer> customerList = new ArrayList<Customer>();
 
     public static void populateCustomers() {
@@ -70,7 +73,8 @@ public class Database {
         return null;
     }
 
-//Staff Database
+    //STAFF DATABASE
+    //===== ========
     public static ArrayList<Staff> staffList = new ArrayList<Staff>();
 
     public static void addToStaffList(Staff newStaff) {
@@ -98,7 +102,9 @@ public class Database {
         }
         return null;
     }
-//Menu Database
+
+    //MENU ITEMS DATABASE
+    //==== ===== ========
     public static ArrayList<MenuItem>menuItems = new ArrayList<>();
     
     public static void addToMenu(MenuItem item){menuItems.add(item);}
