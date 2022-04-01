@@ -14,19 +14,35 @@ public class Driver extends Staff {
         this.setId(id);
     }
 
-    //SETTERS
-    //=======
-   
-    //GETTERS
-    //=======
-
     //METHODS
     //=======
+    public void displayMainMenu() {
+        boolean cont = true;
+        while (cont) {  
+            System.out.println("1. View Active Orders");
+            System.out.println("0. Log Out");
+
+            int select = Input.intInput(0, 1);
+
+            switch (select) {
+                case 1:
+                    viewActiveOrders();
+                    break;
+                case 0:
+                    cont = false;
+                    break;
+            }
+        }   
+    }
+   
+    public void viewActiveOrders() {
+        
+    }
+
     public void completeDelivery() {
         //add code here
     }
-
-    public void displayMainMenu() {}
+   
 
     @Override
     public String toString() {

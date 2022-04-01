@@ -26,7 +26,7 @@ public class Manager extends Staff {
         boolean cont = true;
         while (cont) {
             System.out.println("1. Edit Staff");
-            System.out.println("0. Exit Program");
+            System.out.println("0. Log Out");
 
             int select = Input.intInput(0, 1);
 
@@ -106,7 +106,7 @@ public class Manager extends Staff {
     }
 
     //public void approveEvent() {} (not implemented)
-    
+
     public Customer getMostActiveCustomer() {
         Customer mostActive = Database.mostActiveCustomer();
         return mostActive;
