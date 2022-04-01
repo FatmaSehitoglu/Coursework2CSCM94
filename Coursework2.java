@@ -18,7 +18,6 @@ class Coursework2 {
         menu.selectFromMenu();
         */
         Database.populateDb();
-        
         mainLogin();
     }
 
@@ -26,8 +25,8 @@ class Coursework2 {
     private static void mainLogin() {
         boolean cont = true;
         while (cont) {
-            System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n4. Exit");
-            int select = Input.intInput(1, 4);
+            System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n0. Exit");
+            int select = Input.intInput(0, 3);
             if (select == 1) {
                 customerLogin();
             } else if (select == 2) {
@@ -86,7 +85,7 @@ class Coursework2 {
                 }
                 
             } else {
-                System.out.println("Customer email not found\n1. Try again\n2. Back to main menu");
+                System.out.println("Staff email not found\n1. Try again\n2. Back to main menu");
                 int select = Input.intInput(1, 2);
                 if (select == 2) {
                     cont = false;
