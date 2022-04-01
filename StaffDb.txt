@@ -1,0 +1,2 @@
+George|Mallard|george@mallard.com|Manager
+Waiter|McWaiter|waiter@waiter.com|Waiter

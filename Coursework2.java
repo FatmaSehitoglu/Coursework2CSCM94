@@ -18,9 +18,7 @@ class Coursework2 {
         menu.selectFromMenu();
         */
         Database.populateDb();
-        Manager georgeMallard = new Manager("George", "Mallard", "george@mallard.com");
-        Database.addToStaffList(georgeMallard);
-
+        
         mainLogin();
     }
 
