@@ -52,5 +52,15 @@ public class MenuItem {
     public void setIsSpecial(Boolean isSpecial) {
         this.isSpecial = isSpecial;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s\n%s", name, description);
+    }
+
+    public String toDataString() {
+        return String.format("%s|%s|%s|%s|%s", ID, description, name, inMenu, isSpecial);
+    }
+
     
 }
