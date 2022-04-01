@@ -6,7 +6,7 @@ public class Booking {
     private int numOfGuests;
     private int duration;
     
-    public Booking(String date, String time, String customerID,int numOfGuests) {
+    public Booking(String date, String time, String customerID, int numOfGuests) {
         this.date = date;
         this.time = time;
         this.customerID = customerID;
@@ -67,5 +67,10 @@ public class Booking {
         ", duration=" + duration +
         ", Order Approved=" + approved +
         '}';
-}
+    }
+
+    public String toDataString() {
+        return String.format("%s|%s|%s|%s|%s|%s", date, time, customerID, approved, numOfGuests, duration);
+    }
+
 }
