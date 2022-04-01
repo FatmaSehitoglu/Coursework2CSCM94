@@ -20,4 +20,6 @@ public abstract class Staff extends User{
         return totalHoursWorked;
     }
 
+    public abstract String toDataString();
+
 }

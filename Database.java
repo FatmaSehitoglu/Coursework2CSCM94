@@ -1,10 +1,10 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Database {
 
     public static void populateDb() {
         populateCustomers();
+        populateStaff();
     }
 
     //BOOKING DATABASE
@@ -77,9 +77,42 @@ public class Database {
     //===== ========
     public static ArrayList<Staff> staffList = new ArrayList<Staff>();
 
+
+    public static void addNewStaff(Staff newStaff) {
+        addToStaffList(newStaff);
+        writeStaff(newStaff);
+    }
+
+    public static void writeStaff(Staff newStaff) {
+        FileManager.writeToFile("StaffDb.txt", newStaff.toDataString());
+    }
+
     public static void addToStaffList(Staff newStaff) {
         staffList.add(newStaff);
     }
+
+    public static void populateStaff() {
+        String[][] str = FileManager.readFromFile("StaffDb.txt", 4);
+        for (int i = 0; i < str.length; i++){
+            switch (str[i][3]) {
+                case "Manager":
+                    addToStaffList(new Manager(str[i][0], str[i][1], str[i][2]));
+                    break;
+                case "Waiter":
+                    addToStaffList(new Waiter(str[i][0], str[i][1], str[i][2]));
+                    break;
+                case "Chef":
+                    addToStaffList(new Chef(str[i][0], str[i][1], str[i][2]));
+                    break;
+                case "Driver":
+                    addToStaffList(new Driver(str[i][0], str[i][1], str[i][2]));
+                    break;    
+            }
+            
+        }
+    }
+
+
     public static ArrayList<Staff> getStaffList() {
         return staffList;
     }
