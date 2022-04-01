@@ -36,8 +36,9 @@ public class Waiter extends Staff {
                 case 3:
                     viewActiveBookings();
                     break;
-                default:
+                case 0:
                     cont = false;
+                    break;
             }
         }        
     }
@@ -62,7 +63,7 @@ public class Waiter extends Staff {
     }
 
     public void viewActiveBookings() {
-        
+
     }
 
 

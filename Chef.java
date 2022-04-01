@@ -26,7 +26,7 @@ public class Chef extends Staff {
         //add code here
     }
 
-    public void addtoMenu(){
+    public void addToMenu(){
         int id;
         String description;
         String name;
@@ -51,7 +51,40 @@ public class Chef extends Staff {
     }
     */
 
-    public void displayMainMenu() {}
+    public void displayMainMenu() {
+        boolean cont = true;
+        while (cont) {  
+            System.out.println("1. New Menu Item");
+            System.out.println("2. View Active Orders");
+            System.out.println("3. View Menu Items");
+            System.out.println("0. Log Out");
+
+            int select = Input.intInput(0, 3);
+
+            switch (select) {
+                case 1:
+                    addToMenu();
+                    break;
+                case 2:
+                    viewActiveOrders();
+                    break;
+                case 3:
+                    viewMenuItems();
+                    break;
+                case 0:
+                    cont = false;
+                    break;
+            }
+        }   
+    }
+
+    public void viewActiveOrders() {
+
+    }
+
+    public void viewMenuItems() {
+
+    }
 
     @Override
     public String toString() {
