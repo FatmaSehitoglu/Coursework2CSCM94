@@ -6,11 +6,17 @@ public class Database {
         populateCustomers();
         populateStaff();
         populateMenuItems();
+        populateBookings();
     }
 
-    //BOOKING DATABASE -- Persistence pending
+    //BOOKING DATABASE
     //======= ========
     public static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
+
+    public static void newBooking(Booking newBooking) {
+        addToBookingHistory(newBooking);
+        writeBooking(newBooking);
+    }
 
     public static void addToBookingHistory(Booking newBooking) {
         bookingHistory.add(newBooking);
@@ -18,6 +24,20 @@ public class Database {
     public static ArrayList<Booking> getBookingHistory() {
         return bookingHistory;
     }
+
+    public static void writeBooking(Booking booking) {
+        FileManager.writeToFile("BookingDb.txt", booking.toDataString());
+    }
+
+    public static void populateBookings() {
+        String[][] str = FileManager.readFromFile("BookingDb.txt", 6);
+        for (int i = 0; i < str.length; i++){
+            addToBookingHistory(new Booking(str[i][0], str[i][1], str[i][2], Boolean.parseBoolean(str[i][3]), Integer.parseInt(str[i][4]), Integer.parseInt(str[i][5])));
+        }
+    }
+
+
+
     //ORDER DATABASE -- Persistence pending
     //===== ========
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();

@@ -14,6 +14,16 @@ public class Booking {
         this.approved = false;
         this.duration = 1;
     }
+
+    public Booking(String date, String time, String customerID, boolean approved, int numOfGuests, int duration) {
+        this.setDate(date);
+        this.setTime(time);
+        this.setCustomerID(customerID);
+        this.setApproved(approved);
+        this.setNumOfGuests(numOfGuests);
+        this.setDuration(duration);
+    }
+
     public String getDate() {
         return date;
     }
