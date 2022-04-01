@@ -5,6 +5,7 @@ public class Database {
     public static void populateDb() {
         populateCustomers();
         populateStaff();
+        populateMenuItems();
     }
 
     //BOOKING DATABASE
@@ -77,7 +78,6 @@ public class Database {
     //===== ========
     public static ArrayList<Staff> staffList = new ArrayList<Staff>();
 
-
     public static void addNewStaff(Staff newStaff) {
         addToStaffList(newStaff);
         writeStaff(newStaff);
@@ -107,11 +107,9 @@ public class Database {
                 case "Driver":
                     addToStaffList(new Driver(str[i][0], str[i][1], str[i][2]));
                     break;    
-            }
-            
+            }    
         }
     }
-
 
     public static ArrayList<Staff> getStaffList() {
         return staffList;
@@ -120,15 +118,16 @@ public class Database {
         return staffList.size();
     }
     public static boolean checkStaff(String possibleID) {
-        for(int k=0; k < staffList.size(); k++) {
+        for(int k = 0; k < staffList.size(); k++) {
             if(possibleID.equals(staffList.get(k).getId())) {
                 return true;
             }
         }
         return false;
     }
+
     public static Staff getStaff(String ID) {
-        for(int k=0; k < staffList.size(); k++) {
+        for(int k = 0; k < staffList.size(); k++) {
             if(ID.equals(staffList.get(k).getId())) {
                 return staffList.get(k);
             }
@@ -140,7 +139,24 @@ public class Database {
     //==== ===== ========
     public static ArrayList<MenuItem>menuItems = new ArrayList<>();
     
+    public static void populateMenuItems() {
+        String[][] str = FileManager.readFromFile("MenuItemDb.txt", 5);
+        for (int i = 0; i < str.length; i++) {
+            addToMenu(new MenuItem(Integer.parseInt(str[i][0]), str[i][1], str[i][2], Boolean.parseBoolean(str[i][3]), Boolean.parseBoolean(str[i][4])));
+        }
+    }
+
+    public static void newMenuItem(MenuItem newMenuItem) {
+        addToMenu(newMenuItem);
+        writeMenuItem(newMenuItem);
+    }
+
     public static void addToMenu(MenuItem item){menuItems.add(item);}
+
+    public static void writeMenuItem(MenuItem menuItem) {
+        FileManager.writeToFile("menuItemDb.txt", menuItem.toDataString());
+    }
+
     public static ArrayList<MenuItem> getMenu(){return menuItems;};
     public static ArrayList<MenuItem> selectionss = new ArrayList<>();
     public static void addToSelections(MenuItem selections){selectionss.add(selections);}
