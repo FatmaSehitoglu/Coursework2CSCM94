@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Manager extends Staff {
 
     //FIELDS
@@ -30,23 +28,16 @@ public class Manager extends Staff {
             System.out.println("1. Edit Staff");
             System.out.println("0. Exit Program");
 
-            Scanner in = new Scanner(System.in);
-            while (!in.hasNextInt()) {   //checks whether the input is Int so program doesn't crash
-                System.out.println("1. Edit Staff");
-                System.out.println("0. Exit Program");
-                in.nextLine();
-            }
-            int select = in.nextInt();
-            in.nextLine();
+            int select = Input.intInput(0, 1);
 
             if (select == 1) {
+                //1. Edit Staff
                 displayStaff();
             } else if (select == 0) {
+                //0. Exit Program
                 cont = false;
             }
-
         }
-
     }
 
     public void displayStaff() {
@@ -57,29 +48,21 @@ public class Manager extends Staff {
                 System.out.println((i + 2) + ". " + Database.staffList.get(i).toString());
             }
             System.out.println("0. Back");
-            Scanner in = new Scanner(System.in);
-            while (!in.hasNextInt()) {   //checks whether the input is Int so program doesn't crash
-                System.out.println("1. ADD NEW STAFF MEMBER");
-                for (int i = 0; i < Database.getStaffCount(); i++) {
-                    System.out.println((i + 2) + ". " + Database.staffList.get(i).toString());
-                }
-                System.out.println("0. Back");
-                in.nextLine();
-            }
-            int select = in.nextInt();
-            in.nextLine();
+
+            int select = Input.intInput(0, Database.getStaffCount() + 2);
+            
             if (select == 1) {
+                //1. ADD NEW STAFF MEMBER
                 addStaff();
             } else if (select == 0) {
+                //0. Back
                 cont = false;
             } else {
+                //2 - n. (Staff member)
                 editStaff(select - 2);
             }
-
-
         } 
     }
-
 
     public void addStaff() {
         String firstName = "";
@@ -123,6 +106,7 @@ public class Manager extends Staff {
     }
 
     //public void approveEvent() {} (not implemented)
+    
     public Customer getMostActiveCustomer() {
         Customer mostActive = Database.mostActiveCustomer();
         return mostActive;

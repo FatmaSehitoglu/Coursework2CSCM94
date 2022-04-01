@@ -1,7 +1,3 @@
-
-import java.util.Scanner;
-import java.util.ArrayList;
-
 public class Waiter extends Staff {
     
     //FIELDS
@@ -18,33 +14,57 @@ public class Waiter extends Staff {
         this.setId(staffId);
     }
 
-    //SETTERS
-    //=======
-    
-
-    //GETTERS
-    //=======
-   
-
     //METHODS
     //=======
+    public void displayMainMenu() {
+        boolean cont = true;
+        while (cont) {  
+            System.out.println("1. New Eat In Order");
+            System.out.println("2. View Active Orders");
+            System.out.println("3. View Active Bookings");
+            System.out.println("0. Log Out");
+
+            int select = Input.intInput(0, 3);
+
+            switch (select) {
+                case 1:
+                    newEatInOrder();
+                    break;
+                case 2:
+                    viewActiveOrders();
+                    break;
+                case 3:
+                    viewActiveBookings();
+                    break;
+                default:
+                    cont = false;
+            }
+        }        
+    }
 
     public void newEatInOrder() {
-        Scanner in = new Scanner(System.in);
         int tableId = -1;
 
         System.out.println("Enter table number: ");
-        tableId = in.nextInt();
+        tableId = Input.intInput(1, 999999);
         String waiterId = this.getId();
 
         //select items from menu
         //this method doesn't exist yet
         // Menu.selectFromMenu();
 
-
         //Order order = new Eat_in(tableId, waiterId, items);
         //Database.addToOrderHistory(order);
     }
+
+    public void viewActiveOrders() {
+
+    }
+
+    public void viewActiveBookings() {
+        
+    }
+
 
     public void cancelOrder(Order order) {
         for(int i=0; i<Database.orderHistory.size(); i++) {
@@ -61,8 +81,6 @@ public class Waiter extends Staff {
     public void approveDelivery(Delivery delivery) {
         delivery.setApproval(true);
     }
-
-    public void displayMainMenu() {}
 
     @Override
     public String toString() {
