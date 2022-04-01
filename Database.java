@@ -8,7 +8,7 @@ public class Database {
         populateMenuItems();
     }
 
-    //BOOKING DATABASE
+    //BOOKING DATABASE -- Persistence pending
     //======= ========
     public static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
 
@@ -18,7 +18,7 @@ public class Database {
     public static ArrayList<Booking> getBookingHistory() {
         return bookingHistory;
     }
-    //ORDER DATABASE
+    //ORDER DATABASE -- Persistence pending
     //===== ========
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();
 
