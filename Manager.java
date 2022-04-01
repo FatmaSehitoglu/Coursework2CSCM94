@@ -97,19 +97,19 @@ public class Manager extends Staff {
         switch (role) {
             case 1:
                 Staff newManager = new Manager(firstName, lastName, id);
-                Database.addToStaffList(newManager);
+                Database.addNewStaff(newManager);
                 break;
             case 2:
                 Staff newWaiter = new Waiter(firstName, lastName, id);
-                Database.addToStaffList(newWaiter);
+                Database.addNewStaff(newWaiter);
                 break;
             case 3:
                 Staff newChef = new Chef(firstName, lastName, id);
-                Database.addToStaffList(newChef);
+                Database.addNewStaff(newChef);
                 break;
             case 4:
                 Staff newDriver = new Driver(firstName, lastName, id);
-                Database.addToStaffList(newDriver);
+                Database.addNewStaff(newDriver);
                 break;
         }
     }
