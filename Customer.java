@@ -36,6 +36,10 @@ public class Customer extends User {
     //public void viewEvents(){} (not implemented)
     //public void joinEvent() {} (not implemented)
 
+    public void displayMainMenu() {
+        System.out.println("\nHello customer! Functionality to follow...\n");
+    } 
+
     public void requestBooking(String date, String time, int noOfGuests) {
         String id = this.getId();
         Booking newBooking = new Booking(date, time, id, noOfGuests);
@@ -55,9 +59,7 @@ public class Customer extends User {
         //add code here
     }
 
-    public void displayMainMenu() {
-        System.out.println("\nHello customer! Functionality to follow...\n");
-    }
+   
 
     public String toDataString() {
         return this.getFirstName() + "|" + this.getLastName() + "|" + this.getAddress() + "|" + this.getId() + "\r\n";
