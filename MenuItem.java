@@ -59,7 +59,7 @@ public class MenuItem {
     }
 
     public String toDataString() {
-        return String.format("%s|%s|%s|%s|%s", ID, description, name, inMenu, isSpecial);
+        return String.format("%d|%s|%s|%b|%b", ID, description, name, inMenu, isSpecial);
     }
 
     
