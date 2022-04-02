@@ -42,6 +42,10 @@ public class Eat_in extends Order{
         return "Eat_in{" +
                 "tableID " + tableID +
                 " waiterID " + waiterID +
+                "customID " + customID +
+                " items " + items.toString() +
+                " orderComplete " + orderComplete +
+                " time " + time +
                 " }";
     }
 

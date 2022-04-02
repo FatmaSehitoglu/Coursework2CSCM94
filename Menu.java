@@ -1,12 +1,12 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Menu {
-    public static ArrayList<MenuItem> selections = new ArrayList<>();
+
     public static ArrayList<MenuItem> selectFromMenu(){
-        int exit = 0;
+        ArrayList<MenuItem> selections = new ArrayList<MenuItem>();
+        int exit = -1;
         int noOfSpecials= Database.getSpecials().size();
-        while(!(exit == 0)) {
+        while(exit == -1) {
             System.out.println("Please enter the code of the item you want to select. Press 0 to finish the order");
             System.out.println("Today's Specials");
             for(int k=0; k<noOfSpecials; k++) {
@@ -18,7 +18,7 @@ public class Menu {
             }
             int input = Input.intInput(0,1000+noOfSpecials);
             if(input == 0) {
-                exit=0;
+                exit = 0;
             } else if(input>0 && input<Database.getActiveMenu().size()+2) {
                 input = input-1;
                 selections.add(Database.getActiveMenu().get(input));

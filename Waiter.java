@@ -52,8 +52,7 @@ public class Waiter extends Staff {
         //String waiterId = this.getId();
         System.out.println("Enter customer id:");
         String cID = Input.stringInput();
-        ArrayList<MenuItem> selection = new ArrayList<>();
-        selection = Menu.selectFromMenu();
+        ArrayList<MenuItem> selection = Menu.selectFromMenu();
         Eat_in order = new Eat_in(cID, selection, true, tableId, this.id);
         Database.addToOrderHistory(order);
     }
@@ -62,7 +61,7 @@ public class Waiter extends Staff {
         int con = -1;
         while(!(con==0)) {
             for(int i=0;i<Database.orderHistory.size(); i++) {
-                System.out.println(Database.orderHistory.toString());
+                System.out.println(Database.orderHistory.get(i).toString());
             }
             con=0;
         }
