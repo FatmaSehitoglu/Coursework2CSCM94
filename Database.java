@@ -36,8 +36,6 @@ public class Database {
         }
     }
 
-
-
     //ORDER DATABASE -- Persistence pending
     //===== ========
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();
