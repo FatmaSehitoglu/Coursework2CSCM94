@@ -52,7 +52,8 @@ public class Waiter extends Staff {
         //String waiterId = this.getId();
         System.out.println("Enter customer id:");
         String cID = Input.stringInput();
-        ArrayList<MenuItem> selection = Menu.selectFromMenu();
+        ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
+        selection = Menu.selectFromMenu();
         Eat_in order = new Eat_in(cID, selection, true, tableId, this.id);
         Database.addToOrderHistory(order);
     }
