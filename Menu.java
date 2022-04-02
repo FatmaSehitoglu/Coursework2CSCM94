@@ -7,7 +7,7 @@ public class Menu {
         int exit = 0;
         int noOfSpecials= Database.getSpecials().size();
         while(!(exit == 0)) {
-            System.out.println("Please enter the code of the item you want to select. Press 0 to exit");
+            System.out.println("Please enter the code of the item you want to select. Press 0 to finish the order");
             System.out.println("Today's Specials");
             for(int k=0; k<noOfSpecials; k++) {
                 System.out.println((k+1000) + "- " + Database.getSpecials().get(k).toString() );
