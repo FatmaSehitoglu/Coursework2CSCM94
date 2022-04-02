@@ -41,7 +41,7 @@ public class Database {
         }
     }
 
-    //ORDER DATABASE -- Persistence pending
+    //ORDER DATABASE
     //===== ========
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();
 
@@ -74,7 +74,34 @@ public class Database {
         FileManager.writeToFile("DeliveryOrderDb.txt", delivery.toDataString());
     }
 
-    
+    public static void populateOrders() {
+        populateEatInOrders();
+        populateTakeawayOrders();
+        populateDeliveryOrders();
+    }
+
+    public static void populateEatInOrders() {
+        String[][] str = FileManager.readFromFile("EatInOrderDb.txt", 8);
+        for (int i = 0; i < str.length; i++){
+            addToOrderHistory(new Eat_in(str[i][0], FileManager.getItemsFromIds(str[i][1]), Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]), Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), Integer.parseInt(str[i][6]), str[i][7]));
+        }
+    }
+
+    public static void populateTakeawayOrders() {
+        String[][] str = FileManager.readFromFile("TakeawayOrderDb.txt", 8);
+        for (int i = 0; i < str.length; i++){
+            addToOrderHistory(new Takeaway(str[i][0], FileManager.getItemsFromIds(str[i][1]), Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]), Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), FileManager.StringToLocalDateTime(str[i][6])));
+        }
+    }
+
+    public static void populateDeliveryOrders() {
+
+    }
+
+
+
+
+
 
     //CUSTOMER DATABASE
     //======== ========

@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 
@@ -19,6 +20,16 @@ public class Delivery extends Order{
         super(customID, items, approval);
         this.address = address;
         this.driveID = driveID;
+    }
+
+    public Delivery(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, String address, String driveID, boolean driveComplete) {
+        super(customID, items, approval);
+        this.orderComplete = orderComplete;
+        this.time = time;
+        this.chefComplete = chefComplete;
+        this.address = address;
+        this.driveID = driveID;
+        this.driveComplete = driveComplete;
     }
 
 

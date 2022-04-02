@@ -27,6 +27,15 @@ public class Eat_in extends Order{
         this.waiterID = waiterID;
     }
 
+    public Eat_in(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, int tableID, String waiterID) {
+        super(customID, items, approval);
+        this.orderComplete = orderComplete;
+        this.time = time;
+        this.chefComplete = chefComplete;
+        this.tableID = tableID;
+        this.waiterID = waiterID;
+    }
+
 
 
     public int getTableID() {
