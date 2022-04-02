@@ -178,6 +178,26 @@ public class Database {
     }
 
     public static ArrayList<MenuItem> getMenu(){return menuItems;};
+
+    public static ArrayList<MenuItem> getSpecials() {
+        ArrayList<MenuItem>specials = new ArrayList<>();
+        for(int i=0; i<menuItems.size(); i++) {
+            if(menuItems.get(i).getIsSpecial()) {
+                specials.add(menuItems.get(i));
+            }
+        }
+        return specials;
+    }
+    public static ArrayList<MenuItem> getActiveMenu() {
+        ArrayList<MenuItem>activeMenu = new ArrayList<>();
+        for(int i=0; i<menuItems.size(); i++) {
+            if(menuItems.get(i).getInMenu()) {
+                activeMenu.add(menuItems.get(i));
+            }
+        }
+        return activeMenu;
+    }
+
     public static ArrayList<MenuItem> selectionss = new ArrayList<>();
     public static void addToSelections(MenuItem selections){selectionss.add(selections);}
     public static ArrayList<MenuItem> getSelections(){return selectionss;};
