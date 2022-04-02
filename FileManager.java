@@ -1,5 +1,7 @@
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,6 +11,8 @@ import java.util.Scanner;
 import java.util.ArrayList;;
 
 public class FileManager {
+
+    private static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
     public static void writeToFile(String filename, String data) {
         try {
@@ -71,4 +75,32 @@ public class FileManager {
         }
         return output;
     }
+
+    public static String LocalDateTimeToString(LocalDateTime ldt) {
+        return ldt.format(formatter);
+    }
+
+    public static LocalDateTime StringToLocalDateTime(String str) {
+        return LocalDateTime.parse(str, formatter);
+    }
+
+    public static String getItemIds(ArrayList<MenuItem> items) {
+        String s = String.format("%d", items.get(0).getID());
+        for (int i = 1; i < items.size(); i++) {
+            s += String.format(",%d", items.get(i).getID());
+        }
+        return s;
+    }
+
+    public static ArrayList<MenuItem> getItemsFromIds(String str) {
+        ArrayList<MenuItem> items = new ArrayList<>();
+        String[] ids = str.split(",");
+        for (int i = 0; i < ids.length; i++) {
+            items.add(Database.getItem(Integer.parseInt(ids[i])));
+        }
+        return items;
+    }
+
+
+
 }

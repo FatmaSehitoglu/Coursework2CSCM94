@@ -196,6 +196,15 @@ public class Database {
         return activeMenu;
     }
 
+    public static MenuItem getItem(int ID) {
+        for(int k = 0; k < menuItems.size(); k++) {
+            if(ID == menuItems.get(k).getID()) {
+                return menuItems.get(k);
+            }
+        }
+        return null;
+    }
+
     public static ArrayList<MenuItem> selectionss = new ArrayList<>();
     public static void addToSelections(MenuItem selections){selectionss.add(selections);}
     public static ArrayList<MenuItem> getSelections(){return selectionss;};
