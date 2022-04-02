@@ -23,12 +23,14 @@ public class Driver extends Staff {
 
     //METHODS
     //=======
+
+    /**
+     * <h1>This method displays menu interface</h1>
+     * @param none
+     * @return none
+     */
     public void displayMainMenu() {
-        /**
-         * <h1>This method displays menu interface</h1>
-         * @param none
-         * @return none
-         */
+
 
         boolean cont = true;
         while (cont) {  
@@ -55,8 +57,12 @@ public class Driver extends Staff {
     public void completeDelivery() {
         //add code here
     }
-   
 
+
+    /**
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Driver");
