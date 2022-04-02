@@ -14,18 +14,14 @@ public class FileManager {
 
     private static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
-    /**
-     * @param filename
-     * @param data
-     */
 
+    /**
+     * @param String filename
+     * @param String data
+     * @return none
+     */
     public static void writeToFile(String filename, String data) {
 
-        /**
-         * @param String filename
-         * @param String data
-         * @return none
-         */
 
         try {
             FileWriter writer = new FileWriter(filename, true);
@@ -40,8 +36,14 @@ public class FileManager {
         }
     }
 
-
+    /**
+     * @param String filename
+     * @param String customerID
+     * @see IOException
+     */
     public static void readOrderHistory(String filename, String customerID) throws IOException {
+
+
         ArrayList<String> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(filename));
         Scanner reader = new Scanner(br);
