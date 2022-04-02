@@ -90,6 +90,11 @@ public class FileManager {
         return output;
     }
 
+    public static void emptyFile(String filename) {
+        File file = new File(filename);
+        //FileWriter writer = new FileWriter(filename, true);
+    }
+
     public static String LocalDateTimeToString(LocalDateTime ldt) {
         return ldt.format(formatter);
     }
