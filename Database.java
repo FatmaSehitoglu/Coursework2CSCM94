@@ -47,6 +47,30 @@ public class Database {
         return orderHistory;
     }
 
+    public static void writeOrder(Order order) {
+        if(order.getClass() == Eat_in.class) {
+            writeEatInOrder((Eat_in) order);
+        }else if(order.getClass() == Takeaway.class) {
+            writeTakeawayOrder((Takeaway) order);
+        }else if(order.getClass() == Delivery.class) {
+            writeDeliveryOrder((Delivery) order);
+        }
+    }
+
+    public static void writeEatInOrder(Eat_in eatIn) {
+        FileManager.writeToFile("EatInOrderDb.txt", eatIn.toDataString());
+    }
+
+    public static void writeTakeawayOrder(Takeaway takeaway) {
+        FileManager.writeToFile("TakeawayOrderDb.txt", takeaway.toDataString());
+    }
+
+    public static void writeDeliveryOrder(Delivery delivery) {
+        FileManager.writeToFile("DeliveryOrderDb.txt", delivery.toDataString());
+    }
+
+    
+
     //CUSTOMER DATABASE
     //======== ========
     public static ArrayList<Customer> customerList = new ArrayList<Customer>();
