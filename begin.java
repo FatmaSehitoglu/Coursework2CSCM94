@@ -166,8 +166,8 @@ public class Begin extends Application {
                 TableColumn<LocalDateTime, String> column2 = new TableColumn<>("LocalDateTime");
                 column2.setCellValueFactory(new PropertyValueFactory<>("LocalDateTime"));
 
-                tableView.getColumns().add(column1);
-                tableView.getColumns().add(column2);
+                //tableView.getColumns().add(column1);
+                //tableView.getColumns().add(column2);
 
                 /*tableView.getItems().add();
                 tableView.getItems().add();*/
