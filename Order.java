@@ -69,6 +69,14 @@ public abstract class Order {
         this.approval = approval;
     }
 
+    public String getItemIds() {
+        String s = String.format("%d", this.items.get(0).getID());
+        for (int i = 1; i < this.items.size(); i++) {
+            s += String.format(",%d", this.items.get(i).getID());
+        }
+        return s;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -78,4 +86,5 @@ public abstract class Order {
                 " time " + time +
                 " }";
     }
+
 }
