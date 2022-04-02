@@ -5,6 +5,16 @@ public class Booking {
     private boolean approved;
     private int numOfGuests;
     private int duration;
+
+    /**
+     * <h1>This class is to make the bookings</h1>
+     * @param date
+     * @param time
+     * @param customerID
+     * @param numOfGuests
+     * @param duration
+     * @param approved
+     */
     
     public Booking(String date, String time, String customerID, int numOfGuests) {
         this.date = date;
@@ -80,6 +90,10 @@ public class Booking {
     }
 
     public String toDataString() {
+        /**
+         * @params none
+         * @return String This formats the output to a String
+         */
         return String.format("%s|%s|%s|%b|%d|%d", date, time, customerID, approved, numOfGuests, duration);
     }
 
