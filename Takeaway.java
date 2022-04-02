@@ -10,6 +10,14 @@ public class Takeaway extends Order{
         super(customID, items, approval);
     }
 
+    public Takeaway(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, LocalDateTime arriveTime) {
+        super(customID, items, approval);
+        this.orderComplete = orderComplete;
+        this.time = time;
+        this.chefComplete = chefComplete;
+        this.arriveTime = arriveTime;
+    }
+
 
     public LocalDateTime getArriveTime() {
         return arriveTime;
