@@ -149,7 +149,35 @@ public class Chef extends Staff {
     }
 
     public void viewMenuItems() {
-
+        boolean cont = true;
+        while(cont == true) {
+            for(int i=0; i<Database.menuItems.size(); i++) {
+                if(Database.menuItems.get(i).getInMenu() == true) {
+                    System.out.println(Database.menuItems.get(i).toString() + 
+                    " Menu Status: Actively In the menu");
+                }else {
+                    System.out.println(Database.menuItems.get(i).toString() + 
+                    " Menu Status: Not In the menu");
+                }
+            }
+            System.out.println("1.Change the menu status of an item");
+            System.out.println("0.Go Back");
+            int select = Input.intInput(0, 1);
+            switch (select) {
+                case 1: //switches menu states
+                    System.out.println("Select an menu item");
+                    int order = Input.intInput(0, Database.menuItems.size());
+                    if(Database.menuItems.get(order).getInMenu() == true){
+                        Database.menuItems.get(order).setInMenu(false);
+                    }else {
+                        Database.menuItems.get(order).setInMenu(true);
+                    }
+                    break;
+                case 0:
+                    cont = false;
+                    break;
+            }
+        }
     }
 
     @Override
