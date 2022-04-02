@@ -75,6 +75,7 @@ public abstract class Order {
                 " items " + items.toString() +
                 " orderComplete " + orderComplete +
                 " time " + time +
+                " chefComplete " + chefComplete +
                 " }";
     }
 

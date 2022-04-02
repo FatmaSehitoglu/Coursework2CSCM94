@@ -22,34 +22,77 @@ public class Chef extends Staff {
    
     //METHODS
     //=======
-    public void completeOrder() {
-        //add code here
+    public void completeOrder(Order order) {
+        order.setChefComplete(true);
     }
 
-    public void addToMenu(){
+    public void addToMenu(boolean special){
         int id;
         String description;
         String name;
-        System.out.println("Enter ID of item you want to add:");
-
+        System.out.println("Enter a 6 digit ID for the new Menu Item:");
         id = Input.intInput(0, 999999);
+        System.out.println("Name of the New Menu Item: ");
+        name = Input.stringInput();
         System.out.println("Describe the item you are adding: ");
         description = Input.stringInput();
-        System.out.println("Now give it a name: ");
-        name = Input.stringInput();
-        Database.addToMenu(new MenuItem(id, description, name,true,false));
+        MenuItem newItem = new MenuItem(id, description, name, true, special);
+        Database.menuItems.add(newItem);
     }
 
-    /*
-    public void updateDailySpecial() { //not finished
-        //assuming there can be only one daily special first take off the old special
-        MenuItem old = Database.getTodaysSpecial();
-        old.setIsSpecial(false);
-        System.out.println("Select from the new special from following list");
-
-
+    
+    public void editDailySpecial() {
+        boolean cont = true;
+        while(cont) {
+            for(int i=0;i<Database.getSpecials().size();i++) {
+                System.out.println(Database.getSpecials().get(i).toString());
+            }
+            System.out.println("1. Make an existing menu item daily special");
+            System.out.println("2. Enter a new menu item as daily special");
+            System.out.println("3. Cancel a daily special");
+            System.out.println("0. Back To Previous Menu");
+            int select = Input.intInput(0, 3);
+            switch (select) {
+                case 1:
+                    for(int i=0; i<Database.menuItems.size();i++) {
+                        System.out.println(Database.menuItems.get(i).toString());
+                    }
+                    System.out.println("Enter the id of the item you want to designate as daily special");
+                    boolean found = false;
+                    int input = Input.intInput(0, 999999);
+                    for(int i=0;i<Database.menuItems.size();i++) {
+                        if(input == Database.getSpecials().get(i).getID()) {
+                            Database.getSpecials().get(i).setIsSpecial(true);
+                            found = true;
+                        }
+                    }
+                    if(found == false) {
+                        System.out.println("No item with id " + input + " found."  );
+                    }
+                    break;
+                case 2:
+                    addToMenu(true);
+                    break;
+                case 3:
+                    System.out.println("Enter the id of the item you want to designate as NOT daily special");
+                    found = false;
+                    input = Input.intInput(0, 999999);
+                    for(int i=0;i<Database.getSpecials().size();i++) {
+                        if(input == Database.getSpecials().get(i).getID()) {
+                            Database.getSpecials().get(i).setIsSpecial(false);
+                            found = true;
+                        }
+                    }
+                    if(found == false) {
+                        System.out.println("No item with id " + input + " found."  );
+                    }
+                    break;
+                case 0:
+                    cont = false;
+                    break;
+            }
+        }
     }
-    */
 
     public void displayMainMenu() {
         boolean cont = true;
@@ -57,19 +100,22 @@ public class Chef extends Staff {
             System.out.println("1. New Menu Item");
             System.out.println("2. View Active Orders");
             System.out.println("3. View Menu Items");
+            System.out.println("4. Edit Daily Specials");
             System.out.println("0. Log Out");
 
-            int select = Input.intInput(0, 3);
-
+            int select = Input.intInput(0, 4);
             switch (select) {
                 case 1:
-                    addToMenu();
+                    addToMenu(false);
                     break;
                 case 2:
                     viewActiveOrders();
                     break;
                 case 3:
                     viewMenuItems();
+                    break;
+                case 4:
+                    editDailySpecial();
                     break;
                 case 0:
                     cont = false;
@@ -79,11 +125,59 @@ public class Chef extends Staff {
     }
 
     public void viewActiveOrders() {
-
+        boolean cont = true;
+        while(cont == true) {
+            for(int i=0; i<Database.orderHistory.size(); i++) {
+                if(Database.orderHistory.get(i).isChefComplete() == false) {
+                    System.out.println(Database.orderHistory.get(i).toString());
+                }
+            }
+            System.out.println("1.Complete an incomplete order");
+            System.out.println("0.Go Back");
+            int select = Input.intInput(0, 1);
+            switch (select) {
+                case 1:
+                    System.out.println("Select an order to complete");
+                    int order = Input.intInput(0, Database.orderHistory.size());
+                    Database.orderHistory.get(order).setChefComplete(true);
+                    break;
+                case 0:
+                    cont = false;
+                    break;
+            }
+        }
     }
 
     public void viewMenuItems() {
-
+        boolean cont = true;
+        while(cont == true) {
+            for(int i=0; i<Database.menuItems.size(); i++) {
+                if(Database.menuItems.get(i).getInMenu() == true) {
+                    System.out.println(Database.menuItems.get(i).toString() + 
+                    " Menu Status: Actively In the menu");
+                }else {
+                    System.out.println(Database.menuItems.get(i).toString() + 
+                    " Menu Status: Not In the menu");
+                }
+            }
+            System.out.println("1.Change the menu status of an item");
+            System.out.println("0.Go Back");
+            int select = Input.intInput(0, 1);
+            switch (select) {
+                case 1: //switches menu states
+                    System.out.println("Select an menu item");
+                    int order = Input.intInput(0, Database.menuItems.size());
+                    if(Database.menuItems.get(order).getInMenu() == true){
+                        Database.menuItems.get(order).setInMenu(false);
+                    }else {
+                        Database.menuItems.get(order).setInMenu(true);
+                    }
+                    break;
+                case 0:
+                    cont = false;
+                    break;
+            }
+        }
     }
 
     @Override

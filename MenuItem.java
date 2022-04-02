@@ -55,7 +55,7 @@ public class MenuItem {
 
     @Override
     public String toString() {
-        return String.format("%s\n%s", name, description);
+        return String.format("%s %s %d", name, description, ID);
     }
 
     public String toDataString() {
