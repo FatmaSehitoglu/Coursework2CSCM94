@@ -33,7 +33,7 @@ public abstract class Order {
         return items;
     }
 
-    public void setItems(ArrayList<MenuItem>[] items) {
+    public void setItems(ArrayList<MenuItem> items) {
         this.items = items;
     }
 
