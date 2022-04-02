@@ -1,6 +1,5 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public abstract class Order {
     public String customID;
@@ -67,14 +66,6 @@ public abstract class Order {
 
     public void setApproval(boolean approval) {
         this.approval = approval;
-    }
-
-    public String getItemIds() {
-        String s = String.format("%d", this.items.get(0).getID());
-        for (int i = 1; i < this.items.size(); i++) {
-            s += String.format(",%d", this.items.get(i).getID());
-        }
-        return s;
     }
 
     @Override
