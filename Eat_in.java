@@ -57,6 +57,11 @@ public class Eat_in extends Order{
                 " }";
     }
 
+
+    /**
+     *
+     * @return String formatted
+     */
     public String toDataString() {
         return String.format("%s|%s|%b|%s|%b|%b|%b|%s", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, tableID, waiterID);
     }
