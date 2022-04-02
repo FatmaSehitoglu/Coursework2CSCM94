@@ -8,6 +8,13 @@ public class Customer extends User {
     private String address;
     //private Order[] orderHistory;
 
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param address
+     * @param id
+     */
     //CONSTRUCTOR
     //======
     public Customer(String firstName, String lastName, String address, String id) {
@@ -37,10 +44,19 @@ public class Customer extends User {
     //public void joinEvent() {} (not implemented)
 
     public void displayMainMenu() {
+        /**
+         * @params none
+         */@return none
         System.out.println("\nHello customer! Functionality to follow...\n");
     } 
 
     public void requestBooking(String date, String time, int noOfGuests) {
+        /**
+         * @params String date
+         * @params String time
+         * @params int noOfGuests
+         * @return none
+         */
         String id = this.getId();
         Booking newBooking = new Booking(date, time, id, noOfGuests);
         Database.addToBookingHistory(newBooking);

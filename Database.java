@@ -9,6 +9,11 @@ public class Database {
         populateBookings();
     }
 
+    /**
+     * @param none
+     * @return none
+     */
+
     //BOOKING DATABASE
     //======= ========
     public static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();

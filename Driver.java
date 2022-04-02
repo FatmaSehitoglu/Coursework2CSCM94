@@ -5,7 +5,14 @@ public class Driver extends Staff {
     //private firstName     (inherited)
     //private lastName      (inherited)
     //private staffId       (inherited)    
-    
+
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param id
+     */
+
     //CONSTRUCTOR
     //===========
     public Driver(String firstName, String lastName, String id) {
@@ -17,6 +24,12 @@ public class Driver extends Staff {
     //METHODS
     //=======
     public void displayMainMenu() {
+        /**
+         * <h1>This method displays menu interface</h1>
+         * @param none
+         * @return none
+         */
+
         boolean cont = true;
         while (cont) {  
             System.out.println("1. View Active Orders");
