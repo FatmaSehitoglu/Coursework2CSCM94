@@ -5,7 +5,14 @@ public class Driver extends Staff {
     //private firstName     (inherited)
     //private lastName      (inherited)
     //private staffId       (inherited)    
-    
+
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param id
+     */
+
     //CONSTRUCTOR
     //===========
     public Driver(String firstName, String lastName, String id) {
@@ -16,7 +23,15 @@ public class Driver extends Staff {
 
     //METHODS
     //=======
+
+    /**
+     * <h1>This method displays menu interface</h1>
+     * @param none
+     * @return none
+     */
     public void displayMainMenu() {
+
+
         boolean cont = true;
         while (cont) {  
             System.out.println("1. View Active Orders");
@@ -42,8 +57,12 @@ public class Driver extends Staff {
     public void completeDelivery() {
         //add code here
     }
-   
 
+
+    /**
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Driver");

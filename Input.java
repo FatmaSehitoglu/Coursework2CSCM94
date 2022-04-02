@@ -2,6 +2,12 @@ import java.util.Scanner;
 
 public class Input {
 
+    /**
+     *<h1>This method checks whether the input is a number</h1>
+     * @param min
+     * @param max
+     * @return int inputInt
+     */
     public static int intInput(int min, int max){
         Scanner in = new Scanner(System.in);
         int inputInt = 0;
@@ -18,6 +24,11 @@ public class Input {
         }
         return inputInt;
     }
+
+    /**
+     * <h1>This method creates an input scanner for a String</h1>
+     * @return String input
+     */
     public static String stringInput(){
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();

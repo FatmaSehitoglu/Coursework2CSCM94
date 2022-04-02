@@ -9,6 +9,11 @@ public class Database {
         populateBookings();
     }
 
+    /**
+     * @param none
+     * @return none
+     */
+
     //BOOKING DATABASE
     //======= ========
     public static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
@@ -36,7 +41,7 @@ public class Database {
         }
     }
 
-    //ORDER DATABASE -- Persistence pending
+    //ORDER DATABASE
     //===== ========
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();
 
@@ -46,6 +51,60 @@ public class Database {
     public static ArrayList<Order> getOrderHistory() {
         return orderHistory;
     }
+
+    public static void writeOrder(Order order) {
+        if(order.getClass() == Eat_in.class) {
+            writeEatInOrder((Eat_in) order);
+        }else if(order.getClass() == Takeaway.class) {
+            writeTakeawayOrder((Takeaway) order);
+        }else if(order.getClass() == Delivery.class) {
+            writeDeliveryOrder((Delivery) order);
+        }
+    }
+
+    public static void writeEatInOrder(Eat_in eatIn) {
+        FileManager.writeToFile("EatInOrderDb.txt", eatIn.toDataString());
+    }
+
+    public static void writeTakeawayOrder(Takeaway takeaway) {
+        FileManager.writeToFile("TakeawayOrderDb.txt", takeaway.toDataString());
+    }
+
+    public static void writeDeliveryOrder(Delivery delivery) {
+        FileManager.writeToFile("DeliveryOrderDb.txt", delivery.toDataString());
+    }
+
+    public static void populateOrders() {
+        populateEatInOrders();
+        populateTakeawayOrders();
+        populateDeliveryOrders();
+    }
+
+    public static void populateEatInOrders() {
+        String[][] str = FileManager.readFromFile("EatInOrderDb.txt", 8);
+        for (int i = 0; i < str.length; i++){
+            addToOrderHistory(new Eat_in(str[i][0], FileManager.getItemsFromIds(str[i][1]), Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]), Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), Integer.parseInt(str[i][6]), str[i][7]));
+        }
+    }
+
+    public static void populateTakeawayOrders() {
+        String[][] str = FileManager.readFromFile("TakeawayOrderDb.txt", 7);
+        for (int i = 0; i < str.length; i++){
+            addToOrderHistory(new Takeaway(str[i][0], FileManager.getItemsFromIds(str[i][1]), Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]), Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), FileManager.StringToLocalDateTime(str[i][6])));
+        }
+    }
+
+    public static void populateDeliveryOrders() {
+        String[][] str = FileManager.readFromFile("DeliveryOrderDb.txt", 9);
+        for (int i = 0; i < str.length; i++){
+            addToOrderHistory(new Delivery(str[i][0], FileManager.getItemsFromIds(str[i][1]), Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]), Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), str[i][6], str[i][7], Boolean.parseBoolean(str[i][8])));
+        }
+    }
+
+
+
+
+
 
     //CUSTOMER DATABASE
     //======== ========
