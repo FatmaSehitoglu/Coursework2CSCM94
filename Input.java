@@ -2,6 +2,12 @@ import java.util.Scanner;
 
 public class Input {
 
+    /**
+     *
+     * @param min
+     * @param max
+     * @return int inputInt
+     */
     public static int intInput(int min, int max){
         Scanner in = new Scanner(System.in);
         int inputInt = 0;
