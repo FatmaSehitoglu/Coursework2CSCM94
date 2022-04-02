@@ -42,9 +42,15 @@ public class Delivery extends Order{
     @Override
     public String toString() {
         return "Delivery{" +
-                "address '" + address +
-                " driveID " + driveID +
-                " }";
+        "customID " + customID +
+        " orderApproved " + approval +
+        " time " + time +
+        " address " + address +
+        " driveID " + driveID +
+        " chefComplete " + chefComplete +
+        " driveComplete " + driveComplete + "/n" +
+        " items " + items.toString() +
+        " }";
     }
 
 }
