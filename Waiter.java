@@ -64,6 +64,7 @@ public class Waiter extends Staff {
             for(int i=0;i<Database.orderHistory.size(); i++) {
                 System.out.println(Database.orderHistory.toString());
             }
+            con=0;
         }
     }
 

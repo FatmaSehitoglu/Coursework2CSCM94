@@ -77,7 +77,7 @@ class Coursework2 {
                 if(user.getClass() == Manager.class) {
                     user.displayMainMenu();
                 }else if(user.getClass() == Waiter.class) {
-                    waiterMenu(user);
+                    user.displayMainMenu();
                 }else if(user.getClass() == Chef.class) {
                     user.displayMainMenu();
                 }else {
