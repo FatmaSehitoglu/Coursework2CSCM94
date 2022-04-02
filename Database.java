@@ -88,14 +88,17 @@ public class Database {
     }
 
     public static void populateTakeawayOrders() {
-        String[][] str = FileManager.readFromFile("TakeawayOrderDb.txt", 8);
+        String[][] str = FileManager.readFromFile("TakeawayOrderDb.txt", 7);
         for (int i = 0; i < str.length; i++){
             addToOrderHistory(new Takeaway(str[i][0], FileManager.getItemsFromIds(str[i][1]), Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]), Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), FileManager.StringToLocalDateTime(str[i][6])));
         }
     }
 
     public static void populateDeliveryOrders() {
-
+        String[][] str = FileManager.readFromFile("DeliveryOrderDb.txt", 9);
+        for (int i = 0; i < str.length; i++){
+            addToOrderHistory(new Delivery(str[i][0], FileManager.getItemsFromIds(str[i][1]), Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]), Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), str[i][6], str[i][7], Boolean.parseBoolean(str[i][8])));
+        }
     }
 
 
