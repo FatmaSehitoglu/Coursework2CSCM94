@@ -80,7 +80,7 @@ public class Booking {
     }
 
     public String toDataString() {
-        return String.format("%s|%s|%s|%s|%s|%s", date, time, customerID, approved, numOfGuests, duration);
+        return String.format("%s|%s|%s|%b|%d|%d", date, time, customerID, approved, numOfGuests, duration);
     }
 
 }
