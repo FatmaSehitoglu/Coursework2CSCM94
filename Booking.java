@@ -91,7 +91,7 @@ public class Booking {
 
     public String toDataString() {
         /**
-         * @params none
+         * @param none
          * @return String This formats the output to a String
          */
         return String.format("%s|%s|%s|%b|%d|%d", date, time, customerID, approved, numOfGuests, duration);
