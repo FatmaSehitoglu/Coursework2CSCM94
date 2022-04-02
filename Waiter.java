@@ -19,10 +19,11 @@ public class Waiter extends Staff {
     //=======
     public void displayMainMenu() {
         boolean cont = true;
-        while (cont) {  
+        while (cont) {
+            System.out.println("Profile : " + toDataString());  
             System.out.println("1. New Eat In Order");
             System.out.println("2. View Active Orders");
-            System.out.println("3. View Active Bookings");
+            System.out.println("3. View Booking");
             System.out.println("0. Log Out");
 
             int select = Input.intInput(0, 3);
@@ -35,7 +36,7 @@ public class Waiter extends Staff {
                     viewActiveOrders();
                     break;
                 case 3:
-                    viewActiveBookings();
+                    viewBookings();
                     break;
                 case 0:
                     cont = false;
@@ -61,8 +62,21 @@ public class Waiter extends Staff {
 
     }
 
-    public void viewActiveBookings() {
-
+    public void viewBookings() {
+        int bookingToApprove = -1;
+        while(!(bookingToApprove==0)) {
+            System.out.println("Select a Booking to Approve");
+            for(int i = 0; i<Database.bookingHistory.size(); i++) {
+                System.out.println(i+1 + " : " + Database.bookingHistory.get(i).toString());
+            }
+            System.out.println("Select a Booking to Approve or press 0 to go back");
+            bookingToApprove = Input.intInput(0, Database.bookingHistory.size()+1);
+            if(!(bookingToApprove == 0)) {
+                Database.bookingHistory.get(bookingToApprove-1).setApproved(true);
+            }else {
+                break;
+            }    
+        }               
     }
 
 

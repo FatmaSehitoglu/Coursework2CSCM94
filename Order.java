@@ -73,7 +73,7 @@ public abstract class Order {
     public String toString() {
         return "Order{" +
                 "customID " + customID +
-                " items " + Arrays.toString(items) +
+                " items " + items.toString() +
                 " orderComplete " + orderComplete +
                 " time " + time +
                 " }";
