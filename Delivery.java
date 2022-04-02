@@ -57,6 +57,11 @@ public class Delivery extends Order{
         this.driveComplete = driveComplete;
     }
 
+
+    /**
+     *
+     * @return String formatted
+     */
     @Override
     public String toString() {
         return "Delivery{" +
@@ -71,6 +76,11 @@ public class Delivery extends Order{
         " }";
     }
 
+
+    /**
+     *
+     * @return String formatted
+     */
     public String toDataString() {
         return String.format("%s|%s|%b|%s|%b|%b|%s|%s|%b", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, address, driveID, driveComplete);
     }
