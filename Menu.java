@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Menu {
     public static ArrayList<MenuItem> selections = new ArrayList<>();
-    public ArrayList<MenuItem> selectFromMenu(){
+    public static ArrayList<MenuItem> selectFromMenu(){
         int exit = 0;
         int noOfSpecials= Database.getSpecials().size();
         while(!(exit == 0)) {

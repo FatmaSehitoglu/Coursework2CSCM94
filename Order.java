@@ -3,24 +3,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public abstract class Order {
-    private String customID;
-    private ArrayList<MenuItem>[] items;
-    private boolean orderComplete;
-    private LocalDateTime time;
-    private boolean chefComplete;
-    private boolean approval;
+    public String customID;
+    public ArrayList<MenuItem> items;
+    public boolean orderComplete;
+    public LocalDateTime time;
+    public boolean chefComplete;
+    public boolean approval;
 
 
 
-    public Order(String customID, ArrayList<MenuItem>[] items, boolean approval) {
+    public Order(String customID, ArrayList<MenuItem> items, boolean approval) {
         this.customID = customID;
         this.items = items;
         this.approval = approval;
         this.time = LocalDateTime.now();
-        if (approval){
-            this.orderComplete = false;
-            this.chefComplete = false;
-        }
+        this.orderComplete = false;
+        this.chefComplete = false;
     }
 
     public String getCustomID() {
@@ -31,7 +29,7 @@ public abstract class Order {
         this.customID = customID;
     }
 
-    public ArrayList<MenuItem>[] getItems() {
+    public ArrayList<MenuItem> getItems() {
         return items;
     }
 

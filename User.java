@@ -1,9 +1,9 @@
 public abstract class User {
     //FIELDS
     //======
-    private String firstName;
-    private String lastName;
-    private String id;
+    public String firstName;
+    public String lastName;
+    public String id;
 
     //SETTERS
     //=======

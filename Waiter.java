@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Waiter extends Staff {
     
     //FIELDS
@@ -45,17 +46,15 @@ public class Waiter extends Staff {
 
     public void newEatInOrder() {
         int tableId = -1;
-
-        System.out.println("Enter table number: ");
-        tableId = Input.intInput(1, 999999);
-        String waiterId = this.getId();
-
-        //select items from menu
-        //this method doesn't exist yet
-        // Menu.selectFromMenu();
-
-        //Order order = new Eat_in(tableId, waiterId, items);
-        //Database.addToOrderHistory(order);
+        //System.out.println("Enter table number: ");
+        //tableId = Input.intInput(1, 999999);
+        //String waiterId = this.getId();
+        System.out.println("Enter customer id:");
+        String cID = Input.stringInput();
+        ArrayList<MenuItem> selection = new ArrayList<>();
+        selection = Menu.selectFromMenu();
+        Eat_in order = new Eat_in(cID, selection, true, tableId, this.id);
+        Database.addToOrderHistory(order);
     }
 
     public void viewActiveOrders() {

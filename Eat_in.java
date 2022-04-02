@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 
 public class Eat_in extends Order{
@@ -6,8 +7,14 @@ public class Eat_in extends Order{
     private String waiterID;
 
 
-    public Eat_in(String customID, ArrayList<MenuItem>[] items, boolean approval, int tableID, String waiterID) {
+    public Eat_in(String customID, ArrayList<MenuItem> items, boolean approval, int tableID, String waiterID) {
         super(customID, items, approval);
+        this.customID = customID;
+        this.items = items;
+        this.approval = approval;
+        this.time = LocalDateTime.now();
+        this.orderComplete = false;
+        this.chefComplete = false;
         this.tableID = tableID;
         this.waiterID = waiterID;
     }
