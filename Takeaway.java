@@ -1,3 +1,4 @@
+import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -24,4 +25,9 @@ public class Takeaway extends Order{
                 "arriveTime " + arriveTime +
                 " }";
     }
+
+    public String toDataString() {
+        return String.format("%s|%s|%b|%s|%b|%b|%s", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, FileManager.LocalDateTimeToString(arriveTime));
+    }
+
 }

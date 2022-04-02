@@ -53,4 +53,8 @@ public class Delivery extends Order{
         " }";
     }
 
+    public String toDataString() {
+        return String.format("%s|%s|%b|%s|%b|%b|%s|%s|%b", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, address, driveID, driveComplete);
+    }
+
 }
