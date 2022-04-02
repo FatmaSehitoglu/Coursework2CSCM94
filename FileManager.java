@@ -14,7 +14,19 @@ public class FileManager {
 
     private static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
+    /**
+     * @param filename
+     * @param data
+     */
+
     public static void writeToFile(String filename, String data) {
+
+        /**
+         * @param String filename
+         * @param String data
+         * @return none
+         */
+
         try {
             FileWriter writer = new FileWriter(filename, true);
             BufferedWriter bw = new BufferedWriter(writer);

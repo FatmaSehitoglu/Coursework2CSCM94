@@ -6,6 +6,14 @@ public class Eat_in extends Order{
     private int tableID;
     private String waiterID;
 
+    /**
+     *
+     * @param customID
+     * @param items
+     * @param approval
+     * @param tableID
+     * @param waiterID
+     */
 
     public Eat_in(String customID, ArrayList<MenuItem> items, boolean approval, int tableID, String waiterID) {
         super(customID, items, approval);
