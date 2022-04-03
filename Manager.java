@@ -106,7 +106,7 @@ public class Manager extends Staff {
 
     public void removeStaff(Staff staff) {
 
-        if (romoveStaffFromDatabase(staff.getId())){
+        if (Database.romoveStaffFromDatabase(staff.getId())){
             System.out.println("Delete the success");
         }else {
             System.out.println("Delete failed");
