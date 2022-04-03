@@ -2,6 +2,10 @@ import java.util.ArrayList;
 
 public class Menu {
 
+    /**
+     * <h1>This is the method to display the menu and allow the user to make selections</h1>
+     * @return
+     */
     public static ArrayList<MenuItem> selectFromMenu(){
         ArrayList<MenuItem> selections = new ArrayList<MenuItem>();
         int exit = -1;
