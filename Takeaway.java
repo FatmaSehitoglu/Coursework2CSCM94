@@ -6,6 +6,9 @@ import java.util.ArrayList;
 public class Takeaway extends Order{
     private String arriveTime;
 
+    //CONSTRUCTORS
+    //============
+
     public Takeaway(String customID, ArrayList<MenuItem> items, boolean approval, LocalDateTime time) {
         super(customID, items, approval);
     }
@@ -18,14 +21,20 @@ public class Takeaway extends Order{
         this.arriveTime = arriveTime;
     }
 
-
+    //SETTERS
+    //=======
+    public void setArriveTime(String arriveTime) {
+        this.arriveTime = arriveTime;
+        Database.refreshOrders();
+    }
+      
+    //GETTERS
+    //=======
     public String getArriveTime() {
         return arriveTime;
     }
 
-    public void setArriveTime(String arriveTime) {
-        this.arriveTime = arriveTime;
-    }
+   
 
     @Override
     public String toString() {
