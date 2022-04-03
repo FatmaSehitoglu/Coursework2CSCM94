@@ -49,9 +49,26 @@ public class Database {
         }
     }
 
-    public static void updateBookings() {
-        
-    }
+   public static ArrayList<Booking> getBookings(String custId) {
+        ArrayList<Booking> selection = new ArrayList<Booking>();
+            for (int i = 0; i < bookingHistory.size(); i++) {
+                if (bookingHistory.get(i).getCustomerID().equals(custId)) {
+                    selection.add(bookingHistory.get(i));
+                }
+            }
+        return selection;
+   }
+
+   public static void removeBooking(Booking booking) {
+        /*for (int i = 0; i < bookingHistory.size(); i++) {
+            if (bookingHistory.get(i).equals(booking)) {
+                bookingHistory.remove(i);
+            }
+        }*/
+        bookingHistory.remove(booking);
+   }
+
+
 
 
     //ORDER DATABASE
@@ -251,6 +268,18 @@ public class Database {
             }
         }
         return null;
+    }
+    
+     public static boolean removeStaffFromDatabase(String ID) {
+
+        for (Staff a: staffList){
+            if (a.getId() == ID){
+                staffList.remove(a);
+                return true;
+            }
+        }
+        return false;
+
     }
 
     //MENU ITEMS DATABASE

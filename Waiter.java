@@ -15,6 +15,10 @@ public class Waiter extends Staff {
 
     //METHODS
     //=======
+
+    /**
+     * <h1>a method to display menu</h1>
+     */
     public void displayMainMenu() {
         boolean cont = true;
         while (cont) {
@@ -43,6 +47,9 @@ public class Waiter extends Staff {
         }        
     }
 
+    /**
+     * <h2>A method to create a new Eat In Order</h2>
+     */
     public void newEatInOrder() {
         int tableId = -1;
         //System.out.println("Enter table number: ");
@@ -56,6 +63,9 @@ public class Waiter extends Staff {
         Database.addToOrderHistory(order);
     }
 
+    /**
+     * <h3>A method to view the active orders</h3>
+     */
     public void viewActiveOrders() {
         int con = -1;
         while(!(con==0)) {
@@ -86,6 +96,9 @@ public class Waiter extends Staff {
         }
     }
 
+    /**
+     * <h4>This method is used to view all bookings</h4>
+     */
     public void viewBookings() {
         int bookingToApprove = -1;
         while(!(bookingToApprove==0)) {
@@ -104,6 +117,10 @@ public class Waiter extends Staff {
     }
 
 
+    /**
+     * <h5>This method cancels an order</h5>
+     * @param Order order
+     */
     public void cancelOrder(Order order) {
         for(int i=0; i<Database.orderHistory.size(); i++) {
             if(order.equals(Database.orderHistory.get(i))) {
