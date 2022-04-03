@@ -23,14 +23,14 @@ public class Takeaway extends Order{
 
     //SETTERS
     //=======
-    public void setArriveTime(LocalDateTime arriveTime) {
+    public void setArriveTime(String arriveTime) {
         this.arriveTime = arriveTime;
         Database.refreshOrders();
     }
       
     //GETTERS
     //=======
-    public LocalDateTime getArriveTime() {
+    public String getArriveTime() {
         return arriveTime;
     }
 
