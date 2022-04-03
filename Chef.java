@@ -9,7 +9,7 @@ public class Chef extends Staff {
     //CONSTRUCTOR
     //===========
     public Chef(String firstName, String lastName, String id) {
-        super (firstName, lastName, id);
+        super(firstName, lastName, id);
     }
 
     //SETTERS

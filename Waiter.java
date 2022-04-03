@@ -10,7 +10,7 @@ public class Waiter extends Staff {
     //CONSTRUCTOR
     //===========
     public Waiter(String firstName, String lastName, String staffId) {
-        super (firstName, lastName, staffId);
+        super(firstName, lastName, staffId);
     }
 
     //METHODS
