@@ -65,6 +65,13 @@ public class Database {
         return orderHistory;
     }
 
+    public static void refreshOrders() {
+        FileManager.clearFile("OrderDB.txt");
+        for (int i = 0; i < orderHistory.size(); i++) {
+            writeOrder(orderHistory.get(i));
+        }
+    }
+
     public static void writeOrder(Order order) {
         if(order.getClass() == Eat_in.class) {
             writeEatInOrder((Eat_in) order);
@@ -139,6 +146,13 @@ public class Database {
         writeCustomer(newCustomer);
     }
 
+    public static void refreshCustomers() {
+        FileManager.clearFile("CustomerDB.txt");
+        for (int i = 0; i < customerList.size(); i++) {
+            writeCustomer(customerList.get(i));
+        }
+    }
+
     public static void writeCustomer(Customer newCustomer) {
         FileManager.writeToFile("CustomerDb.txt", newCustomer.toDataString());
     }
@@ -171,6 +185,13 @@ public class Database {
     public static void addNewStaff(Staff newStaff) {
         addToStaffList(newStaff);
         writeStaff(newStaff);
+    }
+
+    public static void refreshStaff() {
+        FileManager.clearFile("StaffDB.txt");
+        for (int i = 0; i < staffList.size(); i++) {
+            writeStaff(staffList.get(i));
+        }
     }
 
     public static void writeStaff(Staff newStaff) {
@@ -242,6 +263,13 @@ public class Database {
     }
 
     public static void addToMenu(MenuItem item){menuItems.add(item);}
+
+    public static void refreshMenuItems() {
+        FileManager.clearFile("MenuItemDB.txt");
+        for (int i = 0; i < menuItems.size(); i++) {
+            writeMenuItem(menuItems.get(i));
+        }
+    }
 
     public static void writeMenuItem(MenuItem menuItem) {
         FileManager.writeToFile("menuItemDb.txt", menuItem.toDataString());
