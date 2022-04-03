@@ -120,7 +120,19 @@ public class Customer extends User {
     }
 
     public void placeDeliveryOrder() {
-        //add code here
+        /*System.out.println("Please select items for your Delivery order");
+        ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
+        selection = Menu.selectFromMenu();
+        boolean cont = true;
+        System.out.println(this.getAddress() + "\n");
+        System.out.println("1. Use this address");
+        System.out.println("2. Input different address");
+        int select = Input.intInput(1, 2);
+        String address = "";
+        if (select == 1) {
+
+        
+        }*/
     }
 
     public void placeTakeAwayOrder() {
