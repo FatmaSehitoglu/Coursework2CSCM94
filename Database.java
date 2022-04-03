@@ -32,7 +32,7 @@ public class Database {
     }
 
     public static void refreshBookings() {
-        Filemanager.clearFile("BookingDB.txt");
+        FileManager.clearFile("BookingDB.txt");
         for (int i = 0; i < bookingHistory.size(); i++) {
             writeBooking(bookingHistory.get(i));
         }
