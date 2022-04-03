@@ -66,7 +66,9 @@ public class Database {
     }
 
     public static void refreshOrders() {
-        FileManager.clearFile("OrderDB.txt");
+        FileManager.clearFile("EatInOrderDB.txt");
+        FileManager.clearFile("TakeawayOrderDB.txt");
+        FileManager.clearFile("DeliveryOrderDB.txt");
         for (int i = 0; i < orderHistory.size(); i++) {
             writeOrder(orderHistory.get(i));
         }
