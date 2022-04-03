@@ -40,6 +40,8 @@ public class Takeaway extends Order{
     public String toString() {
         return "Takeaway{" +
                 "arriveTime " + arriveTime +
+                " items " + items.toString() +
+                " orderComplete " + orderComplete +
                 " }";
     }
 
