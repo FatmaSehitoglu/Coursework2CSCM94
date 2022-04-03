@@ -270,7 +270,7 @@ public class Database {
         return null;
     }
     
-     public static boolean romoveStaffFromDatabase(String ID) {
+     public static boolean removeStaffFromDatabase(String ID) {
 
         for (Staff a: staffList){
             if (a.getId() == ID){
