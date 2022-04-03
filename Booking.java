@@ -26,57 +26,72 @@ public class Booking {
     }
 
     public Booking(String date, String time, String customerID, boolean approved, int numOfGuests, int duration) {
-        this.setDate(date);
-        this.setTime(time);
-        this.setCustomerID(customerID);
-        this.setApproved(approved);
-        this.setNumOfGuests(numOfGuests);
-        this.setDuration(duration);
+        this.date = date;
+        this.time = time;
+        this.customerID = customerID;
+        this.numOfGuests = numOfGuests;
+        this.approved = approved;
+        this.duration = duration;
     }
 
-    public String getDate() {
-        return date;
-    }
-
+    //SETTERS
+    //=======
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public String getTime() {
-        return time;
+        Database.refreshBookings();
     }
 
     public void setTime(String time) {
         this.time = time;
+        Database.refreshBookings();
+    }
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
+        Database.refreshBookings();
+    }
+
+    public void setNumOfGuests(int noOfGuests) {
+        this.numOfGuests = noOfGuests;
+        Database.refreshBookings();
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+        Database.refreshBookings();
+    }
+
+    public void setApproved(boolean approved) {
+        this.approved = approved;
+        Database.refreshBookings();
+    }
+
+    //GETTERS
+    //=======
+    public String getDate() {
+        return date;
+    }
+    
+    public String getTime() {
+        return time;
     }
 
     public String getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(String customerID) {
-        this.customerID = customerID;
-    }
-
     public int getNumOfGuests() {
         return this.numOfGuests;
     }
-    public void setNumOfGuests(int noOfGuests) {
-        this.numOfGuests = noOfGuests;
-    }
+    
     public int getDuration() {
         return this.duration;
     }
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
+    
     public boolean isApproved() {
         return approved;
     }
-
-    public void setApproved(boolean approved) {
-        this.approved = approved;
-    }
+   
     @Override
     public String toString() {
         return "Booking{" +
