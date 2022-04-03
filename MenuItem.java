@@ -5,6 +5,8 @@ public class MenuItem {
     private Boolean inMenu;
     private Boolean isSpecial;
 
+    //CONSTRUCTOR
+    //===========
     public MenuItem(int ID, String price, String name, Boolean inMenu, Boolean isSpecial) {
         this.ID = ID;
         this.price = price;
@@ -13,45 +15,54 @@ public class MenuItem {
         this.isSpecial = isSpecial;
     }
 
-    public int getID() {
-        return ID;
-    }
-
+    //SETTERS
+    //=======
     public void setID(int ID) {
         this.ID = ID;
+        Database.refreshMenuItems();
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+        Database.refreshMenuItems();
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+        Database.refreshMenuItems();
+    }
+
+    public void setInMenu(Boolean setInMenu) {
+        this.inMenu = setInMenu;
+        Database.refreshMenuItems();
+    }
+
+    public void setIsSpecial(Boolean isSpecial) {
+        this.isSpecial = isSpecial;
+        Database.refreshMenuItems();
+    }
+
+    //GETTERS
+    //=======
+     public int getID() {
+        return ID;
     }
 
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Boolean getInMenu() {
         return inMenu;
     }
 
-    public void setInMenu(Boolean setInMenu) {
-        this.inMenu = setInMenu;
-    }
-
     public Boolean getIsSpecial() {
         return isSpecial;
-    }
-
-    public void setIsSpecial(Boolean isSpecial) {
-        this.isSpecial = isSpecial;
-    }
+    } 
 
     @Override
     public String toString() {
@@ -61,6 +72,5 @@ public class MenuItem {
     public String toDataString() {
         return String.format("%d|%s|%s|%b|%b", ID, price, name, inMenu, isSpecial);
     }
-
     
 }
