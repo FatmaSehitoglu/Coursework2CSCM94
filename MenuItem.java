@@ -5,7 +5,7 @@ public class MenuItem {
     private Boolean inMenu;
     private Boolean isSpecial;
 
-    public MenuItem(int ID, String description, String name, Boolean inMenu, Boolean isSpecial) {
+    public MenuItem(int ID, String price, String name, Boolean inMenu, Boolean isSpecial) {
         this.ID = ID;
         this.price = price;
         this.name = name;

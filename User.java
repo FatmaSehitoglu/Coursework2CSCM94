@@ -13,17 +13,11 @@ public abstract class User {
 
     //SETTERS
     //=======
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    public abstract void setFirstName(String firstName);
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    public abstract void setLastName(String lastName);
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public abstract void setId(String id);
 
     //GETTERS
     //=======

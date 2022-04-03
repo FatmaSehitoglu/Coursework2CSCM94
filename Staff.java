@@ -15,8 +15,24 @@ public abstract class Staff extends User{
 
     //SETTERS
     //=======
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+        Database.refreshStaff();
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+        Database.refreshStaff();
+    }
+
+    public void setId(String id) {
+        this.id = id;
+        Database.refreshStaff();
+    }
+
     public void incrementHoursWorked(int n) {
         this.totalHoursWorked += n;
+        Database.refreshStaff();
     }
 
     //GETTERS
