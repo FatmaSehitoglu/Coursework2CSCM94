@@ -26,15 +26,15 @@ public class Chef extends Staff {
 
     public void addToMenu(boolean special){
         int id;
-        String description;
+        String price;
         String name;
         System.out.println("Enter a 6 digit ID for the new Menu Item:");
         id = Input.intInput(0, 999999);
         System.out.println("Name of the New Menu Item: ");
         name = Input.stringInput();
-        System.out.println("Describe the item you are adding: ");
-        description = Input.stringInput();
-        MenuItem newItem = new MenuItem(id, description, name, true, special);
+        System.out.println("Price of the item you are adding: ");
+        price = Input.stringInput();
+        MenuItem newItem = new MenuItem(id, price, name, true, special);
         Database.newMenuItem(newItem);
     }
 
