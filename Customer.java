@@ -1,3 +1,5 @@
+import javafx.scene.control.Alert;
+
 public class Customer extends User {
 
     //FIELDS
@@ -24,8 +26,24 @@ public class Customer extends User {
 
     //SETTERS
     //=======
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+        Database.refreshCustomers();
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+        Database.refreshCustomers();
+    }
+
+    public void setId(String id) {
+        this.id = id;
+        Database.refreshCustomers();
+    }
+
     public void setAddress(String address) {
         this.address = address;
+        Database.refreshCustomers();
     }
 
     //GETTERS
