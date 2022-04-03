@@ -30,8 +30,6 @@ public class Driver extends Staff {
      * @return none
      */
     public void displayMainMenu() {
-
-
         boolean cont = true;
         while (cont) {  
             System.out.println("1. View Active Orders");
