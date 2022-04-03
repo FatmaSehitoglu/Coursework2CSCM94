@@ -67,8 +67,9 @@ public class Customer extends User {
             System.out.println("2. Cancel an existing Booking");
             System.out.println("3. Place a delivery order");
             System.out.println("4. Place a takeaway order");
+            System.out.println("5. See order history");
             System.out.println("0. Exit");
-            int select = Input.intInput(0,4 );
+            int select = Input.intInput(0,5 );
             switch (select) {
                 case 1:
                     requestBooking();
@@ -81,7 +82,10 @@ public class Customer extends User {
                     
                     break;
                 case 4:
-
+                    placeTakeAwayOrder();
+                    break;
+                case 5:
+                    orderHistory();
                     break;
                 case 0:
                     cont = false;
@@ -131,6 +135,15 @@ public class Customer extends User {
         String time = Input.stringInput();
         Takeaway order = new Takeaway(this.id, selection, false, LocalDateTime.now(), false, true, time);
         Database.newOrder(order);
+    }
+
+    public void orderHistory() {
+        for(int i=0; i<Database.getOrderHistory().size(); i++) {
+            String checkingID = Database.getOrderHistory().get(i).getCustomID();
+            if(checkingID.equals(this.id)) {
+                System.out.println(Database.getOrderHistory().get(i).toString());
+            }
+        }
     }
 
     @Override
