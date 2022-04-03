@@ -9,7 +9,7 @@ public class Manager extends Staff {
     //CONSTRUCTOR
     //===========
     public Manager(String firstName, String lastName, String id) {
-        super (firstName, lastName, id);
+        super(firstName, lastName, id);
     }
 
     //SETTERS
