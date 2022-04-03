@@ -10,9 +10,7 @@ public class Waiter extends Staff {
     //CONSTRUCTOR
     //===========
     public Waiter(String firstName, String lastName, String staffId) {
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setId(staffId);
+        super (firstName, lastName, staffId);
     }
 
     //METHODS

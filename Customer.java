@@ -18,10 +18,8 @@ public class Customer extends User {
     //CONSTRUCTOR
     //======
     public Customer(String firstName, String lastName, String address, String id) {
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setAddress(address);
-        this.setId(id);
+        super(firstName, lastName, id);
+        this.address = address;
     }
 
     //SETTERS
