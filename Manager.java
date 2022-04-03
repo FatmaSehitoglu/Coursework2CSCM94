@@ -24,16 +24,25 @@ public class Manager extends Staff {
         boolean cont = true;
         while (cont) {
             System.out.println("1. Edit Staff");
+            System.out.println("2. Most Popular Items Report");
+            System.out.println("3. Most Active Customer Report");
             System.out.println("0. Log Out");
 
             int select = Input.intInput(0, 1);
+            switch (select) {
+                case 1:
+                    displayStaff();
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    getMostActiveCustomer();
+                    break;
 
-            if (select == 1) {
-                //1. Edit Staff
-                displayStaff();
-            } else if (select == 0) {
-                //0. Exit Program
-                cont = false;
+                case 0:
+                    cont = false;
+                    break;
             }
         }
     }
@@ -105,9 +114,19 @@ public class Manager extends Staff {
 
     //public void approveEvent() {} (not implemented)
 
-    public Customer getMostActiveCustomer() {
+    public void getMostActiveCustomer() {
         Customer mostActive = Database.mostActiveCustomer();
-        return mostActive;
+        int sum = 0;
+        for(int i = 0; i<Database.getOrderHistory().size(); i++) {
+            if(mostActive.getId() == Database.getOrderHistory().get(i).getCustomID()) {
+                sum = sum +1;
+            }
+        }
+        System.out.println("The Most Active Customer: " + 
+        mostActive.getFirstName() +
+        " " + mostActive.getLastName() +
+        " with " + sum +
+        " many orders." );
     }
 
     @Override
