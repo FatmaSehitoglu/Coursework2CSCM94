@@ -74,6 +74,16 @@ public class Database {
     //ORDER DATABASE
     //===== ========
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();
+    
+    public static ArrayList<Order> delivery(ArrayList<Order> orderHistory){
+        ArrayList<Order> deliveryList = new ArrayList<>();
+        for (Order order : orderHistory){
+            if(order.getClass() == Delivery.class){
+                deliveryList.add(order);
+            }
+        }
+        return deliveryList;
+    }
 
     public static void addToOrderHistory(Order newOrder) {
         orderHistory.add(newOrder);
