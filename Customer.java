@@ -124,7 +124,7 @@ public class Customer extends User {
     }
 
     public void placeDeliveryOrder() {
-        /*System.out.println("Please select items for your Delivery order");
+        System.out.println("Please select items for your Delivery order");
         ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
         selection = Menu.selectFromMenu();
         boolean cont = true;
@@ -134,9 +134,12 @@ public class Customer extends User {
         int select = Input.intInput(1, 2);
         String address = "";
         if (select == 1) {
-
-        
-        }*/
+            address = this.address;
+        } else {
+            System.out.println("Enter delivery address: ");
+            address = Input.stringInput();
+        }
+        Database.newOrder(new Delivery(this.id, selection, false, address, ""));
     }
 
     public void placeTakeAwayOrder() {
