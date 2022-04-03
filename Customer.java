@@ -73,13 +73,12 @@ public class Customer extends User {
             switch (select) {
                 case 1:
                     requestBooking();
-
                     break;
                 case 2:
-                    
+                    cancelBooking();
                     break;
                 case 3:
-                    
+                    placeDeliveryOrder();
                     break;
                 case 4:
                     placeTakeAwayOrder();
@@ -120,14 +119,32 @@ public class Customer extends User {
     }
 
     public void cancelBooking() {
-        //add code here
+        boolean cont = true;
+        while (cont) {
+            ArrayList<Booking> bookings = Database.getBookings(this.id);
+            for (int i = 0; i < bookings.size(); i++) {
+                System.out.println((i + 1) + ". " + bookings.get(i).toString());
+            }
+            System.out.println("0. Back");
+            int select = Input.intInput(0, bookings.size());
+            if (select == 0) {
+                cont = false;
+            } else {
+                System.out.println("Are you sure you want to delete this booking?");
+                System.out.println("1. YES");
+                System.out.println("0. NO");
+                select = Input.intInput(0, 1);
+                if (select == 1) {
+                    Database.removeBooking(bookings.get(select + 1));
+                }
+            }
+        }
     }
 
     public void placeDeliveryOrder() {
         System.out.println("Please select items for your Delivery order");
         ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
         selection = Menu.selectFromMenu();
-        boolean cont = true;
         System.out.println(this.getAddress() + "\n");
         System.out.println("1. Use this address");
         System.out.println("2. Input different address");
