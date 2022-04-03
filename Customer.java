@@ -70,7 +70,8 @@ public class Customer extends User {
             int select = Input.intInput(0,4 );
             switch (select) {
                 case 1:
-                    
+                    requestBooking();
+
                     break;
                 case 2:
                     
@@ -92,17 +93,25 @@ public class Customer extends User {
         }
     } 
 
-    public void requestBooking(String date, String time, int noOfGuests) {
-        /**
-         * @params String date
-         * @params String time
-         * @params int noOfGuests
-         * @return none
-         */
-        String id = this.getId();
-        Booking newBooking = new Booking(date, time, id, noOfGuests);
-        Database.addToBookingHistory(newBooking);
-        
+    public void requestBooking() {
+        String date;
+        String time;
+        int noOfguests;
+        int duration;
+        System.out.println("Please enter the date of your booking");
+        date = Input.stringInput();
+        System.out.println("Please enter the time of your booking");
+        time = Input.stringInput();
+        System.out.println("Please enter the number of guests");
+        noOfguests = Input.intInput(1, 100);
+        System.out.println("Press 1 if you want to keep a 1 hour booking and 2 if you want to change the duration of the booking");
+        duration = Input.intInput(1, 2);
+        if(duration == 2) {
+            System.out.println("How many hours would you like the booking to be?");
+            duration = Input.intInput(1, 12);
+        }
+        Booking booking = new Booking(date, time, this.id, false, noOfguests, duration);
+        Database.newBooking(booking);
     }
 
     public void cancelBooking() {
