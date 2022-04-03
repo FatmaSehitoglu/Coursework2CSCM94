@@ -34,7 +34,7 @@ public class Manager extends Staff {
                     displayStaff();
                     break;
                 case 2:
-                    
+                    getMostPopularItems();
                     break;
                 case 3:
                     getMostActiveCustomer();
@@ -181,6 +181,32 @@ public class Manager extends Staff {
         " " + mostActive.getLastName() +
         " with " + sum +
         " many orders." );
+    }
+    public void getMostPopularItems() {
+        int max = 0;
+        String maxName = "";
+        System.out.println("Popularity Of Each Menu Item:");
+        for(int i=0; i<Database.getMenu().size(); i++) {
+            int sum = 0;
+            MenuItem item = Database.getMenu().get(i);
+            int itemID= item.getID();
+            for(int k=0; k<Database.getOrderHistory().size(); k++) {
+                for(int l=0; l<Database.getOrderHistory().get(k).getItems().size(); l++) {
+                    if(itemID == (Database.getOrderHistory().get(k).getItems().get(l).getID())) {
+                        sum = sum + 1;
+                    }
+                }
+            }
+            if(sum > max) {
+                max = sum;
+                maxName = item.getName();
+            }
+            System.out.println(item.getID() + " " +
+            item.getName() + " -> " + sum);
+        }
+        System.out.println("The most popular item is " +
+        maxName + " with " +
+        max + " times ordered." );
     }
 
     @Override
