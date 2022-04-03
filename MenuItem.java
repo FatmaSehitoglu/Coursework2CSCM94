@@ -22,7 +22,7 @@ public class MenuItem {
     }
 
     public String getPrice() {
-        return Price;
+        return price;
     }
 
     public void setPrice(String price) {
