@@ -13,6 +13,16 @@ public class Takeaway extends Order{
         super(customID, items, approval);
     }
 
+    /**
+     *
+     * @param customID
+     * @param items
+     * @param orderComplete
+     * @param time
+     * @param chefComplete
+     * @param approval
+     * @param arriveTime
+     */
     public Takeaway(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, String arriveTime) {
         super(customID, items, approval);
         this.orderComplete = orderComplete;
