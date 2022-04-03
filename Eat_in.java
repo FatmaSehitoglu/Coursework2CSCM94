@@ -36,24 +36,29 @@ public class Eat_in extends Order{
         this.waiterID = waiterID;
     }
 
-
-
-    public int getTableID() {
-        return tableID;
-    }
-
+    //SETTERS
+    //=======
     public void setTableID(int tableID) {
         this.tableID = tableID;
+        Database.refreshOrders();
+    }
+
+    public void setWaiterID(String waiterID) {
+        this.waiterID = waiterID;
+        Database.refreshOrders();
+    }
+
+    //GETTERS
+    //=======
+    public int getTableID() {
+        return tableID;
     }
 
     public String getWaiterID() {
         return waiterID;
     }
 
-    public void setWaiterID(String waiterID) {
-        this.waiterID = waiterID;
-    }
-
+    
     @Override
     public String toString() {
         return "Eat_in{" +

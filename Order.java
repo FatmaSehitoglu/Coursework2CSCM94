@@ -9,7 +9,8 @@ public abstract class Order {
     public boolean chefComplete;
     public boolean approval;
 
-
+    //CONSTRUCTORS
+    //============
 
     public Order(String customID, ArrayList<MenuItem> items, boolean approval) {
         this.customID = customID;
@@ -20,52 +21,71 @@ public abstract class Order {
         this.chefComplete = false;
     }
 
-    public String getCustomID() {
-        return customID;
+    public Order(String customID, ArrayList<MenuItem> items, boolean approval, LocalDateTime time, boolean orderComplete, boolean chefComplete) {
+        this.customID = customID;
+        this.items = items;
+        this.approval = approval;
+        this.time = time;
+        this.orderComplete = orderComplete;
+        this.chefComplete = chefComplete;
     }
 
+    //SETTERS
+    //=======
     public void setCustomID(String customID) {
         this.customID = customID;
-    }
-
-    public ArrayList<MenuItem> getItems() {
-        return items;
+        Database.refreshOrders();
     }
 
     public void setItems(ArrayList<MenuItem> items) {
         this.items = items;
+        Database.refreshOrders();
     }
+    
+    public void setOrderComplete(boolean orderComplete) {
+        this.orderComplete = orderComplete;
+        Database.refreshOrders();
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+        Database.refreshOrders();
+    }
+
+    public void setChefComplete(boolean chefComplete) {
+        this.chefComplete = chefComplete;
+        Database.refreshOrders();
+    }
+
+    public void setApproval(boolean approval) {
+        this.approval = approval;
+        Database.refreshOrders();
+    }
+
+    //GETTERS
+    //=======
+    public String getCustomID() {
+        return customID;
+    }
+
+    public ArrayList<MenuItem> getItems() {
+        return items;
+    } 
 
     public boolean isOrderComplete() {
         return orderComplete;
     }
 
-    public void setOrderComplete(boolean orderComplete) {
-        this.orderComplete = orderComplete;
-    }
-
     public LocalDateTime getTime() {
         return time;
-    }
-
-    public void setTime(LocalDateTime time) {
-        this.time = time;
-    }
+    }   
 
     public boolean isChefComplete() {
         return chefComplete;
     }
 
-    public void setChefComplete(boolean chefComplete) {
-        this.chefComplete = chefComplete;
-    }
-
     public boolean isApproval() {
         return approval;
-    }
-
-    public void setApproval(boolean approval) {
-        this.approval = approval;
     }
 
     @Override

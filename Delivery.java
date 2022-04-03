@@ -32,30 +32,38 @@ public class Delivery extends Order{
         this.driveComplete = driveComplete;
     }
 
-
-    public String getAddress() {
-        return address;
-    }
-
+    //SETTERS
+    //=======
     public void setAddress(String address) {
         this.address = address;
+        Database.refreshOrders();
+    }
+
+    public void setDriveID(String driveID) {
+        this.driveID = driveID;
+        Database.refreshOrders();
+    }
+
+    public void setDriveComplete(boolean driveComplete) {
+        this.driveComplete = driveComplete;
+        Database.refreshOrders();
+    }
+
+    //GETTERS
+    //=======
+    public String getAddress() {
+        return address;   
     }
 
     public String getDriveID() {
         return driveID;
     }
 
-    public void setDriveID(String driveID) {
-        this.driveID = driveID;
-    }
-
     public boolean isDriveComplete() {
         return driveComplete;
     }
 
-    public void setDriveComplete(boolean driveComplete) {
-        this.driveComplete = driveComplete;
-    }
+   
 
 
     /**
