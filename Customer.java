@@ -1,5 +1,6 @@
 //import javafx.scene.control.Alert;
-
+import java.util.ArrayList;
+import java.time.LocalDateTime;
 public class Customer extends User {
 
     //FIELDS
@@ -123,7 +124,13 @@ public class Customer extends User {
     }
 
     public void placeTakeAwayOrder() {
-        //add code here
+        System.out.println("Please select items for your Take Away order");
+        ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
+        selection = Menu.selectFromMenu();
+        System.out.println("Please enter the pick up time for your order");
+        String time = Input.stringInput();
+        Takeaway order = new Takeaway(this.id, selection, false, LocalDateTime.now(), false, true, time);
+        Database.newOrder(order);
     }
 
     @Override
