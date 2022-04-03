@@ -26,7 +26,7 @@ public class Input {
     }
 
     /**
-     * <h1>This method creates an input scanner for a String</h1>
+     * <h2>This method creates an input scanner for a String</h2>
      * @return String input
      */
     public static String stringInput(){
