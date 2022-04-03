@@ -9,9 +9,7 @@ public class Chef extends Staff {
     //CONSTRUCTOR
     //===========
     public Chef(String firstName, String lastName, String id) {
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setId(id);
+        super (firstName, lastName, id);
     }
 
     //SETTERS

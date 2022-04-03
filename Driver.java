@@ -16,9 +16,7 @@ public class Driver extends Staff {
     //CONSTRUCTOR
     //===========
     public Driver(String firstName, String lastName, String id) {
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setId(id);
+        super (firstName, lastName, id);
     }
 
     //METHODS

@@ -5,6 +5,12 @@ public abstract class User {
     public String lastName;
     public String id;
 
+    public User (String firstName, String lastName, String id) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
+    }
+
     //SETTERS
     //=======
     public void setFirstName(String firstName) {
