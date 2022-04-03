@@ -1,4 +1,4 @@
-import javafx.scene.control.Alert;
+//import javafx.scene.control.Alert;
 
 public class Customer extends User {
 
