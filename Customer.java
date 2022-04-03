@@ -44,10 +44,13 @@ public class Customer extends User {
     //public void joinEvent() {} (not implemented)
 
     public void displayMainMenu() {
-        /**
-         * @params none
-         */@return none
-        System.out.println("\nHello customer! Functionality to follow...\n");
+        boolean cont = true;
+        while (cont) {
+            //request booking
+            //cancel booking
+            //place delivery order
+            //place takeaway order
+        }
     } 
 
     public void requestBooking(String date, String time, int noOfGuests) {
