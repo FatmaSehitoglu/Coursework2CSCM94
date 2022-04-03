@@ -65,6 +65,11 @@ public class Database {
         return orderHistory;
     }
 
+    public static void newOrder(Order newOrder) {
+        addToOrderHistory(newOrder);
+        writeOrder(newOrder);
+    }
+
     public static void refreshOrders() {
         FileManager.clearFile("EatInOrderDB.txt");
         FileManager.clearFile("TakeawayOrderDB.txt");
