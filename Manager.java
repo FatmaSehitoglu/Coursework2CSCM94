@@ -28,7 +28,7 @@ public class Manager extends Staff {
             System.out.println("3. Most Active Customer Report");
             System.out.println("0. Log Out");
 
-            int select = Input.intInput(0, 1);
+            int select = Input.intInput(0, 3);
             switch (select) {
                 case 1:
                     displayStaff();
@@ -172,8 +172,8 @@ public class Manager extends Staff {
         Customer mostActive = Database.mostActiveCustomer();
         int sum = 0;
         for(int i = 0; i<Database.getOrderHistory().size(); i++) {
-            if(mostActive.getId() == Database.getOrderHistory().get(i).getCustomID()) {
-                sum = sum +1;
+            if(mostActive.getID().contentEquals(Database.getOrderHistory().get(i).getCustomID()) ) {
+                sum = sum + 1;
             }
         }
         System.out.println("The Most Active Customer: " + 

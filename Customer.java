@@ -52,6 +52,9 @@ public class Customer extends User {
     public String getAddress() {
         return this.address;
     }
+    public String getID() {
+        return this.id;
+    }
 
     //METHODS
     //=======
