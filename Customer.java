@@ -46,7 +46,7 @@ public class Customer extends User {
     public void displayMainMenu() {
         /**
          * @params none
-         */@return none
+         @return none*/
         System.out.println("\nHello customer! Functionality to follow...\n");
     } 
 
