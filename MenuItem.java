@@ -7,6 +7,15 @@ public class MenuItem {
 
     //CONSTRUCTOR
     //===========
+
+    /**
+     *
+     * @param ID
+     * @param price
+     * @param name
+     * @param inMenu
+     * @param isSpecial
+     */
     public MenuItem(int ID, String price, String name, Boolean inMenu, Boolean isSpecial) {
         this.ID = ID;
         this.price = price;

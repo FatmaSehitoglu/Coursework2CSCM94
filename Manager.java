@@ -20,6 +20,10 @@ public class Manager extends Staff {
    
     //METHODS
     //=======
+
+    /**
+     * <h1>A method to display the main menu</h1>
+     */
     public void displayMainMenu() {
         boolean cont = true;
         while (cont) {
@@ -47,6 +51,9 @@ public class Manager extends Staff {
         }
     }
 
+    /**
+     * <h2>A method to allow the manager to add staff members</h2>
+     */
     public void displayStaff() {
         boolean cont = true;
         while (cont) {
@@ -71,6 +78,9 @@ public class Manager extends Staff {
         } 
     }
 
+    /**
+     * <h3>A method to choose the type of staff to be added</h3>
+     */
     public void addStaff() {
         String firstName = "";
         String lastName = "";
@@ -104,6 +114,10 @@ public class Manager extends Staff {
         }
     }
 
+    /**
+     * <h4>A method that allows manager to remove staff</h4>
+     * @param staff
+     */
     public void removeStaff(Staff staff) {
 
         if (Database.removeStaffFromDatabase(staff.getId())){
@@ -113,6 +127,10 @@ public class Manager extends Staff {
         }
     }
 
+    /**
+     * <h5>A method that lets the manager edit staff</h5>
+     * @param n
+     */
     public void editStaff(int n) {
         Input.intInput(1,4);
         int choose;
@@ -168,6 +186,9 @@ public class Manager extends Staff {
 
     //public void approveEvent() {} (not implemented)
 
+    /**
+     * <h6>A method to display the most active customer</h6>
+     */
     public void getMostActiveCustomer() {
         Customer mostActive = Database.mostActiveCustomer();
         int sum = 0;
@@ -182,6 +203,10 @@ public class Manager extends Staff {
         " with " + sum +
         " many orders." );
     }
+
+    /**
+     * <h7>A method to show the most popular items</h7>
+     */
     public void getMostPopularItems() {
         int max = 0;
         String maxName = "";
