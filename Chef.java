@@ -35,7 +35,7 @@ public class Chef extends Staff {
         System.out.println("Describe the item you are adding: ");
         description = Input.stringInput();
         MenuItem newItem = new MenuItem(id, description, name, true, special);
-        Database.menuItems.add(newItem);
+        Database.newMenuItem(newItem);
     }
 
     
