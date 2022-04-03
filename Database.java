@@ -252,6 +252,18 @@ public class Database {
         }
         return null;
     }
+    
+     public static boolean romoveStaffFromDatabase(String ID) {
+
+        for (Staff a: staffList){
+            if (a.getId() == ID){
+                staffList.remove(a);
+                return true;
+            }
+        }
+        return false;
+
+    }
 
     //MENU ITEMS DATABASE
     //==== ===== ========
