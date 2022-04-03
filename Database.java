@@ -7,6 +7,7 @@ public class Database {
         populateStaff();
         populateMenuItems();
         populateBookings();
+        populateOrders();
     }
 
     /**
@@ -30,6 +31,13 @@ public class Database {
         return bookingHistory;
     }
 
+    public static void refreshBookings() {
+        Filemanager.clearFile("BookingDB.txt");
+        for (int i = 0; i < bookingHistory.size(); i++) {
+            writeBooking(bookingHistory.get(i));
+        }
+    }
+
     public static void writeBooking(Booking booking) {
         FileManager.writeToFile("BookingDb.txt", booking.toDataString());
     }
@@ -40,6 +48,11 @@ public class Database {
             addToBookingHistory(new Booking(str[i][0], str[i][1], str[i][2], Boolean.parseBoolean(str[i][3]), Integer.parseInt(str[i][4]), Integer.parseInt(str[i][5])));
         }
     }
+
+    public static void updateBookings() {
+        
+    }
+
 
     //ORDER DATABASE
     //===== ========

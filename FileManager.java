@@ -90,9 +90,16 @@ public class FileManager {
         return output;
     }
 
-    public static void emptyFile(String filename) {
-        File file = new File(filename);
-        //FileWriter writer = new FileWriter(filename, true);
+    public static void clearFile(String filename) {
+        try {    
+            FileWriter writer = new FileWriter(filename, true);
+            writer.write("");
+            writer.close();
+
+        } catch (IOException e) {
+            System.out.println("An error occurred");
+            e.printStackTrace();
+        }
     }
 
     public static String LocalDateTimeToString(LocalDateTime ldt) {
