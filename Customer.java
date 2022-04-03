@@ -46,10 +46,33 @@ public class Customer extends User {
     public void displayMainMenu() {
         boolean cont = true;
         while (cont) {
+            System.out.println("1. Request a new Booking");
+            System.out.println("2. Cancel an existing Booking");
+            System.out.println("3. Place a delivery order");
+            System.out.println("4. Place a takeaway order");
+            System.out.println("0. Exit");
+            int select = Input.intInput(0,4 );
+            switch (select) {
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+
+                    break;
+                case 0:
+                    cont = false;
+                    break;
             //request booking
             //cancel booking
             //place delivery order
             //place takeaway order
+            }
         }
     } 
 

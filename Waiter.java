@@ -79,7 +79,7 @@ public class Waiter extends Staff {
                 case 2:
                     System.out.println("Select an order to cancel");
                     int cancel = Input.intInput(1, Database.orderHistory.size()+1);
-                    cancelOrder(Database.orderHistory.get(cancel));
+                    cancelOrder(Database.orderHistory.get(cancel-1));
                     break;
                 case 0:
                     con = 0;
