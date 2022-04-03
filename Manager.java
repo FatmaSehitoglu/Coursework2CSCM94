@@ -104,12 +104,70 @@ public class Manager extends Staff {
         }
     }
 
-    public void removeStaff() {
-        //add code here
+    public void removeStaff(Staff staff) {
+
+        if (romoveStaffFromDatabase(staff.getId())){
+            System.out.println("Delete the success");
+        }else {
+            System.out.println("Delete failed");
+        }
     }
 
     public void editStaff(int n) {
-        //add code here
+        Scanner sc = new Scanner(System.in);
+        int choose;
+        String change;
+        Staff staff =  Database.staffList.get(n);
+        System.out.println("What would you like to change?");
+        System.out.println("1. change firstname");
+        System.out.println("2. change lastname");
+        System.out.println("3. change id");
+        System.out.println("4. remove staff");
+
+        Lo:
+        while (true){
+            System.out.println("Please enter your choice (1,2,3):");
+            choose = sc.nextInt();
+            switch (choose){
+                case 1:
+                    System.out.println("Please enter new firstname:");
+                    change = sc.next();
+                    staff.setFirstName(change);
+                    System.out.println("success!");
+                    break;
+                case 2:
+                    System.out.println("Please enter new lastname:");
+                    change = sc.next();
+                    staff.setLastName(change);
+                    System.out.println("success!");
+                    break;
+                case 3:
+                    System.out.println("Please enter new id:");
+                    change = sc.next();
+                    staff.setId(change);
+                    System.out.println("success!");
+                    break;
+                case 4:
+                    lo:
+                    while (true){
+                        System.out.println("Are you sure you want to delete him? (yes or no)");
+                        change = sc.next();
+                        if (change.equalsIgnoreCase("yes")) {
+                            removeStaff(staff);
+                            break Lo;
+                        }else if (change.equalsIgnoreCase("no")){
+                            continue Lo;
+                        }else {
+                            System.out.println("Incorrect input. Please try again");
+                            continue lo;
+                        }
+                    }
+
+                default:
+                    System.out.println("Incorrect input. Please try again");
+                    continue;
+            }
+        }
     }
 
     //public void approveEvent() {} (not implemented)
