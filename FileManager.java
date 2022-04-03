@@ -37,6 +37,7 @@ public class FileManager {
     }
 
     /**
+     * <h1>A method to show the orrder history</h1>
      * @param String filename
      * @param String customerID
      * @see IOException
@@ -60,6 +61,12 @@ public class FileManager {
         }
     }
 
+    /**
+     * <h2>A method that loads the data from the save fail(database)</h2>
+     * @param filename
+     * @param n
+     * @return
+     */
     public static String[][] readFromFile(String filename, int n) {
         ArrayList<String> list = new ArrayList<>();
         try {
@@ -90,6 +97,10 @@ public class FileManager {
         return output;
     }
 
+    /**
+     * <h3>A method to change the database</h3>
+     * @param filename
+     */
     public static void clearFile(String filename) {
         try {    
             FileWriter writer = new FileWriter(filename, true);
