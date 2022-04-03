@@ -78,6 +78,11 @@ public class Customer extends User {
         //add code here
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s %s, %s", firstName, lastName, address);
+    }
+
    
 
     public String toDataString() {
