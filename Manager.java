@@ -114,7 +114,7 @@ public class Manager extends Staff {
     }
 
     public void editStaff(int n) {
-        Scanner sc = new Scanner(System.in);
+        Input.intInput(1,4);
         int choose;
         String change;
         Staff staff =  Database.staffList.get(n);
@@ -127,23 +127,23 @@ public class Manager extends Staff {
         Lo:
         while (true){
             System.out.println("Please enter your choice (1,2,3):");
-            choose = sc.nextInt();
+            choose = Input.intInput(1,4);
             switch (choose){
                 case 1:
                     System.out.println("Please enter new firstname:");
-                    change = sc.next();
+                    change = Input.stringInput();
                     staff.setFirstName(change);
                     System.out.println("success!");
                     break;
                 case 2:
                     System.out.println("Please enter new lastname:");
-                    change = sc.next();
+                    change = Input.stringInput();
                     staff.setLastName(change);
                     System.out.println("success!");
                     break;
                 case 3:
                     System.out.println("Please enter new id:");
-                    change = sc.next();
+                    change = Input.stringInput();
                     staff.setId(change);
                     System.out.println("success!");
                     break;
@@ -151,7 +151,7 @@ public class Manager extends Staff {
                     lo:
                     while (true){
                         System.out.println("Are you sure you want to delete him? (yes or no)");
-                        change = sc.next();
+                        change = Input.stringInput();
                         if (change.equalsIgnoreCase("yes")) {
                             removeStaff(staff);
                             break Lo;
@@ -162,10 +162,6 @@ public class Manager extends Staff {
                             continue lo;
                         }
                     }
-
-                default:
-                    System.out.println("Incorrect input. Please try again");
-                    continue;
             }
         }
     }
