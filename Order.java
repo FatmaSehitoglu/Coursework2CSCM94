@@ -1,6 +1,5 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-public abstract class Order {
     /**
      * <h2>Order class</h2>
      * Superclass for Eat_in, Delivery and Takeaway
@@ -8,9 +7,12 @@ public abstract class Order {
      * @author Fatma Sehitoglu
      * @version 1.0
      */
+    public abstract class Order {
+   
 
     //FIELDS
     //======
+    
     public String customID;
     public ArrayList<MenuItem> items;
     public boolean orderComplete;
