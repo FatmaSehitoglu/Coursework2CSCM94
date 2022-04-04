@@ -101,7 +101,7 @@ public class Waiter extends Staff {
                     Database.getOrderHistory().get(app - 1).setApproval(true);
                     System.out.println("Choose a driver to this delivery");
                     for(int i = 0; i< Database.getStaffCount(); i++) {
-                        if(Database.getStaffList().get(i).getClass() == Waiter.class) {
+                        if(Database.getStaffList().get(i).getClass() == Driver.class) {
                             System.out.println(i + "- " + 
                             Database.getStaffList().get(i).toString());
                         }
