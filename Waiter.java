@@ -59,6 +59,8 @@ public class Waiter extends Staff {
                 case 0:
                     cont = false;
                     break;
+                default:
+                    break;
             }
         }        
     }
@@ -81,9 +83,9 @@ public class Waiter extends Staff {
      */
     public void viewActiveOrders() {
         int con = -1;
-        while(!(con==0)) {
-            for(int i=0;i<Database.getOrderHistory().size(); i++) {
-                if(Database.getOrderHistory().get(i).isOrderComplete() == false) {
+        while (!(con==0)) {
+            for (int i=0; i<Database.getOrderHistory().size(); i++) {
+                if (!Database.getOrderHistory().get(i).isOrderComplete()) {
                     System.out.println((i+1) + "- " + Database.getOrderHistory().get(i).toString());
                 } 
             }
@@ -105,6 +107,8 @@ public class Waiter extends Staff {
                 case 0:
                     con = 0;
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -114,14 +118,14 @@ public class Waiter extends Staff {
      */
     public void viewBookings() {
         int bookingToApprove = -1;
-        while(!(bookingToApprove==0)) {
+        while (!(bookingToApprove==0)) {
             System.out.println("Select a Booking to Approve");
-            for(int i = 0; i<Database.getBookingHistory().size(); i++) {
+            for (int i = 0; i<Database.getBookingHistory().size(); i++) {
                 System.out.println(i+1 + " : " + Database.getBookingHistory().get(i).toString());
             }
             System.out.println("Select a Booking to Approve or press 0 to go back");
             bookingToApprove = Input.intInput(0, Database.getBookingHistory().size()+1);
-            if(!(bookingToApprove == 0)) {
+            if (!(bookingToApprove == 0)) {
                 Database.getBookingHistory().get(bookingToApprove-1).setApproved(true);
             }else {
                 break;
@@ -134,8 +138,8 @@ public class Waiter extends Staff {
      * @param Order order
      */
     public void cancelOrder(Order order) {
-        for(int i=0; i<Database.getOrderHistory().size(); i++) {
-            if(order.equals(Database.getOrderHistory().get(i))) {
+        for (int i=0; i<Database.getOrderHistory().size(); i++) {
+            if (order.equals(Database.getOrderHistory().get(i))) {
                 Database.getOrderHistory().remove(i);
             }
         }
