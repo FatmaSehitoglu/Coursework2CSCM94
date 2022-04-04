@@ -139,9 +139,10 @@ public class FileManager {
                 s += String.format(",%d", items.get(i).getId());
             }
             return s;
+        } else {
+            return "";
         }
-        return "";
-    }
+    }   
 
     /**
      * Converts a list of MenuItem IDs into a MenuItem ArrayList (for reading from file)
@@ -151,8 +152,10 @@ public class FileManager {
     public static ArrayList<MenuItem> getItemsFromIds(String str) {
         ArrayList<MenuItem> items = new ArrayList<>();
         String[] ids = str.split(",");
-        for (int i = 0; i < ids.length; i++) {
-            items.add(Database.getItem(Integer.parseInt(ids[i])));
+        if (ids[0] != ""){
+            for (int i = 0; i < ids.length; i++) {
+                items.add(Database.getItem(Integer.parseInt(ids[i])));
+            }
         }
         return items;
     }
