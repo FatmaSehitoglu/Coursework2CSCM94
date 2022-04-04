@@ -133,11 +133,14 @@ public class FileManager {
      * @return      the MenuItem IDs as a String, delimited by commas
      */
     public static String getItemIds(ArrayList<MenuItem> items) {
-        String s = String.format("%d", items.get(0).getId());
-        for (int i = 1; i < items.size(); i++) {
-            s += String.format(",%d", items.get(i).getId());
+        if (items.size() > 0) {
+            String s = String.format("%d", items.get(0).getId());
+            for (int i = 1; i < items.size(); i++) {
+                s += String.format(",%d", items.get(i).getId());
+            }
+            return s;
         }
-        return s;
+        return "";
     }
 
     /**
