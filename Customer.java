@@ -1,6 +1,10 @@
 //import javafx.scene.control.Alert;
 import java.util.ArrayList;
 import java.time.LocalDateTime;
+
+/**
+ * The type Customer.
+ */
 public class Customer extends User {
 
     //FIELDS
@@ -12,13 +16,14 @@ public class Customer extends User {
     //private Order[] orderHistory;
 
     /**
+     * Instantiates a new Customer.
      *
-     * @param firstName
-     * @param lastName
-     * @param address
-     * @param id
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param address   the address
+     * @param id        the id
      */
-    //CONSTRUCTOR
+//CONSTRUCTOR
     //======
     public Customer(String firstName, String lastName, String address, String id) {
         super(firstName, lastName, id);
@@ -42,16 +47,32 @@ public class Customer extends User {
         Database.refreshCustomers();
     }
 
+    /**
+     * Sets address.
+     *
+     * @param address the address
+     */
     public void setAddress(String address) {
         this.address = address;
         Database.refreshCustomers();
     }
 
-    //GETTERS
+    /**
+     * Gets address.
+     *
+     * @return the address
+     */
+//GETTERS
     //=======
     public String getAddress() {
         return this.address;
     }
+
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public String getID() {
         return this.id;
     }
@@ -98,8 +119,11 @@ public class Customer extends User {
             //place takeaway order
             }
         }
-    } 
+    }
 
+    /**
+     * Request booking.
+     */
     public void requestBooking() {
         String date;
         String time;
@@ -121,6 +145,9 @@ public class Customer extends User {
         Database.newBooking(booking);
     }
 
+    /**
+     * Cancel booking.
+     */
     public void cancelBooking() {
         boolean cont = true;
         while (cont) {
@@ -144,6 +171,9 @@ public class Customer extends User {
         }
     }
 
+    /**
+     * Place delivery order.
+     */
     public void placeDeliveryOrder() {
         System.out.println("Please select items for your Delivery order");
         ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
@@ -162,6 +192,9 @@ public class Customer extends User {
         Database.newOrder(new Delivery(this.id, selection, false, address, ""));
     }
 
+    /**
+     * Place take away order.
+     */
     public void placeTakeAwayOrder() {
         System.out.println("Please select items for your Take Away order");
         ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
@@ -172,6 +205,9 @@ public class Customer extends User {
         Database.newOrder(order);
     }
 
+    /**
+     * Order history.
+     */
     public void orderHistory() {
         for(int i=0; i<Database.getOrderHistory().size(); i++) {
             String checkingID = Database.getOrderHistory().get(i).getCustomID();
@@ -186,8 +222,12 @@ public class Customer extends User {
         return String.format("%s %s, %s", firstName, lastName, address);
     }
 
-   
 
+    /**
+     * To data string string.
+     *
+     * @return the string
+     */
     public String toDataString() {
         return this.getFirstName() + "|" + this.getLastName() + "|" + this.getAddress() + "|" + this.getId() + "\n";
     }
