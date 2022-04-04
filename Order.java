@@ -1,16 +1,15 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
- /**
-* <h1>Order class</h1>
-* Abstract superclass for Eat_in, Delivery and Takeaway
-* @author   Niu Zhaoye
-* @version  1.0
-*/
 public abstract class Order {
-   
+    /**
+     * <h1>Order class</h1>
+     * Superclass for Eat_in, Delivery and Takeaway
+     * @author Niu Zhaoye
+     * @version 1.0
+     */
+
     //FIELDS
     //======
-
     public String customID;
     public ArrayList<MenuItem> items;
     public boolean orderComplete;
@@ -23,15 +22,11 @@ public abstract class Order {
 
     /**
      * Constructor for new Orders
-     * @param customID  as a String
-     * @param items     as a MenuItem ArrayList
-     * @param approval  as a boolean
+     * @param customID as a String
+     * @param items as a MenuItem ArrayList
+     * @param approval as a boolean
      */
-    public Order(
-        String customID, 
-        ArrayList<MenuItem> items, 
-        boolean approval
-    ) {
+    public Order(String customID, ArrayList<MenuItem> items, boolean approval) {
         this.customID = customID;
         this.items = items;
         this.approval = approval;
@@ -42,21 +37,14 @@ public abstract class Order {
 
     /**
      * Constructor for Orders read from Database
-     * @param customID      as a String
-     * @param items         as a MenuItem ArrayList
-     * @param approval      as a boolean
-     * @param time          as a LocalDateTime
+     * @param customID as a String
+     * @param items as a MenuItem ArrayList
+     * @param approval as a boolean
+     * @param time as a LocalDateTime
      * @param orderComplete as a boolean
-     * @param chefComplete  as a boolean
+     * @param chefComplete as a boolean
      */
-    public Order(
-        String customID, 
-        ArrayList<MenuItem> items, 
-        boolean approval, 
-        LocalDateTime time, 
-        boolean orderComplete, 
-        boolean chefComplete
-    ) {
+    public Order(String customID, ArrayList<MenuItem> items, boolean approval, LocalDateTime time, boolean orderComplete, boolean chefComplete) {
         this.customID = customID;
         this.items = items;
         this.approval = approval;
@@ -67,9 +55,8 @@ public abstract class Order {
 
     //SETTERS
     //=======
-
     /**
-     * Sets customID
+     * Setter for customID
      * @param customID as a String
      */
     public void setCustomID(String customID) {
@@ -78,7 +65,7 @@ public abstract class Order {
     }
 
     /**
-     * Sets items
+     * Setter for items
      * @param items as a MenuItem ArrayList
      */
     public void setItems(ArrayList<MenuItem> items) {
@@ -87,7 +74,7 @@ public abstract class Order {
     }
     
     /**
-     * Sets orderComplete
+     * Setter for orderComplete
      * @param orderComplete as a boolean
      */
     public void setOrderComplete(boolean orderComplete) {
@@ -96,7 +83,7 @@ public abstract class Order {
     }
 
     /**
-     * Sets time
+     * Setter for time
      * @param time as a LocalDateTime
      */
     public void setTime(LocalDateTime time) {
@@ -105,7 +92,7 @@ public abstract class Order {
     }
 
     /**
-     * Sets chefCompete
+     * Setter for chefCompete
      * @param chefComplete as a boolean
      */
     public void setChefComplete(boolean chefComplete) {
@@ -114,7 +101,7 @@ public abstract class Order {
     }
 
     /**
-     * Sets approval
+     * Setter for approval
      * @param approval as a boolean
      */
     public void setApproval(boolean approval) {
@@ -124,9 +111,8 @@ public abstract class Order {
 
     //GETTERS
     //=======
-
     /**
-     * Gets customID
+     * Getter for customID
      * @return customID as a String
      */
     public String getCustomID() {
@@ -134,7 +120,7 @@ public abstract class Order {
     }
 
     /**
-     * Gets items
+     * Getter for items
      * @return items as a MenuItem ArrayList
      */
     public ArrayList<MenuItem> getItems() {
@@ -142,7 +128,7 @@ public abstract class Order {
     } 
 
     /**
-     * Gets orderComplete
+     * Getter for orderComplete
      * @return orderComplete as a boolean
      */
     public boolean isOrderComplete() {
@@ -150,7 +136,7 @@ public abstract class Order {
     }
 
     /**
-     * Gets time
+     * Getter for time
      * @return time as a LocalDateTime
      */
     public LocalDateTime getTime() {
@@ -158,7 +144,7 @@ public abstract class Order {
     }   
 
     /**
-     * Gets chefComplete
+     * Getter for chefComplete
      * @return chefComplete as a boolean
      */
     public boolean isChefComplete() {
@@ -166,7 +152,7 @@ public abstract class Order {
     }
 
     /**
-     * Gets approval
+     * Getter for approval
      * @return approval as a boolean
      */
     public boolean isApproval() {
