@@ -1,7 +1,7 @@
 /**
  * <h2>The type Booking.</h2>
  * @version 1.0
- * @author Martin and others
+ * @author Martin Dimitrov
  */
 public class Booking {
     private String date;
@@ -55,7 +55,7 @@ public class Booking {
 
     //SETTERS
     //=======
-    
+
     public void setDate(String date) {
         this.date = date;
         Database.refreshBookings();
