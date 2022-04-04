@@ -12,14 +12,19 @@ public class Booking {
     private int duration;
 
     /**
-     * This class is to make the bookings
+     * Constructor for new Booking
      *
      * @param date        the date as a String
      * @param time        the time as a String
      * @param customerID  the customer id as a String
      * @param numOfGuests the num of guests as an int
      */
-    public Booking(String date, String time, String customerID, int numOfGuests) {
+    public Booking(
+        String date, 
+        String time, 
+        String customerID, 
+        int numOfGuests
+    ) {
         this.date = date;
         this.time = time;
         this.customerID = customerID;
@@ -30,7 +35,7 @@ public class Booking {
 
 
     /**
-     * Instantiates a new Booking.
+     * Constructor for Bookings read from Database
      *
      * @param date        the date as a String
      * @param time        the time as a String
@@ -50,6 +55,7 @@ public class Booking {
 
     //SETTERS
     //=======
+    
     public void setDate(String date) {
         this.date = date;
         Database.refreshBookings();
@@ -105,13 +111,15 @@ public class Booking {
         Database.refreshBookings();
     }
 
+    //GETTERS
+    //=======
+
     /**
      * Gets date.
      *
      * @return the date as a String
      */
-//GETTERS
-    //=======
+
     public String getDate() {
         return date;
     }
@@ -162,25 +170,26 @@ public class Booking {
     }
 
     /**
-     * This method formats the output to a string
-     * @return String outpu
+     * Converts Booking to a String (for menu display)
+     * @return Booking as a String
      */
     @Override
     public String toString() {
-        return "Booking{" +
-        "customerID=" + customerID +
-        ", date=" + date +
-        ", time=" + time +
-        ", Guest No=" + numOfGuests +
-        ", duration=" + duration +
-        ", Order Approved=" + approved +
-        '}';
+        String status1 = approved ? "Approved" : "Awaiting approval";
+        return String.format(
+            "Customer ID: %s, Date: %s, Time: %s, Guests: %d, Duration: %d, Status: %s",
+            customerID,
+            date,
+            time,
+            numOfGuests,
+            duration,
+            status1
+        );
     }
 
     /**
-     * This method formats the output
-     *
-     * @return String formatted
+     * Convert Booking to a data String (for database storage)
+     * @return Booking as a data String
      */
     public String toDataString() {
         return String.format(
