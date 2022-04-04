@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
 /**
- * The type Input.
+ * <h2>The type Input.</h2>
  * @version 1.0
  * @author Martin
  */
 public class Input {
 
     /**
-     * <h1>This method checks whether the input is a number</h1>
+     * This method checks whether the input is a number
      *
-     * @param min the min
-     * @param max the max
+     * @param min the min as an int
+     * @param max the max as an int
      * @return int inputInt
      */
     public static int intInput(int min, int max){
@@ -32,9 +32,9 @@ public class Input {
     }
 
     /**
-     * <h2>This method creates an input scanner for a String</h2>
+     * This method creates an input scanner for a String
      *
-     * @return String input
+     * @return String input as a String
      */
     public static String stringInput(){
         Scanner in = new Scanner(System.in);
