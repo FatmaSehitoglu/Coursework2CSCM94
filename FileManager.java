@@ -34,7 +34,6 @@ public class FileManager {
         try {
             FileWriter writer = new FileWriter(filename, true);
             writer.append(data);
-            writer.close();
         } catch (IOException e) {
             System.out.println("An error occurred");
         }
@@ -104,8 +103,6 @@ public class FileManager {
         try {    
             FileWriter writer = new FileWriter(filename, true);
             writer.write("");
-            writer.close();
-
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();
