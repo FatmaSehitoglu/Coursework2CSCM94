@@ -51,6 +51,7 @@ public class Takeaway extends Order{
         return "Takeaway{" +
                 "arriveTime " + arriveTime +
                 " items " + items.toString() +
+                "chefComplete " + chefComplete +
                 " orderComplete " + orderComplete +
                 " }";
     }
