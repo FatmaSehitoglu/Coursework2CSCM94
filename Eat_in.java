@@ -4,20 +4,24 @@ import java.time.format.DateTimeFormatter;
 
 
 /**
- * The type Eat in.
+ * <h1>Eat In class</h1>
+ * A subclass of Order class
+ * @author Niu Zhaoye
+ * @version 1.0
  */
 public class Eat_in extends Order{
+    //FIELDS
+    //======
     private int tableID;
     private String waiterID;
 
     /**
-     * Instantiates a new Eat in.
-     *
-     * @param customID the custom id
-     * @param items    the items
-     * @param approval the approval
-     * @param tableID  the table id
-     * @param waiterID the waiter id
+     * Constructor for new Eat In Orders
+     * @param customID as a String
+     * @param items    as a MenuItem ArrayList
+     * @param approval as a boolean
+     * @param tableID  as an int
+     * @param waiterID as a String
      */
     public Eat_in(String customID, ArrayList<MenuItem> items, boolean approval, int tableID, String waiterID) {
         super(customID, items, approval);
@@ -32,28 +36,15 @@ public class Eat_in extends Order{
     }
 
     /**
-<<<<<<< HEAD
-     * 
-     * @param customID
-     * @param items
-     * @param orderComplete
-     * @param time
-     * @param chefComplete
-     * @param approval
-     * @param tableID
-     * @param waiterID
-=======
-     * Instantiates a new Eat in.
-     *
-     * @param customID      the custom id
-     * @param items         the items
-     * @param orderComplete the order complete
-     * @param time          the time
-     * @param chefComplete  the chef complete
-     * @param approval      the approval
-     * @param tableID       the table id
-     * @param waiterID      the waiter id
->>>>>>> cbd464aed1167f12004785c999a6dab4b3bb39da
+     * Constructor for Eat In Orders read from Database
+     * @param customID      as a String
+     * @param items         as a MenuItem ArrayList
+     * @param orderComplete as a boolean
+     * @param time          as a LocalDateTime
+     * @param chefComplete  as a boolean
+     * @param approval      as a boolean
+     * @param tableID       as an int
+     * @param waiterID      as a String
      */
     public Eat_in(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, int tableID, String waiterID) {
         super(customID, items, approval);
@@ -64,13 +55,14 @@ public class Eat_in extends Order{
         this.waiterID = waiterID;
     }
 
+    //SETTERS
+    //=======
+
     /**
      * Sets table id.
      *
      * @param tableID the table id
      */
-//SETTERS
-    //=======
     public void setTableID(int tableID) {
         this.tableID = tableID;
         Database.refreshOrders();
@@ -107,7 +99,10 @@ public class Eat_in extends Order{
     }
 
     
-
+    /**
+     * toString method for Eat_in
+     * @return Eat_in as a String
+     */
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

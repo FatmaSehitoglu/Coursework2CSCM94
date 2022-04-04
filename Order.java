@@ -1,13 +1,13 @@
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+ /**
+* <h1>Order class</h1>
+* Superclass for Eat_in, Delivery and Takeaway
+* @author   Niu Zhaoye
+* @version  1.0
+*/
 public abstract class Order {
-    /**
-     * <h1>Order class</h1>
-     * Superclass for Eat_in, Delivery and Takeaway
-     * @author Niu Zhaoye
-     * @version 1.0
-     */
-
+   
     //FIELDS
     //======
     public String customID;
@@ -22,9 +22,9 @@ public abstract class Order {
 
     /**
      * Constructor for new Orders
-     * @param customID as a String
-     * @param items as a MenuItem ArrayList
-     * @param approval as a boolean
+     * @param customID  as a String
+     * @param items     as a MenuItem ArrayList
+     * @param approval  as a boolean
      */
     public Order(String customID, ArrayList<MenuItem> items, boolean approval) {
         this.customID = customID;
@@ -37,12 +37,12 @@ public abstract class Order {
 
     /**
      * Constructor for Orders read from Database
-     * @param customID as a String
-     * @param items as a MenuItem ArrayList
-     * @param approval as a boolean
-     * @param time as a LocalDateTime
+     * @param customID      as a String
+     * @param items         as a MenuItem ArrayList
+     * @param approval      as a boolean
+     * @param time          as a LocalDateTime
      * @param orderComplete as a boolean
-     * @param chefComplete as a boolean
+     * @param chefComplete  as a boolean
      */
     public Order(String customID, ArrayList<MenuItem> items, boolean approval, LocalDateTime time, boolean orderComplete, boolean chefComplete) {
         this.customID = customID;
@@ -56,7 +56,7 @@ public abstract class Order {
     //SETTERS
     //=======
     /**
-     * Setter for customID
+     * Sets customID
      * @param customID as a String
      */
     public void setCustomID(String customID) {
@@ -65,7 +65,7 @@ public abstract class Order {
     }
 
     /**
-     * Setter for items
+     * Sets items
      * @param items as a MenuItem ArrayList
      */
     public void setItems(ArrayList<MenuItem> items) {
@@ -74,7 +74,7 @@ public abstract class Order {
     }
     
     /**
-     * Setter for orderComplete
+     * Sets orderComplete
      * @param orderComplete as a boolean
      */
     public void setOrderComplete(boolean orderComplete) {
@@ -83,7 +83,7 @@ public abstract class Order {
     }
 
     /**
-     * Setter for time
+     * Sets time
      * @param time as a LocalDateTime
      */
     public void setTime(LocalDateTime time) {
@@ -92,7 +92,7 @@ public abstract class Order {
     }
 
     /**
-     * Setter for chefCompete
+     * Sets chefCompete
      * @param chefComplete as a boolean
      */
     public void setChefComplete(boolean chefComplete) {
@@ -101,7 +101,7 @@ public abstract class Order {
     }
 
     /**
-     * Setter for approval
+     * Sets approval
      * @param approval as a boolean
      */
     public void setApproval(boolean approval) {
@@ -112,7 +112,7 @@ public abstract class Order {
     //GETTERS
     //=======
     /**
-     * Getter for customID
+     * Gets customID
      * @return customID as a String
      */
     public String getCustomID() {
@@ -120,7 +120,7 @@ public abstract class Order {
     }
 
     /**
-     * Getter for items
+     * Gets items
      * @return items as a MenuItem ArrayList
      */
     public ArrayList<MenuItem> getItems() {
@@ -128,7 +128,7 @@ public abstract class Order {
     } 
 
     /**
-     * Getter for orderComplete
+     * Gets orderComplete
      * @return orderComplete as a boolean
      */
     public boolean isOrderComplete() {
@@ -136,7 +136,7 @@ public abstract class Order {
     }
 
     /**
-     * Getter for time
+     * Gets time
      * @return time as a LocalDateTime
      */
     public LocalDateTime getTime() {
@@ -144,7 +144,7 @@ public abstract class Order {
     }   
 
     /**
-     * Getter for chefComplete
+     * Gets chefComplete
      * @return chefComplete as a boolean
      */
     public boolean isChefComplete() {
@@ -152,7 +152,7 @@ public abstract class Order {
     }
 
     /**
-     * Getter for approval
+     * Gets approval
      * @return approval as a boolean
      */
     public boolean isApproval() {
