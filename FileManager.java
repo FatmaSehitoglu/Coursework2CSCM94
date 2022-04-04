@@ -10,14 +10,19 @@ import java.io.FileReader;
 import java.util.Scanner;
 import java.util.ArrayList;;
 
+/**
+ * The type File manager.
+ */
 public class FileManager {
 
     private static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
 
     /**
-     * @param String filename
-     * @param String data
+     * Write to file.
+     *
+     * @param filename the filename
+     * @param data     the data
      * @return none
      */
     public static void writeToFile(String filename, String data) {
@@ -42,8 +47,10 @@ public class FileManager {
 
     /**
      * <h1>A method to show the orrder history</h1>
-     * @param String filename
-     * @param String customerID
+     *
+     * @param filename   the filename
+     * @param customerID the customer id
+     * @throws IOException the io exception
      * @see IOException
      */
     public static void readOrderHistory(String filename, String customerID) throws IOException {
@@ -67,9 +74,10 @@ public class FileManager {
 
     /**
      * <h2>A method that loads the data from the save fail(database)</h2>
-     * @param filename
-     * @param n
-     * @return
+     *
+     * @param filename the filename
+     * @param n        the n
+     * @return string [ ] [ ]
      */
     public static String[][] readFromFile(String filename, int n) {
         ArrayList<String> list = new ArrayList<>();
@@ -103,7 +111,8 @@ public class FileManager {
 
     /**
      * <h3>A method to change the database</h3>
-     * @param filename
+     *
+     * @param filename the filename
      */
     public static void clearFile(String filename) {
         try {    
@@ -117,14 +126,32 @@ public class FileManager {
         }
     }
 
+    /**
+     * Local date time to string string.
+     *
+     * @param ldt the ldt
+     * @return the string
+     */
     public static String LocalDateTimeToString(LocalDateTime ldt) {
         return ldt.format(formatter);
     }
 
+    /**
+     * String to local date time local date time.
+     *
+     * @param str the str
+     * @return the local date time
+     */
     public static LocalDateTime StringToLocalDateTime(String str) {
         return LocalDateTime.parse(str, formatter);
     }
 
+    /**
+     * Gets item ids.
+     *
+     * @param items the items
+     * @return the item ids
+     */
     public static String getItemIds(ArrayList<MenuItem> items) {
         String s = String.format("%d", items.get(0).getID());
         for (int i = 1; i < items.size(); i++) {
@@ -133,6 +160,12 @@ public class FileManager {
         return s;
     }
 
+    /**
+     * Gets items from ids.
+     *
+     * @param str the str
+     * @return the items from ids
+     */
     public static ArrayList<MenuItem> getItemsFromIds(String str) {
         ArrayList<MenuItem> items = new ArrayList<>();
         String[] ids = str.split(",");
