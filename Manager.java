@@ -65,6 +65,8 @@ public class Manager extends Staff {
                 case 0:
                     cont = false;
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -90,16 +92,16 @@ public class Manager extends Staff {
             }else if (select == 2){
                 System.out.println("Select the staff you want to add hours worked");
                 select = (Input.intInput(3, Database.getStaffCount() + 3)) - 3;
-                System.out.println("How many hours worked would you like to add to " +
-                Database.getStaffList().get(select).getFirstName() +
-                " " + Database.getStaffList().get(select).getLastName() +
-                "'s record?");
+                System.out.println("How many hours worked would you like to add to "
+                        + Database.getStaffList().get(select).getFirstName()
+                        + " " + Database.getStaffList().get(select).getLastName()
+                        + "'s record?");
                 int hour = Input.intInput(1, 100);
                 Database.getStaffList().get(select).incrementHoursWorked(hour);
-                System.out.println(Database.getStaffList().get(select).getFirstName() +
-                " " + Database.getStaffList().get(select).getLastName() + ": " +
-                Database.getStaffList().get(select).getHoursWorked() + 
-                " total hours worked.");
+                System.out.println(Database.getStaffList().get(select).getFirstName()
+                        + " " + Database.getStaffList().get(select).getLastName() + ": "
+                        + Database.getStaffList().get(select).getHoursWorked()
+                        + " total hours worked.");
             
             } else if (select == 0) {
                 //0. Back
@@ -120,7 +122,7 @@ public class Manager extends Staff {
         String id = "";
         int role = -1;
         System.out.println("Enter role:\n1. Manager\n2. Waiter\n3. Chef\n4. Driver");
-        role = Input.intInput(1,4);
+        role = Input.intInput(1, 4);
         System.out.println("Enter first name: ");
         firstName = Input.stringInput();
         System.out.println("Enter last name: ");
@@ -144,6 +146,8 @@ public class Manager extends Staff {
                 Staff newDriver = new Driver(firstName, lastName, id);
                 Database.addNewStaff(newDriver);
                 break;
+            default:
+                break;
         }
     }
 
@@ -165,7 +169,7 @@ public class Manager extends Staff {
      * @param n the index of the Staff member in the Database Staff ArrayList
      */
     public void editStaff(int n) {
-        Input.intInput(1,4);
+        Input.intInput(1, 4);
         int choose;
         String change;
         Staff staff =  Database.getStaffList().get(n);
@@ -178,7 +182,7 @@ public class Manager extends Staff {
         Lo:
         while (true){
             System.out.println("Please enter your choice (1,2,3):");
-            choose = Input.intInput(1,4);
+            choose = Input.intInput(1, 4);
             switch (choose){
                 case 1:
                     System.out.println("Please enter new first name:");
@@ -213,6 +217,8 @@ public class Manager extends Staff {
                             continue lo;
                         }
                     }
+                default:
+                    break;
             }
         }
     }
@@ -225,16 +231,16 @@ public class Manager extends Staff {
     public void getMostActiveCustomer() {
         Customer mostActive = Database.mostActiveCustomer();
         int sum = 0;
-        for(int i = 0; i<Database.getOrderHistory().size(); i++) {
-            if(mostActive.getID().contentEquals(Database.getOrderHistory().get(i).getCustomID()) ) {
+        for (int i = 0; i<Database.getOrderHistory().size(); i++) {
+            if (mostActive.getID().contentEquals(Database.getOrderHistory().get(i).getCustomID())) {
                 sum = sum + 1;
             }
         }
-        System.out.println("The Most Active Customer: " + 
-        mostActive.getFirstName() +
-        " " + mostActive.getLastName() +
-        " with " + sum +
-        " orders." );
+        System.out.println("The Most Active Customer: "
+                + mostActive.getFirstName()
+                + " " + mostActive.getLastName()
+                + " with " + sum
+                + " orders.");
     }
 
     /**
@@ -244,27 +250,27 @@ public class Manager extends Staff {
         int max = 0;
         String maxName = "";
         System.out.println("Popularity Of Each Menu Item:");
-        for(int i=0; i<Database.getMenu().size(); i++) {
+        for (int i=0; i<Database.getMenu().size(); i++) {
             int sum = 0;
             MenuItem item = Database.getMenu().get(i);
             int itemID= item.getID();
-            for(int k=0; k<Database.getOrderHistory().size(); k++) {
-                for(int l=0; l<Database.getOrderHistory().get(k).getItems().size(); l++) {
-                    if(itemID == (Database.getOrderHistory().get(k).getItems().get(l).getID())) {
+            for (int k=0; k<Database.getOrderHistory().size(); k++) {
+                for (int l=0; l<Database.getOrderHistory().get(k).getItems().size(); l++) {
+                    if (itemID == (Database.getOrderHistory().get(k).getItems().get(l).getID())) {
                         sum = sum + 1;
                     }
                 }
             }
-            if(sum > max) {
+            if (sum > max) {
                 max = sum;
                 maxName = item.getName();
             }
-            System.out.println(item.getID() + " " +
-            item.getName() + " -> " + sum);
+            System.out.println(item.getID() + " "
+                    + item.getName() + " -> " + sum);
         }
-        System.out.println("The most popular item is " +
-        maxName + " with " +
-        max + " times ordered." );
+        System.out.println("The most popular item is "
+                + maxName + " with "
+                + max + " times ordered.");
     }
 
     /**
@@ -273,18 +279,18 @@ public class Manager extends Staff {
     public void mostWorkedStaff() {
         int maxHour = 0;
         int maxIndex = 0;
-        for(int i = 0; i<Database.getStaffCount(); i++) {
-            if(Database.getStaffList().get(i).getHoursWorked() > maxHour) {
+        for (int i = 0; i<Database.getStaffCount(); i++) {
+            if (Database.getStaffList().get(i).getHoursWorked() > maxHour) {
                 maxHour = Database.getStaffList().get(i).getHoursWorked();
                 maxIndex = i;
             }
         }
-        if(maxHour == 0) {
+        if (maxHour == 0) {
             System.out.println("Total Hours worked by all staff is 0 hours");
         }else {
-            System.out.println("The highest number of hours worked is " +
-            maxHour + " by " + Database.getStaffList().get(maxIndex).getFirstName() +
-            " " + Database.getStaffList().get(maxIndex).getLastName() );
+            System.out.println("The highest number of hours worked is "
+                    + maxHour + " by " + Database.getStaffList().get(maxIndex).getFirstName()
+                    + " " + Database.getStaffList().get(maxIndex).getLastName());
         }
     }
 
