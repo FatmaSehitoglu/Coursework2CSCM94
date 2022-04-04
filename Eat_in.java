@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 
 /**
@@ -31,6 +32,17 @@ public class Eat_in extends Order{
     }
 
     /**
+<<<<<<< HEAD
+     * 
+     * @param customID
+     * @param items
+     * @param orderComplete
+     * @param time
+     * @param chefComplete
+     * @param approval
+     * @param tableID
+     * @param waiterID
+=======
      * Instantiates a new Eat in.
      *
      * @param customID      the custom id
@@ -41,6 +53,7 @@ public class Eat_in extends Order{
      * @param approval      the approval
      * @param tableID       the table id
      * @param waiterID      the waiter id
+>>>>>>> cbd464aed1167f12004785c999a6dab4b3bb39da
      */
     public Eat_in(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, int tableID, String waiterID) {
         super(customID, items, approval);
@@ -94,16 +107,14 @@ public class Eat_in extends Order{
     }
 
     
+
     @Override
     public String toString() {
-        return "Eat_in{" +
-                "tableID " + tableID +
-                " waiterID " + waiterID +
-                "customID " + customID +
-                " items " + items.toString() +
-                " orderComplete " + orderComplete +
-                " time " + time +
-                " }";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String time1 = time.format(formatter);
+        String order1 = items.toString();
+        String status1 = orderComplete ? "Complete" : "Incomplete";
+        return String.format("Table %d, Waiter: %s, Customer: %s, Time: %s, Order: %s, Status: %s", tableID, waiterID, customID, time1, order1, status1);
     }
 
 
