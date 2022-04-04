@@ -1,5 +1,7 @@
 /**
- * The type Menu item.
+ * <h2>The type Menu item.</h2>
+ * @author Martin
+ * @version 1.0
  */
 public class MenuItem {
     private int ID;
@@ -14,11 +16,11 @@ public class MenuItem {
     /**
      * Instantiates a new Menu item.
      *
-     * @param ID        the id
-     * @param price     the price
-     * @param name      the name
-     * @param inMenu    the in menu
-     * @param isSpecial the is special
+     * @param ID        the id as an int
+     * @param price     the price as a String
+     * @param name      the name as a String
+     * @param inMenu    the in menu as a Boolean
+     * @param isSpecial the is special as a Boolean
      */
     public MenuItem(int ID, String price, String name, Boolean inMenu, Boolean isSpecial) {
         this.ID = ID;
@@ -31,7 +33,7 @@ public class MenuItem {
     /**
      * Sets id.
      *
-     * @param ID the id
+     * @param ID the id as an int
      */
 //SETTERS
     //=======
@@ -43,7 +45,7 @@ public class MenuItem {
     /**
      * Sets price.
      *
-     * @param price the price
+     * @param price the price as a String
      */
     public void setPrice(String price) {
         this.price = price;
@@ -53,7 +55,7 @@ public class MenuItem {
     /**
      * Sets name.
      *
-     * @param name the name
+     * @param name the name as a String
      */
     public void setName(String name) {
         this.name = name;
@@ -63,7 +65,7 @@ public class MenuItem {
     /**
      * Sets in menu.
      *
-     * @param setInMenu the set in menu
+     * @param setInMenu the set in menu as a boolean
      */
     public void setInMenu(Boolean setInMenu) {
         this.inMenu = setInMenu;
@@ -73,7 +75,7 @@ public class MenuItem {
     /**
      * Sets is special.
      *
-     * @param isSpecial the is special
+     * @param isSpecial the is special as a boolean
      */
     public void setIsSpecial(Boolean isSpecial) {
         this.isSpecial = isSpecial;
@@ -83,7 +85,7 @@ public class MenuItem {
     /**
      * Gets id.
      *
-     * @return the id
+     * @return the id as an int
      */
 //GETTERS
     //=======
@@ -94,7 +96,7 @@ public class MenuItem {
     /**
      * Gets price.
      *
-     * @return the price
+     * @return the price as a String
      */
     public String getPrice() {
         return price;
@@ -103,7 +105,7 @@ public class MenuItem {
     /**
      * Gets name.
      *
-     * @return the name
+     * @return the name as a String
      */
     public String getName() {
         return name;
@@ -112,7 +114,7 @@ public class MenuItem {
     /**
      * Gets in menu.
      *
-     * @return the in menu
+     * @return the in menu as a boolean
      */
     public Boolean getInMenu() {
         return inMenu;
@@ -121,7 +123,7 @@ public class MenuItem {
     /**
      * Gets is special.
      *
-     * @return the is special
+     * @return the is special as a boolean
      */
     public Boolean getIsSpecial() {
         return isSpecial;
@@ -135,7 +137,7 @@ public class MenuItem {
     /**
      * To data string string.
      *
-     * @return the string
+     * @return the string as a String
      */
     public String toDataString() {
         return String.format("%d|%s|%s|%b|%b", ID, price, name, inMenu, isSpecial);
