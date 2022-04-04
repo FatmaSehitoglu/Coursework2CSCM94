@@ -189,7 +189,7 @@ public class Customer extends User {
    
 
     public String toDataString() {
-        return this.getFirstName() + "|" + this.getLastName() + "|" + this.getAddress() + "|" + this.getId() + "\r\n";
+        return this.getFirstName() + "|" + this.getLastName() + "|" + this.getAddress() + "|" + this.getId() + "\n";
     }
 
 }
