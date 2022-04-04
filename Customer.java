@@ -114,7 +114,7 @@ public class Customer extends User {
             System.out.println("4. Place a takeaway order");
             System.out.println("5. See order history");
             System.out.println("0. Exit");
-            int select = Input.intInput(0,5 );
+            int select = Input.intInput(0, 5);
             switch (select) {
                 case 1:
                     requestBooking();
@@ -134,6 +134,8 @@ public class Customer extends User {
                 case 0:
                     cont = false;
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -152,10 +154,10 @@ public class Customer extends User {
         time = Input.stringInput();
         System.out.println("Please enter the number of guests");
         noOfguests = Input.intInput(1, 100);
-        System.out.println("Press 1 if you want to keep a 1 hour booking and 2 " +
-                "if you want to change the duration of the booking");
+        System.out.println("Press 1 if you want to keep a 1 hour booking and 2 "
+                + "if you want to change the duration of the booking");
         duration = Input.intInput(1, 2);
-        if(duration == 2) {
+        if (duration == 2) {
             System.out.println("How many hours would you like the booking to be?");
             duration = Input.intInput(1, 12);
         }
@@ -228,9 +230,9 @@ public class Customer extends User {
      * Prints Customer's Order History
      */
     public void orderHistory() {
-        for(int i=0; i<Database.getOrderHistory().size(); i++) {
+        for (int i=0; i<Database.getOrderHistory().size(); i++) {
             String checkingID = Database.getOrderHistory().get(i).getCustomID();
-            if(checkingID.equals(this.id)) {
+            if (checkingID.equals(this.id)) {
                 System.out.println(Database.getOrderHistory().get(i).toString());
             }
         }

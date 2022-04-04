@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,51 +10,44 @@ import java.util.Scanner;
 import java.util.ArrayList;;
 
 /**
- * The type File manager.
+ * <h2>FileManager class</h2>
+ * Contains methods for writing to and reading from database
+ * @author  Chris Litting
+ * @version 1.0
  */
 public class FileManager {
 
+    //FIELDS
+    //======
+
     private static DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
 
+    //METHODS
+    //=======
 
     /**
-     * Write to file.
-     *
-     * @param filename the filename
-     * @param data     the data
-     * @return none
+     * Writes data to a text file
+     * @param filename the filename as a String
+     * @param data     the data as a String
      */
     public static void writeToFile(String filename, String data) {
-
-
         try {
             FileWriter writer = new FileWriter(filename, true);
-            /*
-            BufferedWriter bw = new BufferedWriter(writer);
-            bw.newLine();
-            bw.write(data);
-            bw.flush();
-            bw.close();
-            */
             writer.append(data);
             writer.close();
-            //System.out.println("Successfuly wrote " + data + " to " + filename);
         } catch (IOException e) {
             System.out.println("An error occurred");
         }
     }
 
     /**
-     * <h1>A method to show the orrder history</h1>
-     *
-     * @param filename   the filename
-     * @param customerID the customer id
-     * @throws IOException the io exception
+     * Shows the order history (deprecated)
+     * @param filename      the filename as a String
+     * @param customerID    the customer id as a String
+     * @throws IOException
      * @see IOException
      */
     public static void readOrderHistory(String filename, String customerID) throws IOException {
-
-
         ArrayList<String> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(filename));
         Scanner reader = new Scanner(br);
@@ -73,11 +65,10 @@ public class FileManager {
     }
 
     /**
-     * <h2>A method that loads the data from the save fail(database)</h2>
-     *
-     * @param filename the filename
-     * @param n        the n
-     * @return string [ ] [ ]
+     * Reads data from a text file (data must be delimited by pipe ("|") characters )
+     * @param filename  the filename as a String
+     * @param n         n, the number of data points for the object type being read
+     * @return          the object data as a 2D String array
      */
     public static String[][] readFromFile(String filename, int n) {
         ArrayList<String> list = new ArrayList<>();
@@ -93,10 +84,6 @@ public class FileManager {
             e.printStackTrace();
         }
 
-        for (int i = 0; i < list.size(); i++) {
-            //System.out.println("Line read: " + list.get(i));
-        }
-
         String[][] output = new String[list.size()][n];
         //String[] temp = new String[n];
         for (int i = 0; i < list.size(); i++){
@@ -110,9 +97,8 @@ public class FileManager {
     }
 
     /**
-     * <h3>A method to change the database</h3>
-     *
-     * @param filename the filename
+     * Erases the contents of a text file
+     * @param filename the filename as a String
      */
     public static void clearFile(String filename) {
         try {    
@@ -127,30 +113,27 @@ public class FileManager {
     }
 
     /**
-     * Local date time to string string.
-     *
-     * @param ldt the ldt
-     * @return the string
+     * Converts a LocalDateTime to a String (for writing to file)
+     * @param ldt   as a LocalDateTime
+     * @return      the LocalDateTime value as a String
      */
     public static String LocalDateTimeToString(LocalDateTime ldt) {
         return ldt.format(formatter);
     }
 
     /**
-     * String to local date time local date time.
-     *
-     * @param str the str
-     * @return the local date time
+     * Converts a String to a LocalDateTime (for reading from file)
+     * @param str   the LocalDateTime as a String
+     * @return      the LocalDateTime
      */
     public static LocalDateTime StringToLocalDateTime(String str) {
         return LocalDateTime.parse(str, formatter);
     }
 
     /**
-     * Gets item ids.
-     *
-     * @param items the items
-     * @return the item ids
+     * Converts an ArrayList of MenuItems to a String containing only the IDs (for writing to file)
+     * @param items as a MenuItem ArrayList
+     * @return      the MenuItem IDs as a String, delimited by commas
      */
     public static String getItemIds(ArrayList<MenuItem> items) {
         String s = String.format("%d", items.get(0).getID());
@@ -161,10 +144,9 @@ public class FileManager {
     }
 
     /**
-     * Gets items from ids.
-     *
-     * @param str the str
-     * @return the items from ids
+     * Converts a list of MenuItem IDs into a MenuItem ArrayList (for reading from file)
+     * @param str   the IDs as a String, delimited by commas
+     * @return      the MenuItems as a MenuItem ArrayList
      */
     public static ArrayList<MenuItem> getItemsFromIds(String str) {
         ArrayList<MenuItem> items = new ArrayList<>();
@@ -174,7 +156,5 @@ public class FileManager {
         }
         return items;
     }
-
-
 
 }

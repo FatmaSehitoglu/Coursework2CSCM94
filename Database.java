@@ -29,7 +29,7 @@ public class Database {
      */
 //BOOKING DATABASE
     //======= ========
-    public static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
+    private static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
 
     /**
      * New booking.
@@ -125,7 +125,7 @@ public class Database {
      */
 //ORDER DATABASE
     //===== ========
-    public static ArrayList<Order> orderHistory = new ArrayList<Order>();
+    private static ArrayList<Order> orderHistory = new ArrayList<Order>();
 
     /**
      * Delivery array list.
@@ -136,7 +136,7 @@ public class Database {
     public static ArrayList<Order> delivery(ArrayList<Order> orderHistory){
         ArrayList<Order> deliveryList = new ArrayList<>();
         for (Order order : orderHistory){
-            if(order.getClass() == Delivery.class){
+            if (order.getClass() == Delivery.class){
                 deliveryList.add(order);
             }
         }
@@ -189,11 +189,11 @@ public class Database {
      * @param order the order as an object of Order
      */
     public static void writeOrder(Order order) {
-        if(order.getClass() == Eat_in.class) {
+        if (order.getClass() == Eat_in.class) {
             writeEatInOrder((Eat_in) order);
-        }else if(order.getClass() == Takeaway.class) {
+        }else if (order.getClass() == Takeaway.class) {
             writeTakeawayOrder((Takeaway) order);
-        }else if(order.getClass() == Delivery.class) {
+        }else if (order.getClass() == Delivery.class) {
             writeDeliveryOrder((Delivery) order);
         }
     }
@@ -278,7 +278,7 @@ public class Database {
      */
 //CUSTOMER DATABASE
     //======== ========
-    public static ArrayList<Customer> customerList = new ArrayList<Customer>();
+    private static ArrayList<Customer> customerList = new ArrayList<Customer>();
 
     /**
      * Populate customers.
