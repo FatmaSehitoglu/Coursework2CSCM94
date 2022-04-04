@@ -9,10 +9,9 @@ import java.util.ArrayList;
      */
     public abstract class Order {
    
-
     //FIELDS
     //======
-    
+
     public String customID;
     public ArrayList<MenuItem> items;
     public boolean orderComplete;
