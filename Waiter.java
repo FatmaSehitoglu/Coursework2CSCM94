@@ -72,7 +72,7 @@ public class Waiter extends Staff {
         String cID = Input.stringInput();
         ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
         selection = Menu.selectFromMenu();
-        Eat_in order = new Eat_in(cID, selection, true, tableId, this.id);
+        EatIn order = new EatIn(cID, selection, true, tableId, this.id);
         Database.addToOrderHistory(order);
     }
 
