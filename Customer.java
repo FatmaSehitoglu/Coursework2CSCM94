@@ -138,7 +138,7 @@ public class Customer extends User {
                 System.out.println("0. NO");
                 select = Input.intInput(0, 1);
                 if (select == 1) {
-                    Database.removeBooking(bookings.get(select + 1));
+                    Database.removeBooking(bookings.get(select - 1));
                 }
             }
         }
