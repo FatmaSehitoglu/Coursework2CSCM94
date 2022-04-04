@@ -1,7 +1,9 @@
 /**
- * The type Chef.
+ * <h2>Chef class</h2>
+ * A subclass of Staff
+ * @author Fatma Sehitoglu
+ * @author Chris Litting
  * @version 1.0
- * @author Fatma and Chris and others
  */
 public class Chef extends Staff {
 
@@ -11,40 +13,70 @@ public class Chef extends Staff {
     //private lastName      (inherited)
     //private staffId       (inherited)    
 
+    //CONSTRUCTORS
+    //============
+
     /**
-     * Instantiates a new Chef.
-     *
-     * @param firstName the first name as a String
-     * @param lastName  the last name as a String
-     * @param id        the id as a String
+     * Constructor for new Chef
+     * @param firstName as a String
+     * @param lastName  as a String
+     * @param id        as a String
      */
-//CONSTRUCTOR
-    //===========
-    public Chef(String firstName, String lastName, String id) {
+    public Chef(
+        String firstName, 
+        String lastName, 
+        String id
+    ) {
         super(firstName, lastName, id);
     }
 
-    //SETTERS
-    //=======
-   
-    //GETTERS
+    //METHODS
     //=======
 
     /**
-     * Complete order.
-     *
-     * @param order the order as object Order
+     * Displays the main menu for Chef
      */
-//METHODS
-    //=======
+    public void displayMainMenu() {
+        boolean cont = true;
+        while (cont) {  
+            System.out.println("1. New Menu Item");
+            System.out.println("2. View Active Orders");
+            System.out.println("3. View Menu Items");
+            System.out.println("4. Edit Daily Specials");
+            System.out.println("0. Log Out");
+
+            int select = Input.intInput(0, 4);
+            switch (select) {
+                case 1:
+                    addToMenu(false);
+                    break;
+                case 2:
+                    viewActiveOrders();
+                    break;
+                case 3:
+                    viewMenuItems();
+                    break;
+                case 4:
+                    editDailySpecial();
+                    break;
+                case 0:
+                    cont = false;
+                    break;
+            }
+        }   
+    }
+
+    /**
+     * Marks an Order as completed by the chef
+     * @param order as an Order
+     */
     public void completeOrder(Order order) {
         order.setChefComplete(true);
     }
 
     /**
-     * Add to menu.
-     *
-     * @param special the special as a boolean
+     * Adds a MenuItem to the menu as a special
+     * @param special as a boolean
      */
     public void addToMenu(boolean special){
         int id;
@@ -60,9 +92,8 @@ public class Chef extends Staff {
         Database.newMenuItem(newItem);
     }
 
-
     /**
-     * Edit daily special.
+     * Edits the daily special.
      */
     public void editDailySpecial() {
         boolean cont = true;
@@ -117,39 +148,6 @@ public class Chef extends Staff {
                     break;
             }
         }
-    }
-
-    /**
-     * Displays MainMenu
-     */
-    public void displayMainMenu() {
-        boolean cont = true;
-        while (cont) {  
-            System.out.println("1. New Menu Item");
-            System.out.println("2. View Active Orders");
-            System.out.println("3. View Menu Items");
-            System.out.println("4. Edit Daily Specials");
-            System.out.println("0. Log Out");
-
-            int select = Input.intInput(0, 4);
-            switch (select) {
-                case 1:
-                    addToMenu(false);
-                    break;
-                case 2:
-                    viewActiveOrders();
-                    break;
-                case 3:
-                    viewMenuItems();
-                    break;
-                case 4:
-                    editDailySpecial();
-                    break;
-                case 0:
-                    cont = false;
-                    break;
-            }
-        }   
     }
 
     /**
@@ -215,11 +213,19 @@ public class Chef extends Staff {
         }
     }
 
+    /**
+     * toString method for Chef (for menu displays)
+     * @return Chef as a String
+     */
     @Override
     public String toString() {
         return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Chef");
     }
 
+    /**
+     * Converts Chef to data String (for database storage)
+     * @return Chef as a data String
+     */
     public String toDataString() {
         return String.format("%s|%s|%s|%s\n", this.getFirstName(), this.getLastName(), this.getId(), "Chef");
     }
