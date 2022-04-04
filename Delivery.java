@@ -150,7 +150,7 @@ public class Delivery extends Order{
         String status3 = chefComplete ? "Cooking complete" : "Cooking in progress";
         String status4 = driveComplete ? "Order delivered" : "On the way";
         return String.format(
-            "Type: Delivery, Customer: %s, Status: %s, Time: %s, Address: %s, \nOrder: %s, \nChef Progress: %s, Driver Progress: %s", 
+            "\nType: Delivery\nCustomer: %s\nStatus: %s\nTime: %s\nAddress: %s\nOrder: %s\nChef Progress: %s\nDriver Progress: %s\n", 
             customID, 
             status2,
             time1,

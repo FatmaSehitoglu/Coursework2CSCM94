@@ -101,7 +101,7 @@ public class Takeaway extends Order{
         String status1 = orderComplete ? "Complete" : "Incomplete";
         String status2 = chefComplete ? "Cooking complete" : "Cooking in progress";
         return String.format(
-            "Type: Takeaway, Customer: %s, Time: %s, Estimated arrival time: %s, \nOrder: %s, \nCooking status: %s, Order Status: %s", 
+            "\nType: Takeaway\nCustomer: %s\nTime: %s\nEstimated arrival time: %s\nOrder: %s\nCooking status: %s\nOrder Status: %s\n", 
             customID, 
             time1,
             arriveTime, 

@@ -135,7 +135,7 @@ public class EatIn extends Order{
         String order1 = items.toString();
         String status1 = orderComplete ? "Complete" : "Incomplete";
         return String.format(
-            "Type: Eat In, Table %d, Waiter: %s, Customer: %s, Time: %s, Order: %s, Status: %s", 
+            "\nType: Eat In\nTable %d\nWaiter: %s\nCustomer: %s\nTime: %s\nOrder: %s\nStatus: %s\n", 
             tableID, 
             waiterID, 
             customID, 
