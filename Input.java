@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 /**
  * The type Input.
+ * @version 1.0
+ * @author Martin
  */
 public class Input {
 
