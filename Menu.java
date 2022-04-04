@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 /**
  * <h2>The type Menu.</h2>
  * @author Fatma Sehitoglu
@@ -7,6 +6,9 @@ import java.util.ArrayList;
  * @version 1.0
  */
 public class Menu {
+
+    //METHODS
+    //=======
 
     /**
      * This is the method to display the menu and allow the user to make selections
