@@ -1,38 +1,39 @@
 /**
- * The type Manager.
+ * <h2>Manager class</h2>
+ * A subclass of Staff
  */
 public class Manager extends Staff {
 
     //FIELDS
     //======
+
     //private firstName     (inherited)
     //private lastName      (inherited)
     //private staffId       (inherited)
 
+    //CONSTRUCTORS
+    //============
+
     /**
-     * Instantiates a new Manager.
+     * Constructor for new Manager.
      *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param id        the id
+     * @param firstName as a String
+     * @param lastName  as a String
+     * @param id        as a String
      */
-//CONSTRUCTOR
-    //===========
-    public Manager(String firstName, String lastName, String id) {
+    public Manager(
+        String firstName, 
+        String lastName, 
+        String id
+    ) {
         super(firstName, lastName, id);
     }
-
-    //SETTERS
-    //=======
-    
-    //GETTERS
-    //=======
    
     //METHODS
     //=======
 
     /**
-     * <h1>A method to display the main menu</h1>
+     * Displays the main menu for Manager
      */
     public void displayMainMenu() {
         boolean cont = true;

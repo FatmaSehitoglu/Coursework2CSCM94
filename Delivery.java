@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 /**
- * <h1>Delivery class</h1>
+ * <h2>Delivery class</h2>
  * A subclass of Order class
  * @author Niu Zhaoye
  * @version 1.0
@@ -11,7 +11,7 @@ public class Delivery extends Order{
 
     //FIELDS
     //======
-    
+
     //public String customID;               (inherited)
     //public ArrayList<MenuItem> items;     (inherited)
     //public boolean orderComplete;         (inherited)
