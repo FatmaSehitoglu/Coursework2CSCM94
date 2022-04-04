@@ -112,8 +112,8 @@ public class Chef extends Staff {
             int select = Input.intInput(0, 3);
             switch (select) {
                 case 1:
-                    for (int i = 0; i<Database.menuItems.size(); i++) {
-                        System.out.println(Database.menuItems.get(i).toString());
+                    for (int i = 0; i<Database.getMenu().size(); i++) {
+                        System.out.println(Database.getMenu().get(i).toString());
                     }
                     System.out.println("Enter the id of the item you want to designate as daily special");
                     boolean found = false;
@@ -190,12 +190,12 @@ public class Chef extends Staff {
     public void viewMenuItems() {
         boolean cont = true;
         while (cont) {
-            for (int i=0; i<Database.menuItems.size(); i++) {
-                if (Database.menuItems.get(i).getInMenu()) {
-                    System.out.println(i+1 + "- " + Database.menuItems.get(i).toString()
+            for (int i=0; i<Database.getMenu().size(); i++) {
+                if (Database.getMenu().get(i).getInMenu()) {
+                    System.out.println(i+1 + "- " + Database.getMenu().get(i).toString()
                             + " Menu Status: Actively In the menu");
                 }else {
-                    System.out.println(Database.menuItems.get(i).toString()
+                    System.out.println(Database.getMenu().get(i).toString()
                             + " Menu Status: Not In the menu");
                 }
             }
@@ -205,11 +205,11 @@ public class Chef extends Staff {
             switch (select) {
                 case 1: //switches menu states
                     System.out.println("Select an menu item");
-                    int order = Input.intInput(1, Database.menuItems.size()+1) - 1;
-                    if (Database.menuItems.get(order).getInMenu()){
-                        Database.menuItems.get(order).setInMenu(false);
+                    int order = Input.intInput(1, Database.getMenu().size()+1) - 1;
+                    if (Database.getMenu().get(order).getInMenu()){
+                        Database.getMenu().get(order).setInMenu(false);
                     }else {
-                        Database.menuItems.get(order).setInMenu(true);
+                        Database.getMenu().get(order).setInMenu(true);
                     }
                     break;
                 case 0:
