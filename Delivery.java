@@ -148,7 +148,7 @@ public class Delivery extends Order{
         String order1 = items.toString();
         String status2 = approval ? "Approved" : "Awaiting approval";
         String status3 = chefComplete ? "Cooking complete" : "Cooking in progress";
-        String status4 = driveComplete ? "On the way" : "Order delivered";
+        String status4 = driveComplete ? "Order delivered" : "On the way";
         return String.format(
             "Type: Delivery, Customer: %s, Status: %s, Time: %s, Address: %s, \nOrder: %s, \nChef Progress: %s, Driver Progress: %s", 
             customID, 
