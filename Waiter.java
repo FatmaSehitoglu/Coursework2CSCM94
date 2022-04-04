@@ -3,6 +3,7 @@ import java.util.ArrayList;
 /**
  * <h2>Waiter class</h2>
  * A subclass of Staff
+ * @author Fatma Sehitoglu
  */
 public class Waiter extends Staff {
     
