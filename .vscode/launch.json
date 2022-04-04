@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Coursework2CSCM94_8821fad7"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -15,7 +22,7 @@
             "name": "Launch Coursework2",
             "request": "launch",
             "mainClass": "Coursework2",
-            "projectName": "Coursework2CSCM94_8821fad7",
+            "projectName": "Coursework2CSCM94_8821fad7"
         }
     ]
 }
