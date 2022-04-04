@@ -1,5 +1,5 @@
 /**
- * The type Booking.
+ * <h2>The type Booking.</h2>
  * @version 1.0
  * @author Martin and others
  */
@@ -12,7 +12,7 @@ public class Booking {
     private int duration;
 
     /**
-     * <h1>This class is to make the bookings</h1>
+     * This class is to make the bookings
      *
      * @param date        the date as a String
      * @param time        the time as a String

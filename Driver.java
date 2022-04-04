@@ -1,5 +1,5 @@
 /**
- * The type Driver.
+ * <h2>The type Driver.</h2>
  */
 public class Driver extends Staff {
 
@@ -28,7 +28,7 @@ public class Driver extends Staff {
     //=======
 
     /**
-     * <h1>This method displays menu interface</h1>
+     * This method displays menu interface
      * @param none
      * @return none
      */
