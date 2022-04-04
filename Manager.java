@@ -40,9 +40,10 @@ public class Manager extends Staff {
             System.out.println("1. Edit Staff");
             System.out.println("2. Most Popular Items Report");
             System.out.println("3. Most Active Customer Report");
+            System.out.println("4. Highest Hours Worked By A Staff Member");
             System.out.println("0. Log Out");
 
-            int select = Input.intInput(0, 3);
+            int select = Input.intInput(0, 4);
             switch (select) {
                 case 1:
                     displayStaff();
@@ -53,7 +54,9 @@ public class Manager extends Staff {
                 case 3:
                     getMostActiveCustomer();
                     break;
-
+                case 4:
+                    mostWorkedStaff();
+                    break;
                 case 0:
                     cont = false;
                     break;
@@ -67,23 +70,38 @@ public class Manager extends Staff {
     public void displayStaff() {
         boolean cont = true;
         while (cont) {
-            System.out.println("1. ADD NEW STAFF MEMBER");
+            System.out.println("1. Add New Staff Member");
+            System.out.println("2. Add Hours Worked To A Staff Member");
             for (int i = 0; i < Database.getStaffCount(); i++) {
-                System.out.println((i + 2) + "- " + Database.staffList.get(i).toString());
+                System.out.println((i + 3) + "- " + Database.staffList.get(i).toString());
             }
             System.out.println("0. Back");
 
-            int select = Input.intInput(0, Database.getStaffCount() + 2);
+            int select = Input.intInput(0, Database.getStaffCount() + 3);
             
             if (select == 1) {
                 //1. ADD NEW STAFF MEMBER
                 addStaff();
+            }else if (select == 2){
+                System.out.println("Select the staff you want to add hours worked");
+                select = (Input.intInput(3, Database.getStaffCount() + 3)) - 3;
+                System.out.println("How many hours worked would you like to add to " +
+                Database.getStaffList().get(select).getFirstName() +
+                " " + Database.getStaffList().get(select).getLastName() +
+                "'s record?");
+                int hour = Input.intInput(1, 100);
+                Database.getStaffList().get(select).incrementHoursWorked(hour);
+                System.out.println(Database.getStaffList().get(select).getFirstName() +
+                " " + Database.getStaffList().get(select).getLastName() + ": " +
+                Database.getStaffList().get(select).getHoursWorked() + 
+                " total hours worked.");
+            
             } else if (select == 0) {
                 //0. Back
                 cont = false;
             } else {
                 //2 - n. (Staff member)
-                editStaff(select - 2);
+                editStaff(select - 3);
             }
         } 
     }
@@ -132,7 +150,7 @@ public class Manager extends Staff {
     public void removeStaff(Staff staff) {
 
         if (Database.removeStaffFromDatabase(staff.getId())){
-            System.out.println("Delete the success");
+            System.out.println("Delete is successful");
         }else {
             System.out.println("Delete failed");
         }
@@ -213,7 +231,7 @@ public class Manager extends Staff {
         mostActive.getFirstName() +
         " " + mostActive.getLastName() +
         " with " + sum +
-        " many orders." );
+        " orders." );
     }
 
     /**
@@ -244,6 +262,23 @@ public class Manager extends Staff {
         System.out.println("The most popular item is " +
         maxName + " with " +
         max + " times ordered." );
+    }
+    public void mostWorkedStaff() {
+        int maxHour = 0;
+        int maxIndex = 0;
+        for(int i = 0; i<Database.getStaffCount(); i++) {
+            if(Database.getStaffList().get(i).getHoursWorked() > maxHour) {
+                maxHour = Database.getStaffList().get(i).getHoursWorked();
+                maxIndex = i;
+            }
+        }
+        if(maxHour == 0) {
+            System.out.println("Total Hours worked by all staf is 0 hours");
+        }else {
+            System.out.println("The highest number of hours worked is " +
+            maxHour + " by " + Database.getStaffList().get(maxIndex).getFirstName() +
+            " " + Database.getStaffList().get(maxIndex).getLastName() );
+        }
     }
 
     @Override
