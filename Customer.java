@@ -152,7 +152,8 @@ public class Customer extends User {
         time = Input.stringInput();
         System.out.println("Please enter the number of guests");
         noOfguests = Input.intInput(1, 100);
-        System.out.println("Press 1 if you want to keep a 1 hour booking and 2 if you want to change the duration of the booking");
+        System.out.println("Press 1 if you want to keep a 1 hour booking and 2 " +
+                "if you want to change the duration of the booking");
         duration = Input.intInput(1, 2);
         if(duration == 2) {
             System.out.println("How many hours would you like the booking to be?");
@@ -218,7 +219,8 @@ public class Customer extends User {
         selection = Menu.selectFromMenu();
         System.out.println("Please enter the pick up time for your order");
         String time = Input.stringInput();
-        Takeaway order = new Takeaway(this.id, selection, false, LocalDateTime.now(), false, true, time);
+        Takeaway order = new Takeaway(this.id, selection, false, LocalDateTime.now(),
+                false, true, time);
         Database.newOrder(order);
     }
 
