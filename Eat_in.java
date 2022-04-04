@@ -2,19 +2,22 @@ import java.util.ArrayList;
 import java.time.LocalDateTime;
 
 
+/**
+ * The type Eat in.
+ */
 public class Eat_in extends Order{
     private int tableID;
     private String waiterID;
 
     /**
+     * Instantiates a new Eat in.
      *
-     * @param customID
-     * @param items
-     * @param approval
-     * @param tableID
-     * @param waiterID
+     * @param customID the custom id
+     * @param items    the items
+     * @param approval the approval
+     * @param tableID  the table id
+     * @param waiterID the waiter id
      */
-
     public Eat_in(String customID, ArrayList<MenuItem> items, boolean approval, int tableID, String waiterID) {
         super(customID, items, approval);
         this.customID = customID;
@@ -27,6 +30,18 @@ public class Eat_in extends Order{
         this.waiterID = waiterID;
     }
 
+    /**
+     * Instantiates a new Eat in.
+     *
+     * @param customID      the custom id
+     * @param items         the items
+     * @param orderComplete the order complete
+     * @param time          the time
+     * @param chefComplete  the chef complete
+     * @param approval      the approval
+     * @param tableID       the table id
+     * @param waiterID      the waiter id
+     */
     public Eat_in(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, int tableID, String waiterID) {
         super(customID, items, approval);
         this.orderComplete = orderComplete;
@@ -36,24 +51,44 @@ public class Eat_in extends Order{
         this.waiterID = waiterID;
     }
 
-    //SETTERS
+    /**
+     * Sets table id.
+     *
+     * @param tableID the table id
+     */
+//SETTERS
     //=======
     public void setTableID(int tableID) {
         this.tableID = tableID;
         Database.refreshOrders();
     }
 
+    /**
+     * Sets waiter id.
+     *
+     * @param waiterID the waiter id
+     */
     public void setWaiterID(String waiterID) {
         this.waiterID = waiterID;
         Database.refreshOrders();
     }
 
-    //GETTERS
+    /**
+     * Gets table id.
+     *
+     * @return the table id
+     */
+//GETTERS
     //=======
     public int getTableID() {
         return tableID;
     }
 
+    /**
+     * Gets waiter id.
+     *
+     * @return the waiter id
+     */
     public String getWaiterID() {
         return waiterID;
     }
@@ -73,6 +108,7 @@ public class Eat_in extends Order{
 
 
     /**
+     * To data string string.
      *
      * @return String formatted
      */
