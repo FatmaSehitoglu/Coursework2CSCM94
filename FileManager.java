@@ -25,11 +25,15 @@ public class FileManager {
 
         try {
             FileWriter writer = new FileWriter(filename, true);
+            /*
             BufferedWriter bw = new BufferedWriter(writer);
             bw.newLine();
             bw.write(data);
             bw.flush();
             bw.close();
+            */
+            writer.append(data);
+            writer.close();
             System.out.println("Successfuly wrote " + data + " to " + filename);
         } catch (IOException e) {
             System.out.println("An error occurred");
