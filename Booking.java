@@ -1,5 +1,5 @@
 /**
- * The type Booking.
+ * <h2>The type Booking.</h2>
  * @version 1.0
  * @author Martin and others
  */
