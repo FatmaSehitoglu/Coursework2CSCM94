@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /**
- * The type Database.
+ * <h2>The type Database.</h2>
  * @version 1.0
  * @author Christ
  * @author Fatma
