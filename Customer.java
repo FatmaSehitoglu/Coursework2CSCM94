@@ -2,7 +2,11 @@ import java.util.ArrayList;
 import java.time.LocalDateTime;
 
 /**
- * The type Customer.
+ * <h1>Customer class</h1>
+ * A subclass of User
+ * @author Fatma Sehitoglu
+ * @author Chris Litting
+ * @version 1.0
  */
 public class Customer extends User {
 
@@ -12,30 +16,43 @@ public class Customer extends User {
     //private String lastName      (inherited)
     //private String id            (inherited)
     private String address;
-    //private Order[] orderHistory;
+
+    //CONSTRUCTORS
+    //============
 
     /**
-     * Instantiates a new Customer.
-     *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param address   the address
-     * @param id        the id
+     * Constructor for Customer class
+     * @param firstName as a String
+     * @param lastName  as a String
+     * @param address   as a String
+     * @param id        as a String
      */
-//CONSTRUCTOR
-    //======
-    public Customer(String firstName, String lastName, String address, String id) {
+    public Customer(
+        String firstName, 
+        String lastName, 
+        String address, 
+        String id
+    ) {
         super(firstName, lastName, id);
         this.address = address;
     }
 
     //SETTERS
     //=======
+
+    /**
+     * Sets firstName
+     * @param firstName as a String
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
         Database.refreshCustomers();
     }
 
+    /**
+     * Sets lastName
+     * @param lastName as a String
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
         Database.refreshCustomers();
