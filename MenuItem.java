@@ -140,7 +140,7 @@ public class MenuItem {
      */
     @Override
     public String toString() {
-        return String.format("%s %s %d", name, price, ID);
+        return String.format("%s %s %d", name, price, id);
     }
 
     /**
@@ -148,7 +148,7 @@ public class MenuItem {
      * @return MenuItem as a data String
      */
     public String toDataString() {
-        return String.format("%d|%s|%s|%b|%b", ID, price, name, inMenu, isSpecial);
+        return String.format("%d|%s|%s|%b|%b", id, price, name, inMenu, isSpecial);
     }
     
 }
