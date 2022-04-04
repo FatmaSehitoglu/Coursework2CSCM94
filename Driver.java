@@ -62,7 +62,7 @@ public class Driver extends Staff {
     public void viewActiveOrders() {
         String change;
         Lo:
-        for (Order order : Database.delivery(Database.orderHistory)){
+        for (Order order : Database.delivery(Database.getOrderHistory())){
             Delivery delivery = (Delivery)order;
             if (delivery.isDriveComplete()){
                 System.out.println(delivery.toString());
