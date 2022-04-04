@@ -3,3 +3,4 @@
 123456|15|Pizza|true|false
 123457|12|Cheeseburger|true|false
 123458|8|Milkshake|true|true
+111123|3|Taco|true|false
