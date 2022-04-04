@@ -52,6 +52,8 @@ public class Driver extends Staff {
                 case 0:
                     cont = false;
                     break;
+                default:
+                    break;
             }
         }   
     }
@@ -63,7 +65,7 @@ public class Driver extends Staff {
         String change;
         Lo:
         for (Order order : Database.delivery(Database.getOrderHistory())){
-            Delivery delivery = (Delivery)order;
+            Delivery delivery = (Delivery) order;
             if (delivery.isDriveComplete()){
                 System.out.println(delivery.toString());
                 lo:

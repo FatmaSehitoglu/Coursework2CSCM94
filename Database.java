@@ -537,7 +537,9 @@ public class Database {
      *
      * @param item the item as an object of MenuItem
      */
-    public static void addToMenu(MenuItem item) {menuItems.add(item);}
+    public static void addToMenu(MenuItem item) {
+        menuItems.add(item);
+    }
 
     /**
      * Refresh menu items.
@@ -573,9 +575,9 @@ public class Database {
      * @return the specials as an Arraylist of objects of MenuItem
      */
     public static ArrayList<MenuItem> getSpecials() {
-        ArrayList<MenuItem>specials = new ArrayList<>();
-        for(int i=0; i<menuItems.size(); i++) {
-            if(menuItems.get(i).getIsSpecial()) {
+        ArrayList<MenuItem> specials = new ArrayList<>();
+        for (int i=0; i<menuItems.size(); i++) {
+            if (menuItems.get(i).getIsSpecial()) {
                 specials.add(menuItems.get(i));
             }
         }
@@ -588,9 +590,9 @@ public class Database {
      * @return the active menu as an ArrayList of objects of MenuItem
      */
     public static ArrayList<MenuItem> getActiveMenu() {
-        ArrayList<MenuItem>activeMenu = new ArrayList<>();
-        for(int i=0; i<menuItems.size(); i++) {
-            if(menuItems.get(i).getInMenu()) {
+        ArrayList<MenuItem> activeMenu = new ArrayList<>();
+        for (int i=0; i<menuItems.size(); i++) {
+            if (menuItems.get(i).getInMenu()) {
                 activeMenu.add(menuItems.get(i));
             }
         }
@@ -600,12 +602,12 @@ public class Database {
     /**
      * Gets item.
      *
-     * @param ID the id as an int
+     * @param id the id as an int
      * @return the item as an objectof MenuItem
      */
-    public static MenuItem getItem(int ID) {
-        for(int k = 0; k < menuItems.size(); k++) {
-            if(ID == menuItems.get(k).getID()) {
+    public static MenuItem getItem(int id) {
+        for (int k = 0; k < menuItems.size(); k++) {
+            if (id == menuItems.get(k).getID()) {
                 return menuItems.get(k);
             }
         }
@@ -622,14 +624,18 @@ public class Database {
      *
      * @param selections the selections as an object of MenuItem
      */
-    public static void addToSelections(MenuItem selections){selectionss.add(selections);}
+    public static void addToSelections(MenuItem selections) {
+        selectionss.add(selections);
+    }
 
     /**
      * Get selections array list.
      *
      * @return the selections as an ArrayList of objects of MenuItem
      */
-    public static ArrayList<MenuItem> getSelections(){return selectionss;};
+    public static ArrayList<MenuItem> getSelections() {
+        return selectionss;
+    };
 
     /**
      * Customer history array list.
@@ -640,9 +646,9 @@ public class Database {
 // return customer history
     public static ArrayList<Order> customerHistory(String custId) {
         ArrayList<Order> custHistory = new ArrayList<Order>();
-        for(int i = 0; i < orderHistory.size(); i++  ) {
+        for (int i = 0; i < orderHistory.size(); i++) {
             Order checking = orderHistory.get(i);
-            if( checking.getCustomID().equals(custId)) {
+            if (checking.getCustomID().equals(custId)) {
                 custHistory.add(checking);
             }
         }
@@ -659,16 +665,16 @@ public class Database {
         Customer mostActiveCust = getCustomerList().get(0); // If the customer list is empty error will occur!!!
         int maxSize = 0;
         Customer checkingCust = getCustomerList().get(0);
-        for(int i = 0; i <getCustomerList().size(); i++) {
+        for (int i = 0; i <getCustomerList().size(); i++) {
             checkingCust = customerList.get(i);
             int size = 0;
-            for(int k = 0; k<getOrderHistory().size(); k++) {
+            for (int k = 0; k<getOrderHistory().size(); k++) {
                 String checkingCustID = checkingCust.getID();
-                if(checkingCustID.equals(getOrderHistory().get(k).getCustomID())) {
+                if (checkingCustID.equals(getOrderHistory().get(k).getCustomID())) {
                     size = size + 1;
                 }
             }
-            if(size > maxSize) {
+            if (size > maxSize) {
                 maxSize = size;
                 mostActiveCust = checkingCust;
             }
