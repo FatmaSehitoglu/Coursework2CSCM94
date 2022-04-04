@@ -219,7 +219,12 @@ public class Chef extends Staff {
      */
     @Override
     public String toString() {
-        return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Chef");
+        return String.format(
+            "%s %s, %s", 
+            this.getFirstName(), 
+            this.getLastName(), 
+            "Chef"
+        );
     }
 
     /**
@@ -227,7 +232,13 @@ public class Chef extends Staff {
      * @return Chef as a data String
      */
     public String toDataString() {
-        return String.format("%s|%s|%s|%s\n", this.getFirstName(), this.getLastName(), this.getId(), "Chef");
+        return String.format(
+            "%s|%s|%s|%s\n", 
+            this.getFirstName(), 
+            this.getLastName(), 
+            this.getId(), 
+            "Chef"
+        );
     }
 
 }

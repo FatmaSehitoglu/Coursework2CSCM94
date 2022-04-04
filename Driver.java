@@ -1,5 +1,9 @@
 /**
- * <h2>The type Driver.</h2>
+ * <h2>Driver class</h2>
+ * A subclass of Staff
+ * @author Fatma Sehitoglu
+ * @author Chris Litting
+ * @version 1.0
  */
 public class Driver extends Staff {
 
@@ -9,18 +13,20 @@ public class Driver extends Staff {
     //private lastName      (inherited)
     //private staffId       (inherited)    
 
-
+    //CONSTRUCTORS
+    //============
     
     /**
-     * Instantiates a new Driver.
-     *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param id        the id
+     * Constructor for new Driver.
+     * @param firstName as a String
+     * @param lastName  as a String
+     * @param id        as a String
      */
-//CONSTRUCTOR
-    //===========
-    public Driver(String firstName, String lastName, String id) {
+    public Driver(
+        String firstName, 
+        String lastName, 
+        String id
+    ) {
         super(firstName, lastName, id);
     }
 
@@ -28,9 +34,7 @@ public class Driver extends Staff {
     //=======
 
     /**
-     * This method displays menu interface
-     * @param none
-     * @return none
+     * Displays main menu for Driver
      */
     public void displayMainMenu() {
         boolean cont = true;
@@ -82,8 +86,8 @@ public class Driver extends Staff {
     /**
      * Complete delivery.
      *
-     * @param delivery the delivery
-     * @param finish   the finish
+     * @param delivery as a Delivery
+     * @param finish   as a boolean
      */
     public void completeDelivery(Delivery delivery, boolean finish) {
         delivery.setDriveComplete(finish);
@@ -92,17 +96,31 @@ public class Driver extends Staff {
 
 
     /**
-     *
-     * @return String
+     * toString method for Driver (for menu displays)
+     * @return Driver as a String
      */
     @Override
     public String toString() {
-        return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Driver");
+        return String.format(
+            "%s %s, %s", 
+            this.getFirstName(), 
+            this.getLastName(), 
+            "Driver"
+        );
     }
 
+    /**
+     * Converts Driver to data String (for database storage)
+     * @return Driver as data String
+     */
     public String toDataString() {
-        return String.format("%s|%s|%s|%s\n", this.getFirstName(), this.getLastName(), this.getId(), "Driver");
+        return String.format(
+            "%s|%s|%s|%s\n", 
+            this.getFirstName(), 
+            this.getLastName(), 
+            this.getId(), 
+            "Driver"
+        );
     }
    
-
 }
