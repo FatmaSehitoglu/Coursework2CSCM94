@@ -344,8 +344,8 @@ public class Database {
      * @return false as a boolean
      */
     public static boolean checkCustomer(String possibleID) {
-        for(int k=0; k < customerList.size(); k++) {
-            if(possibleID.equals(customerList.get(k).getId())) {
+        for (int k=0; k < customerList.size(); k++) {
+            if (possibleID.equals(customerList.get(k).getId())) {
                 return true;
             }
         }
@@ -355,12 +355,12 @@ public class Database {
     /**
      * Gets customer.
      *
-     * @param ID the id as a String
+     * @param id the id as a String
      * @return the customer as an object of Customer
      */
-    public static Customer getCustomer(String ID) {
-        for(int k=0; k < customerList.size(); k++) {
-            if(ID.equals(customerList.get(k).getId())) {
+    public static Customer getCustomer(String id) {
+        for (int k=0; k < customerList.size(); k++) {
+            if (ID.equals(customerList.get(k).getId())) {
                 return customerList.get(k);
             }
         }
@@ -372,7 +372,7 @@ public class Database {
      */
 //STAFF DATABASE
     //===== ========
-    public static ArrayList<Staff> staffList = new ArrayList<Staff>();
+    private static ArrayList<Staff> staffList = new ArrayList<Staff>();
 
     /**
      * Add new staff.
@@ -431,7 +431,9 @@ public class Database {
                     break;
                 case "Driver":
                     addToStaffList(new Driver(str[i][0], str[i][1], str[i][2]));
-                    break;    
+                    break;
+                default:
+                    break;
             }    
         }
     }
@@ -461,8 +463,8 @@ public class Database {
      * @return true or false as a boolean
      */
     public static boolean checkStaff(String possibleID) {
-        for(int k = 0; k < staffList.size(); k++) {
-            if(possibleID.equals(staffList.get(k).getId())) {
+        for (int k = 0; k < staffList.size(); k++) {
+            if (possibleID.equals(staffList.get(k).getId())) {
                 return true;
             }
         }
@@ -472,12 +474,12 @@ public class Database {
     /**
      * Gets staff.
      *
-     * @param ID the id as a String
+     * @param id the id as a String
      * @return the staff as an object of Staff
      */
-    public static Staff getStaff(String ID) {
-        for(int k = 0; k < staffList.size(); k++) {
-            if(ID.equals(staffList.get(k).getId())) {
+    public static Staff getStaff(String id) {
+        for (int k = 0; k < staffList.size(); k++) {
+            if (ID.equals(staffList.get(k).getId())) {
                 return staffList.get(k);
             }
         }
@@ -487,10 +489,10 @@ public class Database {
     /**
      * Remove staff from database boolean.
      *
-     * @param ID the id as a String
+     * @param id the id as a String
      * @return true or false as a boolean
      */
-    public static boolean removeStaffFromDatabase(String ID) {
+    public static boolean removeStaffFromDatabase(String id) {
 
         for (Staff a: staffList){
             if (a.getId() == ID){
