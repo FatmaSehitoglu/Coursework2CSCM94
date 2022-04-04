@@ -120,13 +120,12 @@ public class Database {
    
     /**
      * Delivery array list.
-     * @param orderHistory  the order history as an Arraylist of objects of class Order
      * @return              deliveryList as an ArrayList of objects of class Order
      */
-    public static ArrayList<Order> delivery(ArrayList<Order> orderHistory){
+    public static ArrayList<Order> activeDelivery(){
         ArrayList<Order> deliveryList = new ArrayList<>();
         for (Order order : orderHistory){
-            if (order.getClass() == Delivery.class){
+            if (order.getClass() == Delivery.class && order.isChefComplete() && !order.isOrderComplete()){
                 deliveryList.add(order);
             }
         }

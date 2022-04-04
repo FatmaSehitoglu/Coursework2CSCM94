@@ -104,6 +104,9 @@ public class Delivery extends Order{
      */
     public void setDriveComplete(boolean driveComplete) {
         this.driveComplete = driveComplete;
+        if (this.driveComplete) {
+            this.setOrderComplete(true);
+        }
         Database.refreshOrders();
     }
 

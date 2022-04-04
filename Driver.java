@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * <h2>Driver class</h2>
  * A subclass of Staff
@@ -59,31 +61,29 @@ public class Driver extends Staff {
     }
 
     /**
-     * View active orders.
+     * View active delivery orders.
      */
     public void viewActiveOrders() {
-        String change;
-        Lo:
-        for (Order order : Database.delivery(Database.getOrderHistory())){
-            Delivery delivery = (Delivery) order;
-            if (delivery.isDriveComplete()){
-                System.out.println(delivery.toString());
-                lo:
-                while (true) {
-                    System.out.println("Have you completed this order? (yes or no)");
-                    change = Input.stringInput();
-                    if (change.equalsIgnoreCase("yes")) {
-                        completeDelivery(delivery, true);
-                        break Lo;
-                    } else if (change.equalsIgnoreCase("no")) {
-                        continue Lo;
-                    } else {
-                        System.out.println("Incorrect input. Please try again");
-                        continue lo;
-                    }
-                }
+        boolean cont = true;
+        while (cont) {
+            ArrayList<Order> activeDeliveries = Database.activeDelivery();
+            for (int i = 0; i < activeDeliveries.size(); i++) {
+                System.out.println((i + 1) + ". " + activeDeliveries.get(i).toString());
+            }
+            System.out.println("1. Complete a delivery");
+            System.out.println("0. Back");
+
+            int select = Input.intInput(0, 1);
+            if (select == 0) {
+                cont = false;
+            } else {
+                System.out.println("Enter delivery to complete:");
+                select = Input.intInput(1, activeDeliveries.size() + 1);
+                Delivery x = (Delivery)activeDeliveries.get(select - 1);
+                x.setDriveComplete(true);
             }
         }
+        
     }
 
     /**
