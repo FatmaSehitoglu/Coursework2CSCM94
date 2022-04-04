@@ -78,7 +78,7 @@ public class Manager extends Staff {
             System.out.println("1. Add New Staff Member");
             System.out.println("2. Add Hours Worked To A Staff Member");
             for (int i = 0; i < Database.getStaffCount(); i++) {
-                System.out.println((i + 3) + "- " + Database.staffList.get(i).toString());
+                System.out.println((i + 3) + "- " + Database.getStaffList().get(i).toString());
             }
             System.out.println("0. Back");
 
@@ -168,7 +168,7 @@ public class Manager extends Staff {
         Input.intInput(1,4);
         int choose;
         String change;
-        Staff staff =  Database.staffList.get(n);
+        Staff staff =  Database.getStaffList().get(n);
         System.out.println("What would you like to change?");
         System.out.println("1. Change first name");
         System.out.println("2. Change last name");
