@@ -14,6 +14,12 @@ public class Eat_in extends Order{
     //FIELDS
     //======
 
+    //public String customID;               (inherited)
+    //public ArrayList<MenuItem> items;     (inherited)
+    //public boolean orderComplete;         (inherited)
+    //public LocalDateTime time;            (inherited)
+    //public boolean chefComplete;          (inherited)
+    //public boolean approval;              (inherited)
     private int tableID;
     private String waiterID;
 
