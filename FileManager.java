@@ -32,8 +32,10 @@ public class FileManager {
      */
     public static void writeToFile(String filename, String data) {
         try {
-            FileWriter writer = new FileWriter(filename, true);
-            writer.append(data);
+            try (FileWriter writer = new FileWriter(filename, true)) {
+                writer.append(data);
+            }
+            System.out.println("Written " + data + " to " + filename);
         } catch (IOException e) {
             System.out.println("An error occurred");
         }
@@ -101,8 +103,9 @@ public class FileManager {
      */
     public static void clearFile(String filename) {
         try {    
-            FileWriter writer = new FileWriter(filename, true);
-            writer.write("");
+            try (FileWriter writer = new FileWriter(filename, true)) {
+                writer.write("");
+            }
         } catch (IOException e) {
             System.out.println("An error occurred");
             e.printStackTrace();
