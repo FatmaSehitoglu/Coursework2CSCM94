@@ -360,7 +360,7 @@ public class Database {
      */
     public static Customer getCustomer(String id) {
         for (int k=0; k < customerList.size(); k++) {
-            if (ID.equals(customerList.get(k).getId())) {
+            if (id.equals(customerList.get(k).getId())) {
                 return customerList.get(k);
             }
         }
@@ -479,7 +479,7 @@ public class Database {
      */
     public static Staff getStaff(String id) {
         for (int k = 0; k < staffList.size(); k++) {
-            if (ID.equals(staffList.get(k).getId())) {
+            if (id.equals(staffList.get(k).getId())) {
                 return staffList.get(k);
             }
         }
@@ -495,7 +495,7 @@ public class Database {
     public static boolean removeStaffFromDatabase(String id) {
 
         for (Staff a: staffList){
-            if (a.getId() == ID){
+            if (a.getId() == id){
                 staffList.remove(a);
                 return true;
             }
@@ -563,7 +563,9 @@ public class Database {
      *
      * @return menuItems as an Arraylist of objects of MenuItem
      */
-    public static ArrayList<MenuItem> getMenu(){return menuItems;};
+    public static ArrayList<MenuItem> getMenu(){
+        return menuItems;
+    };
 
     /**
      * Gets specials.
