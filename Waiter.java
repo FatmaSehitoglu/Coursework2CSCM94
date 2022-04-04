@@ -90,19 +90,19 @@ public class Waiter extends Staff {
                     System.out.println((i+1) + "- " + Database.getOrderHistory().get(i).toString());
                 } 
             }
-            System.out.println("To Approve a delivery Select 1");
-            System.out.println("To cancel an order Select 2");
-            System.out.println("To Go Back Select 0");
+            System.out.println("1. Approve a delivery");
+            System.out.println("2. Cancel an order ");
+            System.out.println("0. Back");
             int select = Input.intInput(0, 2);
             switch (select) {
                 case 1:
                     System.out.println("Select a delivery to approve");
-                    int app = Input.intInput(1, Database.getOrderHistory().size());
-                    Database.getOrderHistory().get(app).setApproval(true);
+                    int app = Input.intInput(1, Database.getOrderHistory().size() + 1);
+                    Database.getOrderHistory().get(app - 1).setApproval(true);
                     break;
                 case 2:
                     System.out.println("Select an order to cancel");
-                    int cancel = Input.intInput(1, Database.getOrderHistory().size());
+                    int cancel = Input.intInput(1, Database.getOrderHistory().size() + 1);
                     cancelOrder(Database.getOrderHistory().get(cancel-1));
                     break;
                 case 0:
