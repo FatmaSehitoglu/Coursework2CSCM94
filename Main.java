@@ -1,3 +1,8 @@
+/**
+ * <h2>Main class</h2>
+ * @author Martin Dimitrov
+ * @version 1.0
+ */
 public class Main {
     /**
      * The entry point of application.
@@ -5,11 +10,6 @@ public class Main {
      */
     public static void main(String[] args) {
     
-        /*
-        Menu mainMenu = new Menu();
-        Menu menu = mainMenu;
-        menu.selectFromMenu();
-        */
         Database.populateDb();
         InterfaceLogin.mainLogin();
     }
