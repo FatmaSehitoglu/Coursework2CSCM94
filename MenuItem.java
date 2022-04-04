@@ -8,7 +8,7 @@ public class MenuItem {
     //FIELDS
     //======
 
-    private int ID;
+    private int id;
     private String price;
     private String name;
     private Boolean inMenu;
@@ -20,20 +20,20 @@ public class MenuItem {
     /**
      * Instantiates a new Menu item.
      *
-     * @param ID        the id as an int
+     * @param id        the id as an int
      * @param price     the price as a String
      * @param name      the name as a String
      * @param inMenu    the in menu as a Boolean
      * @param isSpecial the is special as a Boolean
      */
     public MenuItem(
-        int ID, 
+        int id,
         String price, 
         String name, 
         Boolean inMenu, 
         Boolean isSpecial
     ) {
-        this.ID = ID;
+        this.id = id;
         this.price = price;
         this.name = name;
         this.inMenu = inMenu;
@@ -45,10 +45,10 @@ public class MenuItem {
 
     /**
      * Sets id.
-     * @param ID the id as an int
+     * @param id the id as an int
      */
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int id) {
+        this.id = id;
         Database.refreshMenuItems();
     }
 
@@ -96,7 +96,7 @@ public class MenuItem {
      * @return the id as an int
      */
      public int getID() {
-        return ID;
+        return id;
     }
 
     /**
