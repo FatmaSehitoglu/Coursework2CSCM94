@@ -10,12 +10,12 @@ public abstract class Order {
 
     //FIELDS
     //======
-    private String customID;
-    private ArrayList<MenuItem> items;
-    private boolean orderComplete;
-    private LocalDateTime time;
-    private boolean chefComplete;
-    private boolean approval;
+    public String customID;
+    public ArrayList<MenuItem> items;
+    public boolean orderComplete;
+    public LocalDateTime time;
+    public boolean chefComplete;
+    public boolean approval;
 
     //CONSTRUCTORS
     //============
