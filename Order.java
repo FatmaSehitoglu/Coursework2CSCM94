@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
  /**
 * <h1>Order class</h1>
-* Superclass for Eat_in, Delivery and Takeaway
+* Abstract superclass for Eat_in, Delivery and Takeaway
 * @author   Niu Zhaoye
 * @version  1.0
 */
