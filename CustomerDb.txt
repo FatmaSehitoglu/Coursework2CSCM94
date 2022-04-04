@@ -3,3 +3,4 @@ George|Mallard|69 Bundy Terrace|george@mallard.com
 The|Queen|queen@uk.com|queen@uk.com
 fatma|sehitoglu|swansea|fatma@email.com
 John|Doe|SA1 8EP-Swansea Bay Campus Student Accomodation|john@doe.com
+User|McUser|Swansea|user@user.com
