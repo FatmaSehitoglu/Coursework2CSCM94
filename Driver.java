@@ -3,6 +3,7 @@
  * A subclass of Staff
  * @author Fatma Sehitoglu
  * @author Chris Litting
+ * @author Niu Zhaoye
  * @version 1.0
  */
 public class Driver extends Staff {
