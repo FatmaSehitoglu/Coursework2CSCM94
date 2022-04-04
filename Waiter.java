@@ -1,4 +1,9 @@
 import java.util.ArrayList;
+
+/**
+ * <h2>Waiter class</h2>
+ * A subclass of Staff
+ */
 public class Waiter extends Staff {
     
     //FIELDS
@@ -7,9 +12,20 @@ public class Waiter extends Staff {
     //private lastName      (inherited)
     //private staffId       (inherited)
 
-    //CONSTRUCTOR
-    //===========
-    public Waiter(String firstName, String lastName, String staffId) {
+    //CONSTRUCTORS
+    //============
+
+    /**
+     * Constructor for new Waiter
+     * @param firstName as a String
+     * @param lastName  as a String
+     * @param staffId   as a String
+     */
+    public Waiter(
+        String firstName, 
+        String lastName, 
+        String staffId
+    ) {
         super(firstName, lastName, staffId);
     }
 
@@ -17,7 +33,7 @@ public class Waiter extends Staff {
     //=======
 
     /**
-     * <h1>a method to display menu</h1>
+     * Displays main menu for Waiter
      */
     public void displayMainMenu() {
         boolean cont = true;
@@ -48,13 +64,10 @@ public class Waiter extends Staff {
     }
 
     /**
-     * <h2>A method to create a new Eat In Order</h2>
+     * A method to create a new Eat In Order
      */
     public void newEatInOrder() {
         int tableId = -1;
-        //System.out.println("Enter table number: ");
-        //tableId = Input.intInput(1, 999999);
-        //String waiterId = this.getId();
         System.out.println("Enter customer id:");
         String cID = Input.stringInput();
         ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
@@ -64,7 +77,7 @@ public class Waiter extends Staff {
     }
 
     /**
-     * <h3>A method to view the active orders</h3>
+     * A method to view the active orders
      */
     public void viewActiveOrders() {
         int con = -1;
@@ -97,7 +110,7 @@ public class Waiter extends Staff {
     }
 
     /**
-     * <h4>This method is used to view all bookings</h4>
+     * This method is used to view all bookings
      */
     public void viewBookings() {
         int bookingToApprove = -1;
@@ -116,9 +129,8 @@ public class Waiter extends Staff {
         }               
     }
 
-
     /**
-     * <h5>This method cancels an order</h5>
+     * This method cancels an order
      * @param Order order
      */
     public void cancelOrder(Order order) {
@@ -129,21 +141,48 @@ public class Waiter extends Staff {
         }
     }
 
+    /**
+     * Approves an existing Booking
+     * @param booking as a Booking
+     */
     public void approveBooking(Booking booking) {
         booking.setApproved(true);
     }
 
+    /**
+     * Approves an existing Delivery
+     * @param delivery as a Delivery
+     */
     public void approveDelivery(Delivery delivery) {
         delivery.setApproval(true);
     }
 
+    /**
+     * toString method for Waiter (for menu displays)
+     * @return Waiter as a String
+     */
     @Override
     public String toString() {
-        return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Waiter");
+        return String.format(
+            "%s %s, %s", 
+            this.getFirstName(), 
+            this.getLastName(), 
+            "Waiter"
+        );
     }
 
+    /**
+     * Converts Waiter to a data String (for database storage)
+     * @return Waiter as a data String
+     */
     public String toDataString() {
-        return String.format("%s|%s|%s|%s\n", this.getFirstName(), this.getLastName(), this.getId(), "Waiter");
+        return String.format(
+            "%s|%s|%s|%s\n", 
+            this.getFirstName(), 
+            this.getLastName(), 
+            this.getId(), 
+            "Waiter"
+        );
     }
 
 }
