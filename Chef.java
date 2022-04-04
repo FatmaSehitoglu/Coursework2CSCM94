@@ -62,6 +62,8 @@ public class Chef extends Staff {
                 case 0:
                     cont = false;
                     break;
+                default:
+                    break;
             }
         }   
     }
@@ -146,6 +148,8 @@ public class Chef extends Staff {
                 case 0:
                     cont = false;
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -173,6 +177,8 @@ public class Chef extends Staff {
                     break;
                 case 0:
                     cont = false;
+                    break;
+                default:
                     break;
             }
         }
@@ -208,6 +214,8 @@ public class Chef extends Staff {
                     break;
                 case 0:
                     cont = false;
+                    break;
+                default:
                     break;
             }
         }
