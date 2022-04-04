@@ -1,35 +1,6 @@
-/**
- * The type Coursework 2.
- */
-class Coursework2 {
-    /**
-     * The entry point of application.
-     * @param args the input arguments
-     */
-    public static void main(String[] args) {
-        /*
-        Scanner in = new Scanner(System.in);
-        Customer cust1 = new Customer("fatma", "sh", "Swansea", "00011");
-        System.out.println("Enter the date for the booking");
-        String x = in.nextLine();
-        System.out.println("Enter the time for the booking");
-        String y = in.nextLine();
-        System.out.println("Enter the number of guests for the booking");
-        int guestNo = in.nextInt();
-        cust1.requestBooking(x,y,guestNo);
-        */
-
-        /*
-        Menu mainMenu = new Menu();
-        Menu menu = mainMenu;
-        menu.selectFromMenu();
-        */
-        Database.populateDb();
-        mainLogin();
-    }
-
+public class InterfaceLogin {
     //Main login page for app
-    private static void mainLogin() {
+    public static void mainLogin() {
         boolean cont = true;
         while (cont) {
             System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n0. Exit");
@@ -90,7 +61,7 @@ class Coursework2 {
                 }else {
                     user.displayMainMenu();
                 }
-                
+
             } else {
                 System.out.println("Staff email not found\n1. Try again\n2. Back to main menu");
                 int select = Input.intInput(1, 2);
@@ -98,7 +69,7 @@ class Coursework2 {
                     cont = false;
                 }
             }
-        }    
+        }
     }
 
     //Sign up page for new Customers
@@ -124,10 +95,10 @@ class Coursework2 {
             System.out.println("Menu \n1. New Eat In Order \n2. Cancel Order \n3. Approve Booking \n4. Approve Delivery \n5. Exit");
             int select = Input.intInput(1, 5);
             switch(select) {
-               // ---currently user is staff so Waiter methods doesnt work
+                // ---currently user is staff so Waiter methods doesnt work
                 case 1:
                     // user.newEatInOrder();
-                    break; 
+                    break;
                 case 2:
                     System.out.println("Select an order to Cancel");
                     /* Possible problems:
@@ -159,13 +130,11 @@ class Coursework2 {
                 case 4:
                     System.out.println("Select a Delivery to Approve");
                     //deliveries need to be seperated from orders
-                    break;  
+                    break;
                 case 5:
-                cont = false;
-                break;
+                    cont = false;
+                    break;
             }
         }
     }
-
-
 }
