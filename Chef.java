@@ -119,7 +119,7 @@ public class Chef extends Staff {
                     boolean found = false;
                     int s = Input.intInput(0, 999999);
                     for (int i = 0; i<Database.getMenu().size(); i++) {
-                        if (s == Database.getMenu().get(i).getID()) {
+                        if (s == Database.getMenu().get(i).getId()) {
                             Database.getMenu().get(i).setIsSpecial(true);
                             found = true;
                         }
@@ -136,7 +136,7 @@ public class Chef extends Staff {
                     found = false;
                     s = Input.intInput(0, 999999);
                     for (int i=0; i<Database.getSpecials().size(); i++) {
-                        if (s == Database.getSpecials().get(i).getID()) {
+                        if (s == Database.getSpecials().get(i).getId()) {
                             Database.getSpecials().get(i).setIsSpecial(false);
                             found = true;
                         }

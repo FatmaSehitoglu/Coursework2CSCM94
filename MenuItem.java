@@ -96,7 +96,7 @@ public class MenuItem {
      * Gets id.
      * @return the id as an int
      */
-     public int getID() {
+     public int getId() {
         return id;
     }
 

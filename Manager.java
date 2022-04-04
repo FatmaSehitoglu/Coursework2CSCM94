@@ -253,10 +253,10 @@ public class Manager extends Staff {
         for (int i=0; i<Database.getMenu().size(); i++) {
             int sum = 0;
             MenuItem item = Database.getMenu().get(i);
-            int itemID= item.getID();
+            int itemID= item.getId();
             for (int k=0; k<Database.getOrderHistory().size(); k++) {
                 for (int l=0; l<Database.getOrderHistory().get(k).getItems().size(); l++) {
-                    if (itemID == (Database.getOrderHistory().get(k).getItems().get(l).getID())) {
+                    if (itemID == (Database.getOrderHistory().get(k).getItems().get(l).getId())) {
                         sum = sum + 1;
                     }
                 }
@@ -265,7 +265,7 @@ public class Manager extends Staff {
                 max = sum;
                 maxName = item.getName();
             }
-            System.out.println(item.getID() + " "
+            System.out.println(item.getId() + " "
                     + item.getName() + " -> " + sum);
         }
         System.out.println("The most popular item is "

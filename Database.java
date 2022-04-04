@@ -556,7 +556,7 @@ public class Database {
      */
     public static MenuItem getItem(int id) {
         for (int k = 0; k < menuItems.size(); k++) {
-            if (id == menuItems.get(k).getID()) {
+            if (id == menuItems.get(k).getId()) {
                 return menuItems.get(k);
             }
         }
