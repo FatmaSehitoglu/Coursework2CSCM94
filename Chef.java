@@ -1,5 +1,7 @@
 /**
  * The type Chef.
+ * @version 1.0
+ * @author Fatma and Chris and others
  */
 public class Chef extends Staff {
 
@@ -12,9 +14,9 @@ public class Chef extends Staff {
     /**
      * Instantiates a new Chef.
      *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param id        the id
+     * @param firstName the first name as a String
+     * @param lastName  the last name as a String
+     * @param id        the id as a String
      */
 //CONSTRUCTOR
     //===========
@@ -31,7 +33,7 @@ public class Chef extends Staff {
     /**
      * Complete order.
      *
-     * @param order the order
+     * @param order the order as object Order
      */
 //METHODS
     //=======
@@ -42,7 +44,7 @@ public class Chef extends Staff {
     /**
      * Add to menu.
      *
-     * @param special the special
+     * @param special the special as a boolean
      */
     public void addToMenu(boolean special){
         int id;
