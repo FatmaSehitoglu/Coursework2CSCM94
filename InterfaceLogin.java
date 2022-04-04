@@ -61,11 +61,11 @@ public class InterfaceLogin {
                 user = Database.getStaff(id);
                 cont = false;
                 //checks staffUsers class and shows different menus accordingly
-                if(user.getClass() == Manager.class) {
+                if (user.getClass() == Manager.class) {
                     user.displayMainMenu();
-                }else if(user.getClass() == Waiter.class) {
+                }else if (user.getClass() == Waiter.class) {
                     user.displayMainMenu();
-                }else if(user.getClass() == Chef.class) {
+                }else if (user.getClass() == Chef.class) {
                     user.displayMainMenu();
                 }else {
                     user.displayMainMenu();
