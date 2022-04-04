@@ -74,6 +74,16 @@ public class Database {
     //ORDER DATABASE
     //===== ========
     public static ArrayList<Order> orderHistory = new ArrayList<Order>();
+    
+    public static ArrayList<Order> delivery(ArrayList<Order> orderHistory){
+        ArrayList<Order> deliveryList = new ArrayList<>();
+        for (Order order : orderHistory){
+            if(order.getClass() == Delivery.class){
+                deliveryList.add(order);
+            }
+        }
+        return deliveryList;
+    }
 
     public static void addToOrderHistory(Order newOrder) {
         orderHistory.add(newOrder);
@@ -359,11 +369,18 @@ public class Database {
 
     //most active customer
     public static Customer mostActiveCustomer() {
-        Customer mostActiveCust = customerList.get(0); // If the customer list is empty error will occur!!!
+        Customer mostActiveCust = getCustomerList().get(0); // If the customer list is empty error will occur!!!
         int maxSize = 0;
-        for(int i = 0; i <customerList.size(); i++) {
-            Customer checkingCust = customerList.get(i);
-            int size = customerHistory(checkingCust.getId()).size();
+        Customer checkingCust = getCustomerList().get(0);
+        for(int i = 0; i <getCustomerList().size(); i++) {
+            checkingCust = customerList.get(i);
+            int size = 0;
+            for(int k = 0; k<getOrderHistory().size(); k++) {
+                String checkingCustID = checkingCust.getID();
+                if(checkingCustID.equals(getOrderHistory().get(k).getCustomID())) {
+                    size = size + 1;
+                }
+            }
             if(size > maxSize) {
                 maxSize = size;
                 mostActiveCust = checkingCust;

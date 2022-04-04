@@ -46,12 +46,34 @@ public class Driver extends Staff {
         }   
     }
    
-    public void viewActiveOrders() {
-        
+  public void viewActiveOrders() {
+        String change;
+        Lo:
+        for (Order order : Database.delivery(Database.orderHistory)){
+            Delivery delivery = (Delivery)order;
+            if (delivery.isDriveComplete()){
+                System.out.println(delivery.toString());
+                lo:
+                while (true) {
+                    System.out.println("Have you completed this order? (yes or no)");
+                    change = Input.stringInput();
+                    if (change.equalsIgnoreCase("yes")) {
+                        completeDelivery(delivery, true);
+                        break Lo;
+                    } else if (change.equalsIgnoreCase("no")) {
+                        continue Lo;
+                    } else {
+                        System.out.println("Incorrect input. Please try again");
+                        continue lo;
+                    }
+                }
+            }
+        }
     }
 
-    public void completeDelivery() {
-        //add code here
+    public void completeDelivery(Delivery delivery, boolean finish) {
+        delivery.setDriveComplete(finish);
+        System.out.println("successful!");
     }
 
 
