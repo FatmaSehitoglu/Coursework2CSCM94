@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
  * @author Niu Zhaoye
  * @version 1.0
  */
-public class Eat_in extends Order{
+public class EatIn extends Order{
 
     //FIELDS
     //======
@@ -34,7 +34,7 @@ public class Eat_in extends Order{
      * @param tableID  as an int
      * @param waiterID as a String
      */
-    public Eat_in(
+    public EatIn(
         String customID, 
         ArrayList<MenuItem> items, 
         boolean approval, 
@@ -63,7 +63,7 @@ public class Eat_in extends Order{
      * @param tableID       as an int
      * @param waiterID      as a String
      */
-    public Eat_in(
+    public EatIn(
         String customID, 
         ArrayList<MenuItem> items, 
         boolean orderComplete, 
