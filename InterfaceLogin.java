@@ -1,5 +1,13 @@
+/**
+ * <h2>The type Interface login.</h2>
+ * @version 1.0
+ * @author All
+ */
 public class InterfaceLogin {
-    //Main login page for app
+    /**
+     * Main login.
+     */
+//Main login page for app
     public static void mainLogin() {
         boolean cont = true;
         while (cont) {
@@ -87,6 +95,10 @@ public class InterfaceLogin {
         System.out.println("\nWelcome to Cafe94 " + firstName + "!\n");
     }
 
+    /**
+     *
+     * @param user as an object of Staff
+     */
     //should this method be here or Waiter?
     private static void waiterMenu(Staff user){
         boolean cont = true;
