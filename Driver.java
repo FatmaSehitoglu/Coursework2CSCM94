@@ -1,3 +1,6 @@
+/**
+ * The type Driver.
+ */
 public class Driver extends Staff {
 
     //FIELDS
@@ -7,13 +10,13 @@ public class Driver extends Staff {
     //private staffId       (inherited)    
 
     /**
+     * Instantiates a new Driver.
      *
-     * @param firstName
-     * @param lastName
-     * @param id
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param id        the id
      */
-
-    //CONSTRUCTOR
+//CONSTRUCTOR
     //===========
     public Driver(String firstName, String lastName, String id) {
         super(firstName, lastName, id);
@@ -45,8 +48,11 @@ public class Driver extends Staff {
             }
         }   
     }
-   
-  public void viewActiveOrders() {
+
+    /**
+     * View active orders.
+     */
+    public void viewActiveOrders() {
         String change;
         Lo:
         for (Order order : Database.delivery(Database.orderHistory)){
@@ -71,6 +77,12 @@ public class Driver extends Staff {
         }
     }
 
+    /**
+     * Complete delivery.
+     *
+     * @param delivery the delivery
+     * @param finish   the finish
+     */
     public void completeDelivery(Delivery delivery, boolean finish) {
         delivery.setDriveComplete(finish);
         System.out.println("successful!");

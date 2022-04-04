@@ -1,3 +1,6 @@
+/**
+ * The type Chef.
+ */
 public class Chef extends Staff {
 
     //FIELDS
@@ -5,8 +8,15 @@ public class Chef extends Staff {
     //private firstName     (inherited)
     //private lastName      (inherited)
     //private staffId       (inherited)    
-    
-    //CONSTRUCTOR
+
+    /**
+     * Instantiates a new Chef.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param id        the id
+     */
+//CONSTRUCTOR
     //===========
     public Chef(String firstName, String lastName, String id) {
         super(firstName, lastName, id);
@@ -17,13 +27,23 @@ public class Chef extends Staff {
    
     //GETTERS
     //=======
-   
-    //METHODS
+
+    /**
+     * Complete order.
+     *
+     * @param order the order
+     */
+//METHODS
     //=======
     public void completeOrder(Order order) {
         order.setChefComplete(true);
     }
 
+    /**
+     * Add to menu.
+     *
+     * @param special the special
+     */
     public void addToMenu(boolean special){
         int id;
         String price;
@@ -38,7 +58,10 @@ public class Chef extends Staff {
         Database.newMenuItem(newItem);
     }
 
-    
+
+    /**
+     * Edit daily special.
+     */
     public void editDailySpecial() {
         boolean cont = true;
         while(cont) {
@@ -94,6 +117,9 @@ public class Chef extends Staff {
         }
     }
 
+    /**
+     * Displays MainMenu
+     */
     public void displayMainMenu() {
         boolean cont = true;
         while (cont) {  
@@ -124,6 +150,9 @@ public class Chef extends Staff {
         }   
     }
 
+    /**
+     * View active orders.
+     */
     public void viewActiveOrders() {
         boolean cont = true;
         while(cont == true) {
@@ -149,6 +178,9 @@ public class Chef extends Staff {
         }
     }
 
+    /**
+     * View menu items.
+     */
     public void viewMenuItems() {
         boolean cont = true;
         while(cont == true) {
