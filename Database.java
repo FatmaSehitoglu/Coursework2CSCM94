@@ -551,12 +551,7 @@ public class Database {
 
     /**
      * Gets item.
-<<<<<<< HEAD
-     * @param ID the id as an int
-=======
-     *
      * @param id the id as an int
->>>>>>> b4b0fb93068f397367cc96b9df2ff2542ff59a5c
      * @return the item as an objectof MenuItem
      */
     public static MenuItem getItem(int id) {
