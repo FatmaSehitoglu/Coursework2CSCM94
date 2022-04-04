@@ -1,3 +1,4 @@
-George|Mallard|george@mallard.com|Manager
+Manager|McManager|manager@manager.com|Manager
 Waiter|McWaiter|waiter@waiter.com|Waiter
 Chef|McChef|chef@chef.com|Chef
+Driver|McDriverFace|driver@driver.com|Driver
