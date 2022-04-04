@@ -149,7 +149,7 @@ public class MenuItem {
      * @return MenuItem as a data String
      */
     public String toDataString() {
-        return String.format("%d|%s|%s|%b|%b", id, price, name, inMenu, isSpecial);
+        return String.format("%d|%s|%s|%b|%b\n", id, price, name, inMenu, isSpecial);
     }
     
 }
