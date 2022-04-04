@@ -233,7 +233,8 @@ public class Customer extends User {
         for (int i=0; i<Database.getOrderHistory().size(); i++) {
             String checkingID = Database.getOrderHistory().get(i).getCustomID();
             if (checkingID.equals(this.id)) {
-                System.out.println(Database.getOrderHistory().get(i).toString());
+                System.out.println(i + "- " + 
+                Database.getOrderHistory().get(i).toString());
             }
         }
     }
