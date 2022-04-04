@@ -509,7 +509,7 @@ public class Database {
      */
 //MENU ITEMS DATABASE
     //==== ===== ========
-    public static ArrayList<MenuItem>menuItems = new ArrayList<>();
+    private static ArrayList<MenuItem> menuItems = new ArrayList<>();
 
     /**
      * Populate menu items.
@@ -537,7 +537,7 @@ public class Database {
      *
      * @param item the item as an object of MenuItem
      */
-    public static void addToMenu(MenuItem item){menuItems.add(item);}
+    public static void addToMenu(MenuItem item) {menuItems.add(item);}
 
     /**
      * Refresh menu items.
@@ -613,7 +613,7 @@ public class Database {
     /**
      * The constant selectionss.
      */
-    public static ArrayList<MenuItem> selectionss = new ArrayList<>();
+    private static ArrayList<MenuItem> selectionss = new ArrayList<>();
 
     /**
      * Add to selections.
