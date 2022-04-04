@@ -99,6 +99,15 @@ public class Waiter extends Staff {
                     System.out.println("Select a delivery to approve");
                     int app = Input.intInput(1, Database.getOrderHistory().size() + 1);
                     Database.getOrderHistory().get(app - 1).setApproval(true);
+                    System.out.println("Choose a driver to this delivery");
+                    for(int i = 0; i< Database.getStaffCount(); i++) {
+                        if(Database.getStaffList().get(i).getClass() == Waiter.class) {
+                            System.out.println(i + "- " + 
+                            Database.getStaffList().get(i).toString());
+                        }
+                    }
+                    int driver = Input.intInput(0, Database.getStaffCount());
+                    Database.getOrderHistory().get(app - 1).setDriveID(Database.getStaffList().get(driver).getId());
                     break;
                 case 2:
                     System.out.println("Select an order to cancel");
