@@ -1,14 +1,27 @@
 import java.util.ArrayList;
 
 /**
- * <h2>The type Database.</h2>
+ * <h2>Database class</h2>
+ * Stores data, and backs up to text files
  * @version 1.0
- * @author Christ
- * @author Fatma
- * @author Martin
- * @author Niu
+ * @author Chris Litting
+ * @author Fatma Sehitoglu
+ * @author Martin Dimitrov
+ * @author Niu Zhaoye
  */
 public class Database {
+
+    //FIELDS
+    //======
+
+    private static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
+    private static ArrayList<Order> orderHistory = new ArrayList<Order>();
+    private static ArrayList<Customer> customerList = new ArrayList<Customer>();
+    private static ArrayList<Staff> staffList = new ArrayList<Staff>();
+    private static ArrayList<MenuItem> menuItems = new ArrayList<>();
+
+    //GENERAL METHODS
+    //======= =======
 
     /**
      * Populate the database.
@@ -21,20 +34,12 @@ public class Database {
         populateOrders();
     }
 
-    /**
-     * The constant bookingHistory.
-     *
-     * @param none
-     * @return none
-     */
-//BOOKING DATABASE
+    //BOOKING DATABASE
     //======= ========
-    private static ArrayList<Booking> bookingHistory = new ArrayList<Booking>();
 
     /**
-     * New booking.
-     *
-     * @param newBooking the new booking as an object of Booking
+     * Add a new booking
+     * @param newBooking as a Booking
      */
     public static void newBooking(Booking newBooking) {
         addToBookingHistory(newBooking);
@@ -42,40 +47,37 @@ public class Database {
     }
 
     /**
-     * Add to booking history.
-     *
-     * @param newBooking the new booking as an object of Booking
+     * Add to booking history ArrayList
+     * @param newBooking as a Booking
      */
     public static void addToBookingHistory(Booking newBooking) {
         bookingHistory.add(newBooking);
     }
 
     /**
+     * Writes Booking to text file
+     * @param booking as a Booking
+     */
+    public static void writeBooking(Booking booking) {
+        FileManager.writeToFile("BookingDb.txt", booking.toDataString());
+    }
+
+    /**
      * Gets booking history.
-     *
-     * @return the booking history as an Arraylist of objects Booking
+     * @return the booking history as a Booking Arraylist
      */
     public static ArrayList<Booking> getBookingHistory() {
         return bookingHistory;
     }
 
     /**
-     * Refresh bookings.
+     * Refresh bookings text file
      */
     public static void refreshBookings() {
         FileManager.clearFile("BookingDB.txt");
         for (int i = 0; i < bookingHistory.size(); i++) {
             writeBooking(bookingHistory.get(i));
         }
-    }
-
-    /**
-     * Write booking.
-     *
-     * @param booking the booking as an object of Booking
-     */
-    public static void writeBooking(Booking booking) {
-        FileManager.writeToFile("BookingDb.txt", booking.toDataString());
     }
 
     /**
@@ -90,10 +92,10 @@ public class Database {
     }
 
     /**
-     * Gets bookings.
+     * Gets Bookings based on Customer ID
      *
-     * @param custId the cust id as a String
-     * @return the bookings as an Arraylist of objects Booking
+     * @param custId    the cust id as a String
+     * @return          the bookings as a Booking Arraylist
      */
     public static ArrayList<Booking> getBookings(String custId) {
         ArrayList<Booking> selection = new ArrayList<Booking>();
@@ -103,35 +105,23 @@ public class Database {
                 }
             }
         return selection;
-   }
+    } 
 
     /**
      * Remove booking.
-     *
-     * @param booking the booking as an object Booking
+     * @param booking as a Booking
      */
     public static void removeBooking(Booking booking) {
-        /*for (int i = 0; i < bookingHistory.size(); i++) {
-            if (bookingHistory.get(i).equals(booking)) {
-                bookingHistory.remove(i);
-            }
-        }*/
         bookingHistory.remove(booking);
-   }
+    }
 
-
-    /**
-     * The constant orderHistory.
-     */
-//ORDER DATABASE
+    //ORDER DATABASE
     //===== ========
-    private static ArrayList<Order> orderHistory = new ArrayList<Order>();
-
+   
     /**
      * Delivery array list.
-     *
-     * @param orderHistory the order history as an Arraylist of objects of class Order
-     * @return deliveryList as an ArrayList of objects of class Order
+     * @param orderHistory  the order history as an Arraylist of objects of class Order
+     * @return              deliveryList as an ArrayList of objects of class Order
      */
     public static ArrayList<Order> delivery(ArrayList<Order> orderHistory){
         ArrayList<Order> deliveryList = new ArrayList<>();
@@ -145,8 +135,7 @@ public class Database {
 
     /**
      * Add to order history.
-     *
-     * @param newOrder the new order as an Object of Order
+     * @param newOrder as an Order
      */
     public static void addToOrderHistory(Order newOrder) {
         orderHistory.add(newOrder);
@@ -154,7 +143,6 @@ public class Database {
 
     /**
      * Gets order history.
-     *
      * @return the order history as an Arraylist of objects Order
      */
     public static ArrayList<Order> getOrderHistory() {
@@ -163,7 +151,6 @@ public class Database {
 
     /**
      * New order.
-     *
      * @param newOrder the new order as an object Order
      */
     public static void newOrder(Order newOrder) {
@@ -184,8 +171,7 @@ public class Database {
     }
 
     /**
-     * Write order.
-     *
+     * Write order to text file
      * @param order the order as an object of Order
      */
     public static void writeOrder(Order order) {
@@ -199,9 +185,8 @@ public class Database {
     }
 
     /**
-     * Write eat in order.
-     *
-     * @param eatIn the eat in as an object of Eat_in
+     * Write Eat In order.
+     * @param eatIn the eat in as an object of EatIn
      */
     public static void writeEatInOrder(EatIn eatIn) {
         FileManager.writeToFile("EatInOrderDb.txt", eatIn.toDataString());
@@ -209,7 +194,6 @@ public class Database {
 
     /**
      * Write takeaway order.
-     *
      * @param takeaway the takeaway as an object of Takeaway
      */
     public static void writeTakeawayOrder(Takeaway takeaway) {
@@ -218,7 +202,6 @@ public class Database {
 
     /**
      * Write delivery order.
-     *
      * @param delivery the delivery as an object of Delivery
      */
     public static void writeDeliveryOrder(Delivery delivery) {
@@ -241,7 +224,7 @@ public class Database {
         String[][] str = FileManager.readFromFile("EatInOrderDb.txt", 8);
         for (int i = 0; i < str.length; i++){
             addToOrderHistory(new EatIn(str[i][0], FileManager.getItemsFromIds(str[i][1]),
-                    Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]),
+                    Boolean.parseBoolean(str[i][2]), FileManager.stringToLocalDateTime(str[i][3]),
                     Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]),
                     Integer.parseInt(str[i][6]), str[i][7]));
         }
@@ -254,7 +237,7 @@ public class Database {
         String[][] str = FileManager.readFromFile("TakeawayOrderDb.txt", 7);
         for (int i = 0; i < str.length; i++){
             addToOrderHistory(new Takeaway(str[i][0], FileManager.getItemsFromIds(str[i][1]),
-                    Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]),
+                    Boolean.parseBoolean(str[i][2]), FileManager.stringToLocalDateTime(str[i][3]),
                     Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), (str[i][6])));
         }
     }
@@ -266,20 +249,15 @@ public class Database {
         String[][] str = FileManager.readFromFile("DeliveryOrderDb.txt", 9);
         for (int i = 0; i < str.length; i++){
             addToOrderHistory(new Delivery(str[i][0], FileManager.getItemsFromIds(str[i][1]),
-                    Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]),
+                    Boolean.parseBoolean(str[i][2]), FileManager.stringToLocalDateTime(str[i][3]),
                     Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), str[i][6], str[i][7],
                     Boolean.parseBoolean(str[i][8])));
         }
     }
 
-
-    /**
-     * The constant customerList.
-     */
-//CUSTOMER DATABASE
+    //CUSTOMER DATABASE
     //======== ========
-    private static ArrayList<Customer> customerList = new ArrayList<Customer>();
-
+    
     /**
      * Populate customers.
      */
@@ -292,7 +270,6 @@ public class Database {
 
     /**
      * Add to customer list.
-     *
      * @param newCustomer the new customer as an object of Customer
      */
     public static void addToCustomerList(Customer newCustomer) {
@@ -301,7 +278,6 @@ public class Database {
 
     /**
      * Add new customer.
-     *
      * @param newCustomer the new customer as an object of Customer
      */
     public static void addNewCustomer(Customer newCustomer) {
@@ -321,7 +297,6 @@ public class Database {
 
     /**
      * Write customer.
-     *
      * @param newCustomer the new customer as an object of Customer
      */
     public static void writeCustomer(Customer newCustomer) {
@@ -330,7 +305,6 @@ public class Database {
 
     /**
      * Gets customer list.
-     *
      * @return the customer list as an Arraylist of objects of Customer
      */
     public static ArrayList<Customer> getCustomerList() {
@@ -339,9 +313,8 @@ public class Database {
 
     /**
      * Check customer boolean.
-     *
-     * @param possibleID the possible id as a String
-     * @return false as a boolean
+     * @param possibleID    the possible id as a String
+     * @return              whether Customer ID is in the list as a boolean
      */
     public static boolean checkCustomer(String possibleID) {
         for (int k=0; k < customerList.size(); k++) {
@@ -353,8 +326,7 @@ public class Database {
     }
 
     /**
-     * Gets customer.
-     *
+     * Gets customer by Customer ID
      * @param id the id as a String
      * @return the customer as an object of Customer
      */
@@ -367,16 +339,11 @@ public class Database {
         return null;
     }
 
-    /**
-     * The constant staffList.
-     */
-//STAFF DATABASE
+    //STAFF DATABASE
     //===== ========
-    private static ArrayList<Staff> staffList = new ArrayList<Staff>();
-
+   
     /**
      * Add new staff.
-     *
      * @param newStaff the new staff as an object of Staff
      */
     public static void addNewStaff(Staff newStaff) {
@@ -396,7 +363,6 @@ public class Database {
 
     /**
      * Write staff.
-     *
      * @param newStaff the new staff as an object of Staff
      */
     public static void writeStaff(Staff newStaff) {
@@ -406,7 +372,6 @@ public class Database {
 
     /**
      * Add to staff list.
-     *
      * @param newStaff the new staff as an object of Staff
      */
     public static void addToStaffList(Staff newStaff) {
@@ -440,7 +405,6 @@ public class Database {
 
     /**
      * Gets staff list.
-     *
      * @return the staff list as an Arraylist of objects of Staff
      */
     public static ArrayList<Staff> getStaffList() {
@@ -449,7 +413,6 @@ public class Database {
 
     /**
      * Gets staff count.
-     *
      * @return the staff count as an int
      */
     public static int getStaffCount() {
@@ -458,9 +421,8 @@ public class Database {
 
     /**
      * Check staff boolean.
-     *
-     * @param possibleID the possible idas a String
-     * @return true or false as a boolean
+     * @param possibleID    the possible ID as a String
+     * @return              whether the ID exists in Staff list as a boolean
      */
     public static boolean checkStaff(String possibleID) {
         for (int k = 0; k < staffList.size(); k++) {
@@ -472,10 +434,9 @@ public class Database {
     }
 
     /**
-     * Gets staff.
-     *
-     * @param id the id as a String
-     * @return the staff as an object of Staff
+     * Gets staff by Staff ID
+     * @param id    the id as a String
+     * @return      the staff as an object of Staff
      */
     public static Staff getStaff(String id) {
         for (int k = 0; k < staffList.size(); k++) {
@@ -487,10 +448,10 @@ public class Database {
     }
 
     /**
-     * Remove staff from database boolean.
+     * Remove staff from database by Staff ID
      *
-     * @param id the id as a String
-     * @return true or false as a boolean
+     * @param id    the id as a String
+     * @return      success as a boolean
      */
     public static boolean removeStaffFromDatabase(String id) {
 
@@ -501,15 +462,10 @@ public class Database {
             }
         }
         return false;
-
     }
 
-    /**
-     * The constant menuItems.
-     */
-//MENU ITEMS DATABASE
+    //MENU ITEMS DATABASE
     //==== ===== ========
-    private static ArrayList<MenuItem> menuItems = new ArrayList<>();
 
     /**
      * Populate menu items.
@@ -524,7 +480,6 @@ public class Database {
 
     /**
      * New menu item.
-     *
      * @param newMenuItem the new menu item as an object of MenuItem
      */
     public static void newMenuItem(MenuItem newMenuItem) {
@@ -534,7 +489,6 @@ public class Database {
 
     /**
      * Add to menu.
-     *
      * @param item the item as an object of MenuItem
      */
     public static void addToMenu(MenuItem item) {menuItems.add(item);}
@@ -550,8 +504,7 @@ public class Database {
     }
 
     /**
-     * Write menu item.
-     *
+     * Write menu item to text file
      * @param menuItem the menu item as an object of MenuItem
      */
     public static void writeMenuItem(MenuItem menuItem) {
@@ -560,7 +513,6 @@ public class Database {
 
     /**
      * Get menu array list.
-     *
      * @return menuItems as an Arraylist of objects of MenuItem
      */
     public static ArrayList<MenuItem> getMenu(){
@@ -569,7 +521,6 @@ public class Database {
 
     /**
      * Gets specials.
-     *
      * @return the specials as an Arraylist of objects of MenuItem
      */
     public static ArrayList<MenuItem> getSpecials() {
@@ -584,7 +535,6 @@ public class Database {
 
     /**
      * Gets active menu.
-     *
      * @return the active menu as an ArrayList of objects of MenuItem
      */
     public static ArrayList<MenuItem> getActiveMenu() {
@@ -599,7 +549,6 @@ public class Database {
 
     /**
      * Gets item.
-     *
      * @param ID the id as an int
      * @return the item as an objectof MenuItem
      */
@@ -612,32 +561,28 @@ public class Database {
         return null;
     }
 
-    /**
-     * The constant selectionss.
-     */
+    //OTHER METHODS AND REPORTS
+    //===== ======= === =======
+
     private static ArrayList<MenuItem> selectionss = new ArrayList<>();
 
     /**
      * Add to selections.
-     *
      * @param selections the selections as an object of MenuItem
      */
     public static void addToSelections(MenuItem selections){selectionss.add(selections);}
 
     /**
      * Get selections array list.
-     *
      * @return the selections as an ArrayList of objects of MenuItem
      */
     public static ArrayList<MenuItem> getSelections(){return selectionss;};
 
     /**
      * Customer history array list.
-     *
      * @param custId the cust id as a String
      * @return custHistory as an ArrayList of objects of Order
      */
-// return customer history
     public static ArrayList<Order> customerHistory(String custId) {
         ArrayList<Order> custHistory = new ArrayList<Order>();
         for(int i = 0; i < orderHistory.size(); i++  ) {
@@ -651,10 +596,8 @@ public class Database {
 
     /**
      * Most active customer customer.
-     *
      * @return the most active customer as an object of Customer
      */
-//most active customer
     public static Customer mostActiveCustomer() {
         Customer mostActiveCust = getCustomerList().get(0); // If the customer list is empty error will occur!!!
         int maxSize = 0;
@@ -675,7 +618,5 @@ public class Database {
         }
         return mostActiveCust;
     }
-
-    
 
 }
