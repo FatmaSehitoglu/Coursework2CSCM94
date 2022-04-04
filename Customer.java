@@ -58,36 +58,38 @@ public class Customer extends User {
         Database.refreshCustomers();
     }
 
+    /**
+     * Sets id
+     * @param id as a String
+     */
     public void setId(String id) {
         this.id = id;
         Database.refreshCustomers();
     }
 
     /**
-     * Sets address.
-     *
-     * @param address the address
+     * Sets address
+     * @param address as a String
      */
     public void setAddress(String address) {
         this.address = address;
         Database.refreshCustomers();
     }
 
-    /**
-     * Gets address.
-     *
-     * @return the address
-     */
-//GETTERS
+    //GETTERS
     //=======
+
+    /**
+     * Gets address
+     * @return address as a String
+     */
     public String getAddress() {
         return this.address;
     }
 
     /**
-     * Gets id.
-     *
-     * @return the id
+     * Gets id
+     * @return id as a String
      */
     public String getID() {
         return this.id;
@@ -97,8 +99,8 @@ public class Customer extends User {
     //=======
 
     //public void createNewEvent(){} (not implemented)
-    //public void viewEvents(){} (not implemented)
-    //public void joinEvent() {} (not implemented)
+    //public void viewEvents(){}    (not implemented)
+    //public void joinEvent() {}    (not implemented)
 
     public void displayMainMenu() {
         boolean cont = true;
