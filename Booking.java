@@ -1,5 +1,7 @@
 /**
  * The type Booking.
+ * @version 1.0
+ * @author Martin and others
  */
 public class Booking {
     private String date;
@@ -12,10 +14,10 @@ public class Booking {
     /**
      * <h1>This class is to make the bookings</h1>
      *
-     * @param date        the date
-     * @param time        the time
-     * @param customerID  the customer id
-     * @param numOfGuests the num of guests
+     * @param date        the date as a String
+     * @param time        the time as a String
+     * @param customerID  the customer id as a String
+     * @param numOfGuests the num of guests as an int
      */
     public Booking(String date, String time, String customerID, int numOfGuests) {
         this.date = date;
@@ -30,12 +32,12 @@ public class Booking {
     /**
      * Instantiates a new Booking.
      *
-     * @param date        the date
-     * @param time        the time
-     * @param customerID  the customer id
-     * @param approved    the approved
-     * @param numOfGuests the num of guests
-     * @param duration    the duration
+     * @param date        the date as a String
+     * @param time        the time as a String
+     * @param customerID  the customer id as a String
+     * @param approved    the approved as a boolean
+     * @param numOfGuests the num of guests as an int
+     * @param duration    the duration as an int
      */
     public Booking(String date, String time, String customerID, boolean approved, int numOfGuests, int duration) {
         this.date = date;
@@ -56,7 +58,7 @@ public class Booking {
     /**
      * Sets time.
      *
-     * @param time the time
+     * @param time the time as a String
      */
     public void setTime(String time) {
         this.time = time;
@@ -66,7 +68,7 @@ public class Booking {
     /**
      * Sets customer id.
      *
-     * @param customerID the customer id
+     * @param customerID the customer id as a String
      */
     public void setCustomerID(String customerID) {
         this.customerID = customerID;
@@ -76,7 +78,7 @@ public class Booking {
     /**
      * Sets num of guests.
      *
-     * @param noOfGuests the no of guests
+     * @param noOfGuests the no of guests as an int
      */
     public void setNumOfGuests(int noOfGuests) {
         this.numOfGuests = noOfGuests;
@@ -86,7 +88,7 @@ public class Booking {
     /**
      * Sets duration.
      *
-     * @param duration the duration
+     * @param duration the duration as an int
      */
     public void setDuration(int duration) {
         this.duration = duration;
@@ -96,7 +98,7 @@ public class Booking {
     /**
      * Sets approved.
      *
-     * @param approved the approved
+     * @param approved the approved as a boolean
      */
     public void setApproved(boolean approved) {
         this.approved = approved;
@@ -106,7 +108,7 @@ public class Booking {
     /**
      * Gets date.
      *
-     * @return the date
+     * @return the date as a String
      */
 //GETTERS
     //=======
@@ -117,7 +119,7 @@ public class Booking {
     /**
      * Gets time.
      *
-     * @return the time
+     * @return the time as a String
      */
     public String getTime() {
         return time;
@@ -126,7 +128,7 @@ public class Booking {
     /**
      * Gets customer id.
      *
-     * @return the customer id
+     * @return the customer id as a String
      */
     public String getCustomerID() {
         return customerID;
@@ -135,7 +137,7 @@ public class Booking {
     /**
      * Gets num of guests.
      *
-     * @return the num of guests
+     * @return the num of guests as an int
      */
     public int getNumOfGuests() {
         return this.numOfGuests;
@@ -144,7 +146,7 @@ public class Booking {
     /**
      * Gets duration.
      *
-     * @return the duration
+     * @return the duration as an int
      */
     public int getDuration() {
         return this.duration;
@@ -153,7 +155,7 @@ public class Booking {
     /**
      * Is approved boolean.
      *
-     * @return the boolean
+     * @return the boolean as a boolean
      */
     public boolean isApproved() {
         return approved;
@@ -161,7 +163,7 @@ public class Booking {
 
     /**
      * This method formats the output to a string
-     * @return
+     * @return String outpu
      */
     @Override
     public String toString() {
