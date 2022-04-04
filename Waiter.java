@@ -71,7 +71,7 @@ public class Waiter extends Staff {
         while(!(con==0)) {
             for(int i=0;i<Database.orderHistory.size(); i++) {
                 if(Database.orderHistory.get(i).isOrderComplete() == false) {
-                    System.out.println(i+1 + "- " + Database.orderHistory.get(i).toString());
+                    System.out.println((i+1) + "- " + Database.orderHistory.get(i).toString());
                 } 
             }
             System.out.println("To Approve a delivery Select 1");
