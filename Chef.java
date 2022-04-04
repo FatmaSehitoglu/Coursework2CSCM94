@@ -62,6 +62,8 @@ public class Chef extends Staff {
                 case 0:
                     cont = false;
                     break;
+                default:
+                    break;
             }
         }   
     }
@@ -97,9 +99,9 @@ public class Chef extends Staff {
      */
     public void editDailySpecial() {
         boolean cont = true;
-        while(cont) {
+        while (cont){
             System.out.println("Daily Specials:");
-            for(int i=0;i<Database.getSpecials().size();i++) {
+            for (int i=0; i<Database.getSpecials().size(); i++) {
                 System.out.println(Database.getSpecials().get(i).toString());
             }
             System.out.println("-----------");
@@ -110,20 +112,20 @@ public class Chef extends Staff {
             int select = Input.intInput(0, 3);
             switch (select) {
                 case 1:
-                    for(int i = 0; i<Database.menuItems.size();i++) {
+                    for (int i = 0; i<Database.menuItems.size(); i++) {
                         System.out.println(Database.menuItems.get(i).toString());
                     }
                     System.out.println("Enter the id of the item you want to designate as daily special");
                     boolean found = false;
                     int s = Input.intInput(0, 999999);
-                    for(int i = 0; i<Database.getMenu().size(); i++) {
-                        if(s == Database.getMenu().get(i).getID()) {
+                    for (int i = 0; i<Database.getMenu().size(); i++) {
+                        if (s == Database.getMenu().get(i).getID()) {
                             Database.getMenu().get(i).setIsSpecial(true);
                             found = true;
                         }
                     }
-                    if(found == false) {
-                        System.out.println("No item with id " + s + " found."  );
+                    if (!found) {
+                        System.out.println("No item with id " + s + " found.");
                     }
                     break;
                 case 2:
@@ -133,18 +135,20 @@ public class Chef extends Staff {
                     System.out.println("Enter the id of the item you want to designate as NOT daily special");
                     found = false;
                     s = Input.intInput(0, 999999);
-                    for(int i=0; i<Database.getSpecials().size();i++) {
-                        if(s == Database.getSpecials().get(i).getID()) {
+                    for (int i=0; i<Database.getSpecials().size(); i++) {
+                        if (s == Database.getSpecials().get(i).getID()) {
                             Database.getSpecials().get(i).setIsSpecial(false);
                             found = true;
                         }
                     }
-                    if(found == false) {
-                        System.out.println("No item with id " + s + " found."  );
+                    if (!found) {
+                        System.out.println("No item with id " + s + " found.");
                     }
                     break;
                 case 0:
                     cont = false;
+                    break;
+                default:
                     break;
             }
         }
@@ -155,11 +159,11 @@ public class Chef extends Staff {
      */
     public void viewActiveOrders() {
         boolean cont = true;
-        while(cont == true) {
-            for(int i=0; i<Database.orderHistory.size(); i++) {
-                if(Database.orderHistory.get(i).isChefComplete() == false) {
-                    System.out.println(i+1 + "- " +
-                    Database.orderHistory.get(i).toString());
+        while (cont) {
+            for (int i=0; i<Database.orderHistory.size(); i++) {
+                if (!Database.orderHistory.get(i).isChefComplete()) {
+                    System.out.println(i+1 + "- "
+                            + Database.orderHistory.get(i).toString());
                 }
             }
             System.out.println("1.Complete an incomplete order");
@@ -174,6 +178,8 @@ public class Chef extends Staff {
                 case 0:
                     cont = false;
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -183,14 +189,14 @@ public class Chef extends Staff {
      */
     public void viewMenuItems() {
         boolean cont = true;
-        while(cont == true) {
-            for(int i=0; i<Database.menuItems.size(); i++) {
-                if(Database.menuItems.get(i).getInMenu() == true) {
-                    System.out.println(i+1 + "- " + Database.menuItems.get(i).toString() + 
-                    " Menu Status: Actively In the menu");
+        while (cont) {
+            for (int i=0; i<Database.menuItems.size(); i++) {
+                if (Database.menuItems.get(i).getInMenu()) {
+                    System.out.println(i+1 + "- " + Database.menuItems.get(i).toString()
+                            + " Menu Status: Actively In the menu");
                 }else {
-                    System.out.println(Database.menuItems.get(i).toString() + 
-                    " Menu Status: Not In the menu");
+                    System.out.println(Database.menuItems.get(i).toString()
+                            + " Menu Status: Not In the menu");
                 }
             }
             System.out.println("1.Change the menu status of an item");
@@ -200,7 +206,7 @@ public class Chef extends Staff {
                 case 1: //switches menu states
                     System.out.println("Select an menu item");
                     int order = Input.intInput(1, Database.menuItems.size()+1) - 1;
-                    if(Database.menuItems.get(order).getInMenu() == true){
+                    if (Database.menuItems.get(order).getInMenu()){
                         Database.menuItems.get(order).setInMenu(false);
                     }else {
                         Database.menuItems.get(order).setInMenu(true);
@@ -208,6 +214,8 @@ public class Chef extends Staff {
                     break;
                 case 0:
                     cont = false;
+                    break;
+                default:
                     break;
             }
         }
