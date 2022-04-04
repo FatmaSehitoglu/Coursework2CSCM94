@@ -1,20 +1,23 @@
 import java.util.Scanner;
 
 /**
- * <h2>The type Input.</h2>
+ * <h2>Input class</h2>
+ * Provides methods to accept user input
  * @version 1.0
- * @author Martin
+ * @author Martin Dimitrov
  */
 public class Input {
 
+    //METHODS
+    //=======
+
     /**
-     * This method checks whether the input is a number
-     *
-     * @param min the min as an int
-     * @param max the max as an int
-     * @return int inputInt
+     * Accepts integer input from a user
+     * @param min   the minimum value as an int
+     * @param max   the maximum value as an int
+     * @return      the user-entered value as an int
      */
-    public static int intInput(int min, int max){
+    public static int intInput(int min, int max) {
         Scanner in = new Scanner(System.in);
         int inputInt = 0;
         while (!in.hasNextInt()) {   //checks whether the input is Int so program doesn't crash
@@ -28,17 +31,18 @@ public class Input {
             inputInt = in.nextInt();
             in.nextLine();
         }
+        in.close();
         return inputInt;
     }
 
     /**
-     * This method creates an input scanner for a String
-     *
+     * Accepts String input from a user
      * @return String input as a String
      */
-    public static String stringInput(){
+    public static String stringInput() {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
+        in.close();
         return input;
     }
 }
