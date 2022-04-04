@@ -2,6 +2,7 @@
  * <h2>The type Booking.</h2>
  * @version 1.0
  * @author Martin Dimitrov
+ * @author Chris Litting
  */
 public class Booking {
     private String date;
