@@ -33,7 +33,6 @@ public class Booking {
         this.duration = 1;
     }
 
-
     /**
      * Constructor for Bookings read from Database
      *
