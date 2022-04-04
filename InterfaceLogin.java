@@ -1,6 +1,6 @@
 public class InterfaceLogin {
     //Main login page for app
-    private static void mainLogin() {
+    public static void mainLogin() {
         boolean cont = true;
         while (cont) {
             System.out.println("Welcome to Cafe 94\n1. Customer Login\n2. Staff Login\n3. New Customer\n0. Exit");

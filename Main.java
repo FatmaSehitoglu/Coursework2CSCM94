@@ -22,6 +22,6 @@ public class Main {
         menu.selectFromMenu();
         */
         Database.populateDb();
-
+        InterfaceLogin.mainLogin();
     }
 }
