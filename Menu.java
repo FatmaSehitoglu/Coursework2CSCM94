@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 /**
  * <h2>The type Menu.</h2>
+ * @author Fatma
+ * @author Martin
+ * @version 1.0
  */
 public class Menu {
 
