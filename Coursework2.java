@@ -1,4 +1,12 @@
+/**
+ * The type Coursework 2.
+ */
 class Coursework2 {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         /*
         Scanner in = new Scanner(System.in);
