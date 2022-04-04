@@ -27,7 +27,11 @@ public abstract class Order {
      * @param items     as a MenuItem ArrayList
      * @param approval  as a boolean
      */
-    public Order(String customID, ArrayList<MenuItem> items, boolean approval) {
+    public Order(
+        String customID, 
+        ArrayList<MenuItem> items, 
+        boolean approval
+    ) {
         this.customID = customID;
         this.items = items;
         this.approval = approval;
@@ -45,7 +49,14 @@ public abstract class Order {
      * @param orderComplete as a boolean
      * @param chefComplete  as a boolean
      */
-    public Order(String customID, ArrayList<MenuItem> items, boolean approval, LocalDateTime time, boolean orderComplete, boolean chefComplete) {
+    public Order(
+        String customID, 
+        ArrayList<MenuItem> items, 
+        boolean approval, 
+        LocalDateTime time, 
+        boolean orderComplete, 
+        boolean chefComplete
+    ) {
         this.customID = customID;
         this.items = items;
         this.approval = approval;
@@ -113,7 +124,7 @@ public abstract class Order {
 
     //GETTERS
     //=======
-    
+
     /**
      * Gets customID
      * @return customID as a String

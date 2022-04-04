@@ -28,7 +28,13 @@ public class Eat_in extends Order{
      * @param tableID  as an int
      * @param waiterID as a String
      */
-    public Eat_in(String customID, ArrayList<MenuItem> items, boolean approval, int tableID, String waiterID) {
+    public Eat_in(
+        String customID, 
+        ArrayList<MenuItem> items, 
+        boolean approval, 
+        int tableID, 
+        String waiterID
+    ) {
         super(customID, items, approval);
         this.customID = customID;
         this.items = items;
@@ -51,7 +57,16 @@ public class Eat_in extends Order{
      * @param tableID       as an int
      * @param waiterID      as a String
      */
-    public Eat_in(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, int tableID, String waiterID) {
+    public Eat_in(
+        String customID, 
+        ArrayList<MenuItem> items, 
+        boolean orderComplete, 
+        LocalDateTime time, 
+        boolean chefComplete, 
+        boolean approval, 
+        int tableID, 
+        String waiterID
+    ) {
         super(customID, items, approval);
         this.orderComplete = orderComplete;
         this.time = time;
@@ -104,7 +119,7 @@ public class Eat_in extends Order{
     //======= =======
 
     /**
-     * toString method for Eat_in
+     * toString method for Eat_in (for menus displays)
      * @return Eat_in as a String
      */
     @Override
@@ -113,7 +128,15 @@ public class Eat_in extends Order{
         String time1 = time.format(formatter);
         String order1 = items.toString();
         String status1 = orderComplete ? "Complete" : "Incomplete";
-        return String.format("Table %d, Waiter: %s, Customer: %s, Time: %s, Order: %s, Status: %s", tableID, waiterID, customID, time1, order1, status1);
+        return String.format(
+            "Table %d, Waiter: %s, Customer: %s, Time: %s, Order: %s, Status: %s", 
+            tableID, 
+            waiterID, 
+            customID, 
+            time1, 
+            order1, 
+            status1
+        );
     }
 
     /**
@@ -121,7 +144,17 @@ public class Eat_in extends Order{
      * @return Eat_in as a data string
      */
     public String toDataString() {
-        return String.format("%s|%s|%b|%s|%b|%b|%b|%s\n", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, tableID, waiterID);
+        return String.format(
+            "%s|%s|%b|%s|%b|%b|%b|%s\n", 
+            customID, 
+            FileManager.getItemIds(items), 
+            orderComplete, 
+            FileManager.LocalDateTimeToString(time), 
+            chefComplete, 
+            approval, 
+            tableID, 
+            waiterID
+        );
     }
 
 }

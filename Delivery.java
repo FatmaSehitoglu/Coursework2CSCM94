@@ -1,45 +1,67 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-
-
 /**
- * The type Delivery.
+ * <h1>Delivery class</h1>
+ * A subclass of Order class
+ * @author Niu Zhaoye
+ * @version 1.0
  */
 public class Delivery extends Order{
+
+    //FIELDS
+    //======
+
     private String address;
     private String driveID;
     private boolean driveComplete;
 
+    //CONSTRUCTORS
+    //============
 
     /**
-     * Instantiates a new Delivery.
-     *
-     * @param customID the custom id
-     * @param items    the items
-     * @param approval the approval
-     * @param address  the address
-     * @param driveID  the drive id
+     * Constructor for new Deliveries
+     * @param customID as a String
+     * @param items    as a MenuItem ArrayList
+     * @param approval as a boolean
+     * @param address  as a String
+     * @param driveID  as a String
      */
-    public Delivery(String customID, ArrayList<MenuItem> items, boolean approval, String address, String driveID) {
+    public Delivery(
+        String customID, 
+        ArrayList<MenuItem> items, 
+        boolean approval, 
+        String address, 
+        String driveID
+    ) {
         super(customID, items, approval);
         this.address = address;
         this.driveID = driveID;
     }
 
     /**
-     * Instantiates a new Delivery.
-     *
-     * @param customID      the custom id
-     * @param items         the items
-     * @param orderComplete the order complete
-     * @param time          the time
-     * @param chefComplete  the chef complete
-     * @param approval      the approval
-     * @param address       the address
-     * @param driveID       the drive id
-     * @param driveComplete the drive complete
+     * Constructor for Deliveries read from Database
+     * @param customID      as a String
+     * @param items         as a MenuItem ArrayList
+     * @param orderComplete as a boolean
+     * @param time          as a LocalDateTime
+     * @param chefComplete  as a boolean
+     * @param approval      as a boolean
+     * @param address       as a String
+     * @param driveID       as a String
+     * @param driveComplete as a boolean
      */
-    public Delivery(String customID, ArrayList<MenuItem> items, boolean orderComplete, LocalDateTime time, boolean chefComplete, boolean approval, String address, String driveID, boolean driveComplete) {
+    public Delivery(
+        String customID, 
+        ArrayList<MenuItem> items, 
+        boolean orderComplete, 
+        LocalDateTime time, 
+        boolean chefComplete, 
+        boolean approval, 
+        String address, 
+        String driveID, 
+        boolean driveComplete
+    ) {
         super(customID, items, approval);
         this.orderComplete = orderComplete;
         this.time = time;
@@ -49,22 +71,21 @@ public class Delivery extends Order{
         this.driveComplete = driveComplete;
     }
 
-    /**
-     * Sets address.
-     *
-     * @param address the address
-     */
-//SETTERS
+    //SETTERS
     //=======
+
+     /**
+     * Sets address.
+     * @param address as a String
+     */
     public void setAddress(String address) {
         this.address = address;
         Database.refreshOrders();
     }
 
     /**
-     * Sets drive id.
-     *
-     * @param driveID the drive id
+     * Sets driveID
+     * @param driveID as a String
      */
     public void setDriveID(String driveID) {
         this.driveID = driveID;
@@ -72,73 +93,86 @@ public class Delivery extends Order{
     }
 
     /**
-     * Sets drive complete.
-     *
-     * @param driveComplete the drive complete
+     * Sets driveComplete.
+     * @param driveComplete as a boolean
      */
     public void setDriveComplete(boolean driveComplete) {
         this.driveComplete = driveComplete;
         Database.refreshOrders();
     }
 
-    /**
-     * Gets address.
-     *
-     * @return the address
-     */
-//GETTERS
+    //GETTERS
     //=======
+
+    /**
+     * Gets address
+     * @return address as a String
+     */
     public String getAddress() {
         return address;   
     }
 
     /**
-     * Gets drive id.
-     *
-     * @return the drive id
+     * Gets driveID
+     * @return driveID as a String
      */
     public String getDriveID() {
         return driveID;
     }
 
     /**
-     * Is drive complete boolean.
-     *
-     * @return the boolean
+     * Gets isDriveComplete
+     * @return isDriveComplete as a boolean
      */
     public boolean isDriveComplete() {
         return driveComplete;
     }
 
-   
-
+    //UTILITY METHODS
+    //======= =======
 
     /**
-     *
-     * @return String formatted
+     * toString method for Delivery (for menu displays)
+     * @return Delivery as a String
      */
     @Override
     public String toString() {
-        return "Delivery{" +
-        "customID " + customID +
-        " orderApproved " + approval +
-        " time " + time +
-        " address " + address +
-        " driveID " + driveID +
-        " chefComplete " + chefComplete +
-        " driveComplete " + driveComplete + "/n" +
-        " items " + items.toString() +
-        " }";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String time1 = time.format(formatter);
+        String order1 = items.toString();
+        String status1 = orderComplete ? "Complete" : "Incomplete";
+        String status2 = approval ? "Approved" : "Awaiting approval";
+        String status3 = chefComplete ? "Cooking complete" : "Cooking in progress";
+        String status4 = driveComplete ? "On the way" : "Order delivered";
+        return String.format(
+            "Customer: %s, Status: %s, Time: %s, Address: %s, \nOrder: %s, \nChef Progress: %s, Driver Progress: %s", 
+            customID, 
+            status2,
+            time1,
+            address, 
+            order1, 
+            status3,
+            status4
+        );
     }
 
-
     /**
-     * To data string string.
-     *
-     * @return String formatted
+     * Converts Delivery Order to a data string for entry in Database
+     * @return Delivery as a data string
      */
     public String toDataString() {
-        return String.format("%s|%s|%b|%s|%b|%b|%s|%s|%b\n", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, address, driveID, driveComplete);
+        return String.format(
+            "%s|%s|%b|%s|%b|%b|%s|%s|%b\n", 
+            customID, 
+            FileManager.getItemIds(items), 
+            orderComplete, 
+            FileManager.LocalDateTimeToString(time), 
+            chefComplete, 
+            approval, 
+            address, 
+            driveID, 
+            driveComplete
+        );
     }
 
 }
