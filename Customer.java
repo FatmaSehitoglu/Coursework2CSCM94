@@ -98,10 +98,13 @@ public class Customer extends User {
     //METHODS
     //=======
 
-    //public void createNewEvent(){} (not implemented)
-    //public void viewEvents(){}    (not implemented)
-    //public void joinEvent() {}    (not implemented)
+    //public void createNewEvent(){}    (not implemented)
+    //public void viewEvents(){}        (not implemented)
+    //public void joinEvent() {}        (not implemented)
 
+    /**
+     * 
+     */
     public void displayMainMenu() {
         boolean cont = true;
         while (cont) {
