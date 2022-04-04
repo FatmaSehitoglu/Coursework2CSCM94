@@ -87,7 +87,7 @@ public class Driver extends Staff {
     }
 
     public String toDataString() {
-        return String.format("%s|%s|%s|%s", this.getFirstName(), this.getLastName(), this.getId(), "Driver");
+        return String.format("%s|%s|%s|%s\n", this.getFirstName(), this.getLastName(), this.getId(), "Driver");
     }
    
 

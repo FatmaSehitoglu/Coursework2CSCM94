@@ -90,7 +90,7 @@ public class Delivery extends Order{
      * @return String formatted
      */
     public String toDataString() {
-        return String.format("%s|%s|%b|%s|%b|%b|%s|%s|%b", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, address, driveID, driveComplete);
+        return String.format("%s|%s|%b|%s|%b|%b|%s|%s|%b\n", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, address, driveID, driveComplete);
     }
 
 }
