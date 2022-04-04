@@ -23,7 +23,7 @@ public abstract class User {
      * @param lastName  as a String
      * @param id        as a String
      */
-    public User (
+    public User(
         String firstName, 
         String lastName, 
         String id
