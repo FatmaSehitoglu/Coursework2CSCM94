@@ -107,7 +107,8 @@ public class Waiter extends Staff {
                         }
                     }
                     int driver = Input.intInput(0, Database.getStaffCount());
-                    Database.getOrderHistory().get(app - 1).setDriveID(Database.getStaffList().get(driver).getId());
+                    Delivery delivery = (Delivery)Database.getOrderHistory().get(app - 1);
+                    delivery.setDriveID(Database.getStaffList().get(driver).getId());
                     break;
                 case 2:
                     System.out.println("Select an order to cancel");
