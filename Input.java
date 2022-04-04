@@ -31,7 +31,6 @@ public class Input {
             inputInt = in.nextInt();
             in.nextLine();
         }
-        //in.close();
         return inputInt;
     }
 
@@ -42,7 +41,6 @@ public class Input {
     public static String stringInput() {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
-        //in.close();
         return input;
     }
 }
