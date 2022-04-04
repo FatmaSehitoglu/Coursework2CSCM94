@@ -1,5 +1,5 @@
 /**
- * <h1>User class</h1>
+ * <h2>User class</h2>
  * Abstract superclass for Customer and Staff
  * @author Fatma Sehitoglu
  * @author Chris Litting

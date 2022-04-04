@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.time.LocalDateTime;
 
 /**
- * <h1>Customer class</h1>
+ * <h2>Customer class</h2>
  * A subclass of User
  * @author Fatma Sehitoglu
  * @author Chris Litting

@@ -4,7 +4,7 @@ import java.time.format.DateTimeFormatter;
 
 
 /**
- * <h1>Eat In class</h1>
+ * <h2>Eat In class</h2>
  * A subclass of Order class
  * @author Niu Zhaoye
  * @version 1.0

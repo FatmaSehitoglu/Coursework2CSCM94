@@ -1,5 +1,5 @@
 /**
- * <h1>User class</h1>
+ * <h2>Staff class</h2>
  * Subclass of User, abstract superclass for Manager, Waiter, Driver and Chef
  * @author Fatma Sehitoglu
  * @author Chris Litting
