@@ -82,9 +82,9 @@ public class Waiter extends Staff {
     public void viewActiveOrders() {
         int con = -1;
         while(!(con==0)) {
-            for(int i=0;i<Database.orderHistory.size(); i++) {
-                if(Database.orderHistory.get(i).isOrderComplete() == false) {
-                    System.out.println((i+1) + "- " + Database.orderHistory.get(i).toString());
+            for(int i=0;i<Database.getOrderHistory().size(); i++) {
+                if(Database.getOrderHistory().get(i).isOrderComplete() == false) {
+                    System.out.println((i+1) + "- " + Database.getOrderHistory().get(i).toString());
                 } 
             }
             System.out.println("To Approve a delivery Select 1");
@@ -94,13 +94,13 @@ public class Waiter extends Staff {
             switch (select) {
                 case 1:
                     System.out.println("Select a delivery to approve");
-                    int app = Input.intInput(1, Database.orderHistory.size());
-                    Database.orderHistory.get(app).setApproval(true);
+                    int app = Input.intInput(1, Database.getOrderHistory().size());
+                    Database.getOrderHistory().get(app).setApproval(true);
                     break;
                 case 2:
                     System.out.println("Select an order to cancel");
-                    int cancel = Input.intInput(1, Database.orderHistory.size());
-                    cancelOrder(Database.orderHistory.get(cancel-1));
+                    int cancel = Input.intInput(1, Database.getOrderHistory().size());
+                    cancelOrder(Database.getOrderHistory().get(cancel-1));
                     break;
                 case 0:
                     con = 0;
@@ -116,13 +116,13 @@ public class Waiter extends Staff {
         int bookingToApprove = -1;
         while(!(bookingToApprove==0)) {
             System.out.println("Select a Booking to Approve");
-            for(int i = 0; i<Database.bookingHistory.size(); i++) {
-                System.out.println(i+1 + " : " + Database.bookingHistory.get(i).toString());
+            for(int i = 0; i<Database.getBookingHistory().size(); i++) {
+                System.out.println(i+1 + " : " + Database.getBookingHistory().get(i).toString());
             }
             System.out.println("Select a Booking to Approve or press 0 to go back");
-            bookingToApprove = Input.intInput(0, Database.bookingHistory.size()+1);
+            bookingToApprove = Input.intInput(0, Database.getBookingHistory().size()+1);
             if(!(bookingToApprove == 0)) {
-                Database.bookingHistory.get(bookingToApprove-1).setApproved(true);
+                Database.getBookingHistory().get(bookingToApprove-1).setApproved(true);
             }else {
                 break;
             }    
@@ -134,9 +134,9 @@ public class Waiter extends Staff {
      * @param Order order
      */
     public void cancelOrder(Order order) {
-        for(int i=0; i<Database.orderHistory.size(); i++) {
-            if(order.equals(Database.orderHistory.get(i))) {
-                Database.orderHistory.remove(i);
+        for(int i=0; i<Database.getOrderHistory().size(); i++) {
+            if(order.equals(Database.getOrderHistory().get(i))) {
+                Database.getOrderHistory().remove(i);
             }
         }
     }

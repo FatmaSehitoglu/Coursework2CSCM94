@@ -160,10 +160,10 @@ public class Chef extends Staff {
     public void viewActiveOrders() {
         boolean cont = true;
         while (cont) {
-            for (int i=0; i<Database.orderHistory.size(); i++) {
-                if (!Database.orderHistory.get(i).isChefComplete()) {
+            for (int i=0; i<Database.getOrderHistory().size(); i++) {
+                if (!Database.getOrderHistory().get(i).isChefComplete()) {
                     System.out.println(i+1 + "- "
-                            + Database.orderHistory.get(i).toString());
+                            + Database.getOrderHistory().get(i).toString());
                 }
             }
             System.out.println("1.Complete an incomplete order");
@@ -172,8 +172,8 @@ public class Chef extends Staff {
             switch (select) {
                 case 1:
                     System.out.println("Select an order to complete");
-                    int order = Input.intInput(1, Database.orderHistory.size()+1)-1;
-                    Database.orderHistory.get(order).setChefComplete(true);
+                    int order = Input.intInput(1, Database.getOrderHistory().size()+1)-1;
+                    Database.getOrderHistory().get(order).setChefComplete(true);
                     break;
                 case 0:
                     cont = false;
