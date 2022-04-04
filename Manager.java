@@ -1,6 +1,9 @@
 /**
  * <h2>Manager class</h2>
  * A subclass of Staff
+ * @author Fatma Sehitoglu
+ * @author Chris Litting
+ * @version 1.0
  */
 public class Manager extends Staff {
 
@@ -66,7 +69,7 @@ public class Manager extends Staff {
     }
 
     /**
-     * <h2>A method to allow the manager to add staff members</h2>
+     * Displays the menu for editing staff members
      */
     public void displayStaff() {
         boolean cont = true;
@@ -108,7 +111,7 @@ public class Manager extends Staff {
     }
 
     /**
-     * <h3>A method to choose the type of staff to be added</h3>
+     * Displays menu for adding staff
      */
     public void addStaff() {
         String firstName = "";
@@ -144,9 +147,8 @@ public class Manager extends Staff {
     }
 
     /**
-     * <h4>A method that allows manager to remove staff</h4>
-     *
-     * @param staff the staff
+     * A method that allows Manager to remove staff
+     * @param staff as a Staff
      */
     public void removeStaff(Staff staff) {
 
@@ -158,9 +160,8 @@ public class Manager extends Staff {
     }
 
     /**
-     * <h5>A method that lets the manager edit staff</h5>
-     *
-     * @param n the n
+     * A method that lets the manager edit staff
+     * @param n the index of the Staff member in the Database Staff ArrayList
      */
     public void editStaff(int n) {
         Input.intInput(1,4);
@@ -168,10 +169,10 @@ public class Manager extends Staff {
         String change;
         Staff staff =  Database.staffList.get(n);
         System.out.println("What would you like to change?");
-        System.out.println("1. change firstname");
-        System.out.println("2. change lastname");
-        System.out.println("3. change id");
-        System.out.println("4. remove staff");
+        System.out.println("1. Change first name");
+        System.out.println("2. Change last name");
+        System.out.println("3. Change ID");
+        System.out.println("4. Remove staff member");
 
         Lo:
         while (true){
@@ -179,19 +180,19 @@ public class Manager extends Staff {
             choose = Input.intInput(1,4);
             switch (choose){
                 case 1:
-                    System.out.println("Please enter new firstname:");
+                    System.out.println("Please enter new first name:");
                     change = Input.stringInput();
                     staff.setFirstName(change);
                     System.out.println("success!");
                     break;
                 case 2:
-                    System.out.println("Please enter new lastname:");
+                    System.out.println("Please enter new last name:");
                     change = Input.stringInput();
                     staff.setLastName(change);
                     System.out.println("success!");
                     break;
                 case 3:
-                    System.out.println("Please enter new id:");
+                    System.out.println("Please enter new ID:");
                     change = Input.stringInput();
                     staff.setId(change);
                     System.out.println("success!");
@@ -199,7 +200,7 @@ public class Manager extends Staff {
                 case 4:
                     lo:
                     while (true){
-                        System.out.println("Are you sure you want to delete him? (yes or no)");
+                        System.out.println("Are you sure you want to delete this staff member? (yes or no)");
                         change = Input.stringInput();
                         if (change.equalsIgnoreCase("yes")) {
                             removeStaff(staff);
@@ -218,7 +219,7 @@ public class Manager extends Staff {
     //public void approveEvent() {} (not implemented)
 
     /**
-     * <h6>A method to display the most active customer</h6>
+     * A method to display the most active customer
      */
     public void getMostActiveCustomer() {
         Customer mostActive = Database.mostActiveCustomer();
@@ -236,7 +237,7 @@ public class Manager extends Staff {
     }
 
     /**
-     * <h7>A method to show the most popular items</h7>
+     * A method to show the most popular items
      */
     public void getMostPopularItems() {
         int max = 0;
@@ -264,6 +265,10 @@ public class Manager extends Staff {
         maxName + " with " +
         max + " times ordered." );
     }
+
+    /**
+     * Prints highest number of hours worked by a Staff member
+     */
     public void mostWorkedStaff() {
         int maxHour = 0;
         int maxIndex = 0;
@@ -274,7 +279,7 @@ public class Manager extends Staff {
             }
         }
         if(maxHour == 0) {
-            System.out.println("Total Hours worked by all staf is 0 hours");
+            System.out.println("Total Hours worked by all staff is 0 hours");
         }else {
             System.out.println("The highest number of hours worked is " +
             maxHour + " by " + Database.getStaffList().get(maxIndex).getFirstName() +
@@ -282,12 +287,32 @@ public class Manager extends Staff {
         }
     }
 
+    /**
+     * toString method for Manager (for menu displays)
+     * @return Manager as a String
+     */
     @Override
     public String toString() {
-        return String.format("%s %s, %s", this.getFirstName(), this.getLastName(), "Manager");
+        return String.format(
+            "%s %s, %s", 
+            this.getFirstName(), 
+            this.getLastName(), 
+            "Manager"
+        );
     }
 
+    /**
+     * Converts Manager to a data string (for database storage)
+     * @return Manager as a data String
+     */
     public String toDataString() {
-        return String.format("%s|%s|%s|%s\n", this.getFirstName(), this.getLastName(), this.getId(), "Manager");
+        return String.format(
+            "%s|%s|%s|%s\n", 
+            this.getFirstName(), 
+            this.getLastName(), 
+            this.getId(), 
+            "Manager"
+        );
     }
+
 }
