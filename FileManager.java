@@ -152,7 +152,7 @@ public class FileManager {
     public static ArrayList<MenuItem> getItemsFromIds(String str) {
         ArrayList<MenuItem> items = new ArrayList<>();
         String[] ids = str.split(",");
-        if (ids[0] != ""){
+        if (!ids[0].equals("")){
             for (int i = 0; i < ids.length; i++) {
                 items.add(Database.getItem(Integer.parseInt(ids[i])));
             }
