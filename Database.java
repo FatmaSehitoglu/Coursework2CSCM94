@@ -550,7 +550,7 @@ public class Database {
     }
 
     /**
-     * Gets item.
+     * Gets item by ID
      * @param id the id as an int
      * @return the item as an objectof MenuItem
      */
