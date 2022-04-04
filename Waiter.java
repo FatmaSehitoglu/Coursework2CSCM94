@@ -136,7 +136,7 @@ public class Waiter extends Staff {
 
     /**
      * This method cancels an order
-     * @param Order order
+     * @param order as an Order
      */
     public void cancelOrder(Order order) {
         for (int i=0; i<Database.getOrderHistory().size(); i++) {

@@ -44,7 +44,7 @@ public class FileManager {
      * Shows the order history (deprecated)
      * @param filename      the filename as a String
      * @param customerID    the customer id as a String
-     * @throws IOException
+     * @throws IOException  if file not found
      * @see IOException
      */
     public static void readOrderHistory(String filename, String customerID) throws IOException {
