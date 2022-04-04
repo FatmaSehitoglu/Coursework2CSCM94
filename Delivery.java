@@ -140,7 +140,6 @@ public class Delivery extends Order{
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String time1 = time.format(formatter);
         String order1 = items.toString();
-        String status1 = orderComplete ? "Complete" : "Incomplete";
         String status2 = approval ? "Approved" : "Awaiting approval";
         String status3 = chefComplete ? "Cooking complete" : "Cooking in progress";
         String status4 = driveComplete ? "On the way" : "Order delivered";
