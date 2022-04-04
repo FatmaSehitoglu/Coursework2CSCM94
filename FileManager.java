@@ -34,7 +34,7 @@ public class FileManager {
             */
             writer.append(data);
             writer.close();
-            System.out.println("Successfuly wrote " + data + " to " + filename);
+            //System.out.println("Successfuly wrote " + data + " to " + filename);
         } catch (IOException e) {
             System.out.println("An error occurred");
         }

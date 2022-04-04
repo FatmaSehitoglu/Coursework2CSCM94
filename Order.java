@@ -2,6 +2,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public abstract class Order {
+
+    //FIELDS
+    //======
     public String customID;
     public ArrayList<MenuItem> items;
     public boolean orderComplete;
@@ -12,6 +15,12 @@ public abstract class Order {
     //CONSTRUCTORS
     //============
 
+    /**
+     * Constructor for new Orders
+     * @param customID
+     * @param items
+     * @param approval
+     */
     public Order(String customID, ArrayList<MenuItem> items, boolean approval) {
         this.customID = customID;
         this.items = items;
@@ -21,6 +30,15 @@ public abstract class Order {
         this.chefComplete = false;
     }
 
+    /**
+     * Constructor for Orders read from Database
+     * @param customID
+     * @param items
+     * @param approval
+     * @param time
+     * @param orderComplete
+     * @param chefComplete
+     */
     public Order(String customID, ArrayList<MenuItem> items, boolean approval, LocalDateTime time, boolean orderComplete, boolean chefComplete) {
         this.customID = customID;
         this.items = items;
@@ -32,11 +50,19 @@ public abstract class Order {
 
     //SETTERS
     //=======
+    /**
+     * Setter for customID
+     * @param customID
+     */
     public void setCustomID(String customID) {
         this.customID = customID;
         Database.refreshOrders();
     }
 
+    /**
+     * Setter for items
+     * @param items
+     */
     public void setItems(ArrayList<MenuItem> items) {
         this.items = items;
         Database.refreshOrders();
