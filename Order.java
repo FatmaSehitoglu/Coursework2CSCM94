@@ -10,6 +10,7 @@ public abstract class Order {
    
     //FIELDS
     //======
+
     public String customID;
     public ArrayList<MenuItem> items;
     public boolean orderComplete;
@@ -55,6 +56,7 @@ public abstract class Order {
 
     //SETTERS
     //=======
+
     /**
      * Sets customID
      * @param customID as a String
@@ -111,6 +113,7 @@ public abstract class Order {
 
     //GETTERS
     //=======
+    
     /**
      * Gets customID
      * @return customID as a String

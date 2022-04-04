@@ -10,10 +10,15 @@ import java.time.format.DateTimeFormatter;
  * @version 1.0
  */
 public class Eat_in extends Order{
+
     //FIELDS
     //======
+
     private int tableID;
     private String waiterID;
+
+    //CONSTRUCTORS
+    //============
 
     /**
      * Constructor for new Eat In Orders
@@ -59,9 +64,8 @@ public class Eat_in extends Order{
     //=======
 
     /**
-     * Sets table id.
-     *
-     * @param tableID the table id
+     * Sets tableID
+     * @param tableID as an int
      */
     public void setTableID(int tableID) {
         this.tableID = tableID;
@@ -69,36 +73,36 @@ public class Eat_in extends Order{
     }
 
     /**
-     * Sets waiter id.
-     *
-     * @param waiterID the waiter id
+     * Sets waiterID
+     * @param waiterID as a String
      */
     public void setWaiterID(String waiterID) {
         this.waiterID = waiterID;
         Database.refreshOrders();
     }
+    
+    //GETTERS
+    //=======
 
     /**
-     * Gets table id.
-     *
-     * @return the table id
+     * Gets tableID
+     * @return tableID as an int
      */
-//GETTERS
-    //=======
     public int getTableID() {
         return tableID;
     }
 
     /**
-     * Gets waiter id.
-     *
-     * @return the waiter id
+     * Gets waiterID
+     * @return waiterID as a String
      */
     public String getWaiterID() {
         return waiterID;
     }
 
-    
+    //UTILITY METHODS
+    //======= =======
+
     /**
      * toString method for Eat_in
      * @return Eat_in as a String
@@ -112,11 +116,9 @@ public class Eat_in extends Order{
         return String.format("Table %d, Waiter: %s, Customer: %s, Time: %s, Order: %s, Status: %s", tableID, waiterID, customID, time1, order1, status1);
     }
 
-
     /**
-     * To data string string.
-     *
-     * @return String formatted
+     * Converts Eat_in Order to a data string for entry in Database
+     * @return Eat_in as a data string
      */
     public String toDataString() {
         return String.format("%s|%s|%b|%s|%b|%b|%b|%s\n", customID, FileManager.getItemIds(items), orderComplete, FileManager.LocalDateTimeToString(time), chefComplete, approval, tableID, waiterID);
