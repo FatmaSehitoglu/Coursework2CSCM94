@@ -241,7 +241,7 @@ public class Database {
         String[][] str = FileManager.readFromFile("EatInOrderDb.txt", 8);
         for (int i = 0; i < str.length; i++){
             addToOrderHistory(new EatIn(str[i][0], FileManager.getItemsFromIds(str[i][1]),
-                    Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]),
+                    Boolean.parseBoolean(str[i][2]), FileManager.stringToLocalDateTime(str[i][3]),
                     Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]),
                     Integer.parseInt(str[i][6]), str[i][7]));
         }
@@ -254,7 +254,7 @@ public class Database {
         String[][] str = FileManager.readFromFile("TakeawayOrderDb.txt", 7);
         for (int i = 0; i < str.length; i++){
             addToOrderHistory(new Takeaway(str[i][0], FileManager.getItemsFromIds(str[i][1]),
-                    Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]),
+                    Boolean.parseBoolean(str[i][2]), FileManager.stringToLocalDateTime(str[i][3]),
                     Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), (str[i][6])));
         }
     }
@@ -266,7 +266,7 @@ public class Database {
         String[][] str = FileManager.readFromFile("DeliveryOrderDb.txt", 9);
         for (int i = 0; i < str.length; i++){
             addToOrderHistory(new Delivery(str[i][0], FileManager.getItemsFromIds(str[i][1]),
-                    Boolean.parseBoolean(str[i][2]), FileManager.StringToLocalDateTime(str[i][3]),
+                    Boolean.parseBoolean(str[i][2]), FileManager.stringToLocalDateTime(str[i][3]),
                     Boolean.parseBoolean(str[i][4]), Boolean.parseBoolean(str[i][5]), str[i][6], str[i][7],
                     Boolean.parseBoolean(str[i][8])));
         }
