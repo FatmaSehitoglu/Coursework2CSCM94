@@ -5,6 +5,7 @@ public abstract class Order {
      * <h2>Order class</h2>
      * Superclass for Eat_in, Delivery and Takeaway
      * @author Niu Zhaoye
+     * @author Fatma Sehitoglu
      * @version 1.0
      */
 

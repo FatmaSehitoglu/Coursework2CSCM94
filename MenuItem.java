@@ -1,5 +1,6 @@
 /**
  * <h2>The type Menu item.</h2>
+ * @author Fatma Sehitoglu
  * @author Martin
  * @version 1.0
  */
