@@ -56,6 +56,10 @@ public class Booking {
     //SETTERS
     //=======
 
+    /**
+     * Sets date
+     * @param date as a String
+     */
     public void setDate(String date) {
         this.date = date;
         Database.refreshBookings();
