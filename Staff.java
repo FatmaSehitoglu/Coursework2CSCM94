@@ -25,7 +25,7 @@ public abstract class Staff extends User{
      * @param lastName  as a String
      * @param id        as a String
      */
-    public Staff (
+    public Staff(
         String firstName, 
         String lastName, 
         String id
