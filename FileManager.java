@@ -117,7 +117,7 @@ public class FileManager {
      * @param ldt   as a LocalDateTime
      * @return      the LocalDateTime value as a String
      */
-    public static String LocalDateTimeToString(LocalDateTime ldt) {
+    public static String localDateTimeToString(LocalDateTime ldt) {
         return ldt.format(formatter);
     }
 
@@ -126,7 +126,7 @@ public class FileManager {
      * @param str   the LocalDateTime as a String
      * @return      the LocalDateTime
      */
-    public static LocalDateTime StringToLocalDateTime(String str) {
+    public static LocalDateTime stringToLocalDateTime(String str) {
         return LocalDateTime.parse(str, formatter);
     }
 
