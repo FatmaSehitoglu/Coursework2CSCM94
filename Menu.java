@@ -1,10 +1,14 @@
 import java.util.ArrayList;
 
+/**
+ * The type Menu.
+ */
 public class Menu {
 
     /**
      * <h1>This is the method to display the menu and allow the user to make selections</h1>
-     * @return
+     *
+     * @return array list
      */
     public static ArrayList<MenuItem> selectFromMenu(){
         ArrayList<MenuItem> selections = new ArrayList<MenuItem>();
