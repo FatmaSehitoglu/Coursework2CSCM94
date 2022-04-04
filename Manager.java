@@ -1,3 +1,6 @@
+/**
+ * The type Manager.
+ */
 public class Manager extends Staff {
 
     //FIELDS
@@ -6,7 +9,14 @@ public class Manager extends Staff {
     //private lastName      (inherited)
     //private staffId       (inherited)
 
-    //CONSTRUCTOR
+    /**
+     * Instantiates a new Manager.
+     *
+     * @param firstName the first name
+     * @param lastName  the last name
+     * @param id        the id
+     */
+//CONSTRUCTOR
     //===========
     public Manager(String firstName, String lastName, String id) {
         super(firstName, lastName, id);
@@ -116,7 +126,8 @@ public class Manager extends Staff {
 
     /**
      * <h4>A method that allows manager to remove staff</h4>
-     * @param staff
+     *
+     * @param staff the staff
      */
     public void removeStaff(Staff staff) {
 
@@ -129,7 +140,8 @@ public class Manager extends Staff {
 
     /**
      * <h5>A method that lets the manager edit staff</h5>
-     * @param n
+     *
+     * @param n the n
      */
     public void editStaff(int n) {
         Input.intInput(1,4);
