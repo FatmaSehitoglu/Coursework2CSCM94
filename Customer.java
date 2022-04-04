@@ -103,7 +103,7 @@ public class Customer extends User {
     //public void joinEvent() {}        (not implemented)
 
     /**
-     * 
+     * Main menu display for Customer after login
      */
     public void displayMainMenu() {
         boolean cont = true;
@@ -134,18 +134,14 @@ public class Customer extends User {
                 case 0:
                     cont = false;
                     break;
-            //request booking
-            //cancel booking
-            //place delivery order
-            //place takeaway order
             }
         }
     }
 
     /**
-     * Request booking.
+     * Request booking menu for Customer
      */
-    public void requestBooking() {
+    private void requestBooking() {
         String date;
         String time;
         int noOfguests;
@@ -167,9 +163,9 @@ public class Customer extends User {
     }
 
     /**
-     * Cancel booking.
+     * Cancel booking menu for Customer
      */
-    public void cancelBooking() {
+    private void cancelBooking() {
         boolean cont = true;
         while (cont) {
             ArrayList<Booking> bookings = Database.getBookings(this.id);
@@ -193,9 +189,9 @@ public class Customer extends User {
     }
 
     /**
-     * Place delivery order.
+     * Place delivery order menu for Customer
      */
-    public void placeDeliveryOrder() {
+    private void placeDeliveryOrder() {
         System.out.println("Please select items for your Delivery order");
         ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
         selection = Menu.selectFromMenu();
@@ -214,9 +210,9 @@ public class Customer extends User {
     }
 
     /**
-     * Place take away order.
+     * Place take away order menu for Customer
      */
-    public void placeTakeAwayOrder() {
+    private void placeTakeAwayOrder() {
         System.out.println("Please select items for your Take Away order");
         ArrayList<MenuItem> selection = new ArrayList<MenuItem>();
         selection = Menu.selectFromMenu();
@@ -227,9 +223,9 @@ public class Customer extends User {
     }
 
     /**
-     * Order history.
+     * Order history for Customer
      */
-    public void orderHistory() {
+    private void orderHistory() {
         for(int i=0; i<Database.getOrderHistory().size(); i++) {
             String checkingID = Database.getOrderHistory().get(i).getCustomID();
             if(checkingID.equals(this.id)) {
