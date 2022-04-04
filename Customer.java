@@ -225,9 +225,9 @@ public class Customer extends User {
     }
 
     /**
-     * Order history for Customer
+     * Prints Customer's Order History
      */
-    private void orderHistory() {
+    public void orderHistory() {
         for(int i=0; i<Database.getOrderHistory().size(); i++) {
             String checkingID = Database.getOrderHistory().get(i).getCustomID();
             if(checkingID.equals(this.id)) {
@@ -236,6 +236,10 @@ public class Customer extends User {
         }
     }
 
+    /**
+     * toString method for Customer (for menu displays)
+     * @return Customer as a String
+     */
     @Override
     public String toString() {
         return String.format("%s %s, %s", firstName, lastName, address);
@@ -243,9 +247,8 @@ public class Customer extends User {
 
 
     /**
-     * To data string string.
-     *
-     * @return the string
+     * Converts Customer to a data String for writing to Database
+     * @return Customer as a data String
      */
     public String toDataString() {
         return this.getFirstName() + "|" + this.getLastName() + "|" + this.getAddress() + "|" + this.getId() + "\n";
