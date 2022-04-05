@@ -151,7 +151,7 @@ public class EatIn extends Order{
      */
     public String toDataString() {
         return String.format(
-            "%s|%s|%b|%s|%b|%b|%b|%s\n", 
+            "%s|%s|%b|%s|%b|%b|%d|%s\n", 
             customID, 
             FileManager.getItemIds(items), 
             orderComplete, 

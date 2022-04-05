@@ -1,5 +1,5 @@
 123456|15|Pizza|true|false
-123457|12|Cheeseburger|true|false
-123458|8|Milkshake|true|true
+123457|12|Cheeseburger|true|true
+123458|8|Milkshake|true|false
 111123|3|Taco|true|false
-456098|19|Steak|false|false
+475643|19|Steak|false|false

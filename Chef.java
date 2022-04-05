@@ -178,7 +178,6 @@ public class Chef extends Staff {
                     if (order2.getClass().equals(Takeaway.class) || order2.getClass().equals(EatIn.class)) {
                         order2.setOrderComplete(true);
                     }
-                    //Database.getOrderHistory().get(order).setChefComplete(true);
                     break;
                 case 0:
                     cont = false;

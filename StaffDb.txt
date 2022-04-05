@@ -2,4 +2,4 @@ Manager|McManagerface|manager@manager.com|Manager
 Waiter|McWaiterface|waiter@waiter.com|Waiter
 Chef|McChefface|chef@chef.com|Chef
 Driver|McDriverface|driver@driver.com|Driver
-Davy|Jones|waiter2@waiter.com|Waiter
+Sally|Smith|waiter2@waiter.com|Waiter
