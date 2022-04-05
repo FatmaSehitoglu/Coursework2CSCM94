@@ -84,14 +84,14 @@ public class Manager extends Staff {
             }
             System.out.println("0. Back");
 
-            int select = Input.intInput(0, Database.getStaffCount() + 3);
+            int select = Input.intInput(0, Database.getStaffCount() + 2);
             
             if (select == 1) {
                 //1. ADD NEW STAFF MEMBER
                 addStaff();
             }else if (select == 2){
                 System.out.println("Select the staff you want to add hours worked");
-                select = (Input.intInput(3, Database.getStaffCount() + 3)) - 3;
+                select = (Input.intInput(3, Database.getStaffCount() + 2)) - 2;
                 System.out.println("How many hours worked would you like to add to "
                         + Database.getStaffList().get(select).getFirstName()
                         + " " + Database.getStaffList().get(select).getLastName()
@@ -107,7 +107,7 @@ public class Manager extends Staff {
                 //0. Back
                 cont = false;
             } else {
-                //2 - n. (Staff member)
+                //3 - n. (Staff member)
                 editStaff(select - 3);
             }
         } 
@@ -162,6 +162,7 @@ public class Manager extends Staff {
         }else {
             System.out.println("Delete failed");
         }
+        Database.refreshStaff();
     }
 
     /**
@@ -169,54 +170,48 @@ public class Manager extends Staff {
      * @param n the index of the Staff member in the Database Staff ArrayList
      */
     public void editStaff(int n) {
-        Input.intInput(1, 4);
-        int choose;
+        boolean cont = true;
+        int choose = -1;
         String change;
         Staff staff =  Database.getStaffList().get(n);
-        System.out.println("What would you like to change?");
-        System.out.println("1. Change first name");
-        System.out.println("2. Change last name");
-        System.out.println("3. Change ID");
-        System.out.println("4. Remove staff member");
-
-        Lo:
-        while (true){
-            System.out.println("Please enter your choice (1,2,3):");
-            choose = Input.intInput(1, 4);
+        
+        while (cont){
+            System.out.println("Editing " + staff.toString());
+            System.out.println("What would you like to change?");
+            System.out.println("1. Change first name");
+            System.out.println("2. Change last name");
+            System.out.println("3. Change ID");
+            System.out.println("4. Remove staff member");
+            System.out.println("0. Back");
+            choose = Input.intInput(0, 4);
             switch (choose){
                 case 1:
                     System.out.println("Please enter new first name:");
                     change = Input.stringInput();
                     staff.setFirstName(change);
-                    System.out.println("success!");
                     break;
                 case 2:
                     System.out.println("Please enter new last name:");
                     change = Input.stringInput();
                     staff.setLastName(change);
-                    System.out.println("success!");
                     break;
                 case 3:
                     System.out.println("Please enter new ID:");
                     change = Input.stringInput();
                     staff.setId(change);
-                    System.out.println("success!");
                     break;
                 case 4:
-                    lo:
-                    while (true){
-                        System.out.println("Are you sure you want to delete this staff member? (yes or no)");
-                        change = Input.stringInput();
-                        if (change.equalsIgnoreCase("yes")) {
-                            removeStaff(staff);
-                            break Lo;
-                        }else if (change.equalsIgnoreCase("no")){
-                            continue Lo;
-                        }else {
-                            System.out.println("Incorrect input. Please try again");
-                            continue lo;
-                        }
+                    System.out.println("Are you sure?");
+                    System.out.println("0. No");
+                    System.out.println("1. Yes");
+                    choose = Input.intInput(0, 1);
+                    if (choose == 1) {
+                        removeStaff(staff);
                     }
+                    break;
+                case 0:
+                    cont = false;
+                    break;
                 default:
                     break;
             }

@@ -1,2 +1,1 @@
-fatma|sehitoglu|swansea|fatma@email.com
-Customer|McCustomerFace|Swansea|customer@customer.com
+Customer|McCustomer|Swansea 123|customer@customer.com

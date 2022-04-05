@@ -35,7 +35,7 @@ public class FileManager {
             try (FileWriter writer = new FileWriter(filename, true)) {
                 writer.append(data);
             }
-            System.out.println("Written " + data + " to " + filename);
+            //System.out.println("Written " + data + " to " + filename);
         } catch (IOException e) {
             System.out.println("An error occurred");
         }
@@ -84,16 +84,16 @@ public class FileManager {
             System.out.println("An error occurred");
             e.printStackTrace();
         }
-
         String[][] output = new String[list.size()][n];
-        //String[] temp = new String[n];
-        for (int i = 0; i < list.size(); i++){
-            String[] temp = list.get(i).split("\\|");
-            for (int j = 0; j < n; j++){
-                //System.out.println(temp[j]);
-                output[i][j] = temp[j];
+        //if (!list.get(0).equals("")){
+            for (int i = 0; i < list.size(); i++){
+                String[] temp = list.get(i).split("\\|");
+                for (int j = 0; j < n; j++){
+                    //System.out.println(temp[j]);
+                    output[i][j] = temp[j];
+                }
             }
-        }
+        //}
         return output;
     }
 

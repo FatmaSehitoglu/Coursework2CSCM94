@@ -74,7 +74,7 @@ public class Database {
      * Refresh bookings text file
      */
     public static void refreshBookings() {
-        FileManager.clearFile("BookingDB.txt");
+        FileManager.clearFile("BookingDb.txt");
         for (int i = 0; i < bookingHistory.size(); i++) {
             writeBooking(bookingHistory.get(i));
         }
@@ -161,9 +161,9 @@ public class Database {
      * Refresh orders.
      */
     public static void refreshOrders() {
-        FileManager.clearFile("EatInOrderDB.txt");
-        FileManager.clearFile("TakeawayOrderDB.txt");
-        FileManager.clearFile("DeliveryOrderDB.txt");
+        FileManager.clearFile("EatInOrderDb.txt");
+        FileManager.clearFile("TakeawayOrderDb.txt");
+        FileManager.clearFile("DeliveryOrderDb.txt");
         for (int i = 0; i < orderHistory.size(); i++) {
             writeOrder(orderHistory.get(i));
         }
@@ -288,7 +288,7 @@ public class Database {
      * Refresh customers.
      */
     public static void refreshCustomers() {
-        FileManager.clearFile("CustomerDB.txt");
+        FileManager.clearFile("CustomerDb.txt");
         for (int i = 0; i < customerList.size(); i++) {
             writeCustomer(customerList.get(i));
         }
@@ -354,7 +354,7 @@ public class Database {
      * Refresh staff.
      */
     public static void refreshStaff() {
-        FileManager.clearFile("StaffDB.txt");
+        FileManager.clearFile("StaffDb.txt");
         for (int i = 0; i < staffList.size(); i++) {
             writeStaff(staffList.get(i));
         }
@@ -498,7 +498,7 @@ public class Database {
      * Refresh menu items.
      */
     public static void refreshMenuItems() {
-        FileManager.clearFile("MenuItemDB.txt");
+        FileManager.clearFile("MenuItemDb.txt");
         for (int i = 0; i < menuItems.size(); i++) {
             writeMenuItem(menuItems.get(i));
         }
