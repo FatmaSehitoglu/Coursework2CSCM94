@@ -173,7 +173,12 @@ public class Chef extends Staff {
                 case 1:
                     System.out.println("Select an order to complete");
                     int order = Input.intInput(1, Database.getOrderHistory().size()+1)-1;
-                    Database.getOrderHistory().get(order).setChefComplete(true);
+                    Order order2 = Database.getOrderHistory().get(order);
+                    order2.setChefComplete(true);
+                    if (order2.getClass().equals(Takeaway.class) || order2.getClass().equals(EatIn.class)) {
+                        order2.setOrderComplete(true);
+                    }
+                    //Database.getOrderHistory().get(order).setChefComplete(true);
                     break;
                 case 0:
                     cont = false;

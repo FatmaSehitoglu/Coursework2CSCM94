@@ -103,7 +103,7 @@ public class FileManager {
      */
     public static void clearFile(String filename) {
         try {    
-            try (FileWriter writer = new FileWriter(filename, true)) {
+            try (FileWriter writer = new FileWriter(filename)) {
                 writer.write("");
             }
         } catch (IOException e) {
